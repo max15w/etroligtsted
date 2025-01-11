@@ -1,0 +1,54 @@
+<style>
+	/* Navbar styling */
+	.navbar {
+	  background-color: rgba(40, 40, 40, 0.5); /* Replace with a color from your background image in RGBA format */
+	  border: none; /* Remove the default border */
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+	}
+  
+	.navbar-brand img {
+	  position: relative;
+	  top: -10px;
+	}
+  
+	.navbar-default .navbar-nav > li > a {
+	  color: #ffffff; /* Adjust text color for visibility */
+	  font-weight: bold;
+	  font-size: 16px;
+	}
+  
+	.navbar-default .navbar-nav > li > a:hover {
+	  color: #7cf10f55; /* Adjust hover color */
+	}
+  
+	.navbar-default .navbar-brand {
+	  color: #ffffff; /* Adjust brand text color */
+	}
+  
+	.navbar-default .navbar-brand:hover {
+	  color: #7cf10f55; /* Adjust brand hover color */
+	}
+  </style>
+  
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+	  </div>
+	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
+		<ul class="nav navbar-nav navbar-left">
+		  <li><a href="{{ site.url }}{{ site.baseurl }}/">Home</a></li>
+		  <li><a href="{{ site.url }}{{ site.baseurl }}/library">Library</a></li>
+		  <li><a href="{{ site.url }}{{ site.baseurl }}/doodleddiary">Doodled Diary</a></li>
+		  <li><a href="{{ site.url }}{{ site.baseurl }}/junkjournal">Junk Journal</a></li>
+		  <!-- <li><a href="{{ site.url }}{{ site.baseurl }}/bugart">Bug Art</a></li> -->
+		  <li><a href="{{ site.url }}{{ site.baseurl }}/readinglog">Reading Log</a></li>
+		</ul>
+	  </div>
+	</div>
+  </div>

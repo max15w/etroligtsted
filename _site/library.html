@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Et Roligt Sted - Library</title>
+  <meta name="description" content="Et Roligt Sted - Library">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/library.html">
+
+
+</head>
+
+  <body>
+
+    <style>
+	/* Navbar styling */
+	.navbar {
+	  background-color: rgba(40, 40, 40, 0.5); /* Replace with a color from your background image in RGBA format */
+	  border: none; /* Remove the default border */
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+	}
+  
+	.navbar-brand img {
+	  position: relative;
+	  top: -10px;
+	}
+  
+	.navbar-default .navbar-nav > li > a {
+	  color: #ffffff; /* Adjust text color for visibility */
+	  font-weight: bold;
+	  font-size: 16px;
+	}
+  
+	.navbar-default .navbar-nav > li > a:hover {
+	  color: #7cf10f55; /* Adjust hover color */
+	}
+  
+	.navbar-default .navbar-brand {
+	  color: #ffffff; /* Adjust brand text color */
+	}
+  
+	.navbar-default .navbar-brand:hover {
+	  color: #7cf10f55; /* Adjust brand hover color */
+	}
+  </style>
+  
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+	  </div>
+	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
+		<ul class="nav navbar-nav navbar-left">
+		  <li><a href="http://localhost:4000/">Home</a></li>
+		  <li><a href="http://localhost:4000/library">Library</a></li>
+		  <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li>
+		  <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li>
+		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
+		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
+		</ul>
+	  </div>
+	</div>
+  </div>
+
+    <div class="container-fluid">
+        <div class="row">
+          <style>
+  /* Flexbox for centering the main content */
+  body {
+    background-image: url("http://localhost:4000/images/backgrounds/library.png"); /* Replace with your image path */
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: top center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  /* Style for the main content wrapper */
+  #homeid {
+    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Set a fixed or relative width for the box */
+    max-width: 1500px; /* Optional: Limit the maximum width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
+    /* margin: auto; /* Center the box vertically */
+    /* Add font styles here */
+    font-family: 'Cochin', sans-serif;
+  }
+
+</style>
+
+<!-- Main Content -->
+<div class="text-center">
+  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="/images/titles/library.png" class="rounded float-right">
+  
+  <!-- Add gap -->
+  <div style="height: 610px;"></div>
+
+  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
+
+  <!-- Add gap -->
+  <div style="height: 50px;"></div>
+
+  <div id="homeid" class="col-sm-12">
+    <html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Interactive Library Tables</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css" />
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            opacity: 0.9; /* Semi-transparent table */
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            text-align: left;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for cells */
+        }
+        h1 {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Reading Books</h1>
+<div id="tableContainer1"></div> <!-- Container for the first table -->
+
+<h1>Textbooks</h1>
+<div id="tableContainer2"></div> <!-- Container for the second table -->
+
+<!-- Include DataTables, jQuery, and Markdown-it -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/markdown-it/dist/markdown-it.min.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const md = window.markdownit();
+
+        // Load and render the first table from librarytable.md
+        fetch('http://localhost:4000/_pages/readingbooks.md')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load librarytable.md');
+                return response.text();
+            })
+            .then(markdownContent => {
+                const htmlTable = md.render(markdownContent);
+                document.getElementById("tableContainer1").innerHTML = htmlTable;
+
+                const tableElement = document.querySelector("#tableContainer1 table");
+                if (tableElement) {
+                    tableElement.id = "myTable1"; // Assign a unique ID to the first table
+                    $('#myTable1').DataTable();
+                }
+            })
+            .catch(error => {
+                console.error("Error loading or processing librarytable.md:", error);
+                document.getElementById("tableContainer1").innerText = "Error loading the library table.";
+            });
+
+        // Load and render the second table from textbooks.md
+        fetch('http://localhost:4000/_pages/textbooks.md')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load textbooks.md');
+                return response.text();
+            })
+            .then(markdownContent => {
+                const htmlTable = md.render(markdownContent);
+                document.getElementById("tableContainer2").innerHTML = htmlTable;
+
+                const tableElement = document.querySelector("#tableContainer2 table");
+                if (tableElement) {
+                    tableElement.id = "myTable2"; // Assign a unique ID to the second table
+                    $('#myTable2').DataTable({
+                        "order": [[1, "desc"]] // Assuming the author surname is in the second column (index 1)
+                    });
+                }
+            })
+            .catch(error => {
+                console.error("Error loading or processing textbooks.md:", error);
+                document.getElementById("tableContainer2").innerText = "Error loading the textbooks table.";
+            });
+    });
+</script>
+
+</body>
+</html>
+
+  </div>
+
+    <!-- Add gap -->
+    <div style="height: 200px;"></div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
