@@ -60,7 +60,9 @@ permalink: /library.html
                 const tableElement = document.querySelector("#tableContainer1 table");
                 if (tableElement) {
                     tableElement.id = "myTable1"; // Assign a unique ID to the first table
-                    $('#myTable1').DataTable();
+                    $('#myTable1').DataTable({
+                        "order": [[1, "asc"]] // Assuming the author surname is in the second column (index 1)
+                    });
                 }
             })
             .catch(error => {
@@ -82,7 +84,7 @@ permalink: /library.html
                 if (tableElement) {
                     tableElement.id = "myTable2"; // Assign a unique ID to the second table
                     $('#myTable2').DataTable({
-                        "order": [[1, "desc"]] // Assuming the author surname is in the second column (index 1)
+                        "order": [[0, "desc"]] // Assuming the author surname is in the second column (index 1)
                     });
                 }
             })

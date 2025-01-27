@@ -51,13 +51,13 @@
 | Bertolt             | Brecht             | Collected Poems                                                  | No            | No             | M           | Main     |
 | Bertolt             | Brecht             | Love Poems                                                       | Yes           | No             | M           | Main     |
 | Poppy               | Brite              | Exquisite Corpse                                                 | Yes           | No             | M           | Main     |
-| Edwin               | Brock              | With Love from Judas                                             | Yes           | No             | M        | Main     |
+| Edwin               | Brock              | With Love from Judas                                             | Yes           | No             | M           | Main     |
 | nan                 | Bronte             | Selected Poems                                                   | No            | No             | M           | Main     |
 | Emily               | Bronte             | Wuthering Heights                                                | Yes           | No             | M           | Main     |
 | Gordon              | Brook-Shepherd     | November 1918                                                    | No            | Yes            | E           | Main     |
 | Max                 | Brooks             | The Zombie Survival Guide                                        | No            | Yes            | E           | Main     |
 | Max                 | Brooks             | World War Z                                                      | No            | Yes            | E           | Main     |
-| Pierce              | Brown              | Light Bringer                                                    | No            | No             | E           | Main     |
+| Pierce              | Brown              | Light Bringer                                                    | No            | Yes            | E           | Main     |
 | Mikhail             | Bulgakov           | The Heart of a Dog                                               | Yes           | No             | M           | Main     |
 | Mikhail             | Bulgakov           | The Master and Margarita                                         | No            | No             | M           | Main     |
 | Daisy               | Butcher            | Crawling Horror                                                  | No            | No             | M           | Main     |
@@ -450,3 +450,4 @@
 | Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
 | Hanya               | Yanagihara         | The People in the Trees                                          | No            | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
+| H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | Yes            | M           | Main     |
