@@ -444,7 +444,7 @@
 | Jean                | Cocteau            | Les Enfants Terribles                                            | No            | No             | M           | Window   |
 | Christopher         | Isherwood          | Goodbye to Berlin                                                | No            | No             | M           | Window   |
 | Boris               | Strugatsky         | Roadside Picnic                                                  | No            | No             | E           | Main     |
-| Blake               | Crouch             | Dark Matter                                                      | No            | No             | M           | Window   |
+| Blake               | Crouch             | Dark Matter                                                      | Yes           | No             | M           | Main     |
 | R.L.                | Stevenson          | Skatteøen                                                        | No            | No             | E           | Danish   |
 | J.R.R.               | Tolkien           | Hobbiten                                                         | No            | No             | E           | Danish   |
 | Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
