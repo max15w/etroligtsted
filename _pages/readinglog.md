@@ -252,9 +252,9 @@ permalink: /readinglog.html
     </div>
     <div class="col-sm-2 text-center">
 </div>
-
-
+</div>
 
 </body>
 </html>
+```
 

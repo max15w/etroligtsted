@@ -450,4 +450,4 @@
 | Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
 | Hanya               | Yanagihara         | The People in the Trees                                          | No            | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
-| H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | Yes            | M           | Main     |
+| H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | No             | M           | Main     |
