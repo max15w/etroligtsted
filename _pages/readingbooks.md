@@ -451,3 +451,4 @@
 | Hanya               | Yanagihara         | The People in the Trees                                          | No            | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
 | H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | No             | M           | Main     |
+| Han                 | Kang               | We Do Not Part                                                   | No            | No             | M           | Window   |
