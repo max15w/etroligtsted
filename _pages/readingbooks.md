@@ -448,7 +448,7 @@
 | R.L.                | Stevenson          | Skatteøen                                                        | No            | No             | E           | Danish   |
 | J.R.R.               | Tolkien           | Hobbiten                                                         | No            | No             | E           | Danish   |
 | Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
-| Hanya               | Yanagihara         | The People in the Trees                                          | No            | No             | M           | Window   |
+| Hanya               | Yanagihara         | The People in the Trees                                          | Yes           | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
 | H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | No             | M           | Main     |
 | Han                 | Kang               | We Do Not Part                                                   | No            | No             | M           | Window   |
