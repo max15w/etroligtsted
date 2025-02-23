@@ -70,7 +70,7 @@ permalink: /readinglog.html
          <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/thepeopleyanagihara.jpeg" class="book-image">
         <div class="star-rating">
         <!-- 3.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span>
+            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span> class="empty">☆</span>
         </div>
     </div>
     <div class="col-sm-2 text-center">
