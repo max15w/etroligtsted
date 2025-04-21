@@ -1,62 +1,90 @@
----
-layout: default
----
 
 <style>
-  /* Flexbox for centering the main content */
+
   body {
-    background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/home.png"); /* Replace with your image path */
+    background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/home.jpg");
     background-repeat: repeat-y;
     background-size: 100% auto;
     background-position: top center;
     margin: 0;
     padding: 0;
+    font-family: 'Palatino', sans-serif;
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     min-height: 100vh;
+  }
+
+  .image-grid-container {
+    width: 100%;
+    max-width: 1200px; /* Keeps content nicely sized on wide screens */
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px; /* Keeps margin on mobile */
     box-sizing: border-box;
   }
 
-  /* Style for the main content wrapper */
-  #homeid {
-    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1500px; /* Optional: Limit the maximum width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
-    margin: auto; /* Center the box vertically */
-    /* Add font styles here */
-    font-family: 'Cochin', sans-serif;
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wraps to new line if needed on small screens */
+    gap: 5vx;
   }
 
-  /* Footer styling */
-  footer {
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent dark footer */
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom */
+  .page-title {
+    position: absolute;
+    top: 90vh;
+    left: 5vw;
+    transform: translateX(-10%);
+    font-size: 36px;
+    font-weight: bold;
+    color: #aebd99;
+    font-family: 'Palatino', sans-serif;
+    z-index: 20;
   }
+
+  .manual-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* or however tall your layout needs to be */
+}
+
+.bug {
+  position: absolute;
+}
+
+.bug1 { top: 25vh; left: 33vw; transform: rotate(10deg);}
+.bug1 img {width: 15vw;}
+.bug2 { top: 20vh; left: 60vw; transform: rotate(-30deg); }
+.bug2 img {width: 8vw;}
+.bug3 { top: 50vh; left: 70vw; transform: rotate(-45deg); }
+.bug3 img {width: 13vw;}
+.bug4 { top: 55vh; left: 40vw; transform: rotate(0deg); }
+.bug4 img {width: 15vw;}
+
 </style>
 
-<!-- Main Content -->
 <div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="{{ site.baseurl }}/images/titles/etroligtsted.png" class="rounded float-right">
+
+  <div class="manual-container">
+    <a href="/library" class="bug bug1">
+      <img src="{{ site.baseurl }}/images/bugart/libraryIm.png" alt="Library">
+    </a>
   
-  <!-- Add gap -->
-  <div style="height: 610px;"></div>
+    <a href="/readinglog" class="bug bug2">
+      <img src="{{ site.baseurl }}/images/bugart/readingLogIm.png" alt="Reading Log">
+    </a>
 
-  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
+    <div class="page-title">Et Roligt Sted</div>
+  
+    <a href="/doodleddiary" class="bug bug3">
+      <img src="{{ site.baseurl }}/images/bugart/doodledDiaryIm.png" alt="Doodled Diary">
+    </a>
 
-  <!-- Add gap -->
-  <div style="height: 50px;"></div>
+    <a href="/junkjournal" class="bug bug4">
+      <img src="{{ site.baseurl }}/images/bugart/junkJournalIm.png" alt="Junk Journal">
+    </a>
 
-  <div id="homeid" class="col-sm-12">
-    {{ content }}
   </div>
-
-    <!-- Add gap -->
-    <div style="height: 200px;"></div>
-</div>

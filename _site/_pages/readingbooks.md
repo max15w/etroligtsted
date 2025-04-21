@@ -363,7 +363,7 @@
 | Merlin              | Sheldrake          | Entangled Life                                                   | No            | No             | M           | Main     |
 | Mary                | Shelley            | Frankenstein                                                     | Yes           | Yes            | M           | Main     |
 | Mikhail             | Sholokhov          | And Quiet Flows the Don                                          | No            | Yes            | E           | Main     |
-| Zara                | Slattery           | Coma                                                             | Yes           | No             | M           | Main     |
+| Zara                | Slattery           | Coma                                                             | Yes           | No             | M           | Graphic  |
 | nan                 | Smithsonian        | Butterfiles and Moths                                            | Yes           | No             | M           | Moth     |
 | Won-Pyung           | Sohn               | Almond                                                           | Yes           | No             | M           | Main     |
 | Jon                 | Sopel              | If Only They Didn't Speak English                                | No            | No             | E           | Main     |
@@ -448,7 +448,11 @@
 | R.L.                | Stevenson          | Skatteøen                                                        | No            | No             | E           | Danish   |
 | J.R.R.               | Tolkien           | Hobbiten                                                         | No            | No             | E           | Danish   |
 | Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
-| Hanya               | Yanagihara         | The People in the Trees                                          | No            | No             | M           | Window   |
+| Hanya               | Yanagihara         | The People in the Trees                                          | Yes           | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
-| H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | No             | M           | Main     |
+| H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | Yes            | M           | Main     |
 | Han                 | Kang               | We Do Not Part                                                   | No            | No             | M           | Window   |
+| Samantha            | Harvey             | Orbital                                                          | No            | No             | M           | Main     |
+| Astrid              | Lindgren           | Pippi Langstrømpe                                                | No            | No             | M           | Danish   |
+| Junji               | Ito                | No Longer Human                                                  | Yes           | No             | M           | Graphic  |
+| Gou                 | Tanabe             | At the Mountains of Madness                                      | Yes           | No             | M           | Graphic  |
