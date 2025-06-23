@@ -446,7 +446,7 @@
 | Boris               | Strugatsky         | Roadside Picnic                                                  | No            | No             | E           | Main     |
 | Blake               | Crouch             | Dark Matter                                                      | Yes           | No             | M           | Main     |
 | R.L.                | Stevenson          | Skatteøen                                                        | No            | No             | E           | Danish   |
-| J.R.R.               | Tolkien           | Hobbiten                                                         | No            | No             | E           | Danish   |
+| J.R.R.              | Tolkien            | Hobbiten                                                         | No            | No             | E           | Danish   |
 | Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
 | Hanya               | Yanagihara         | The People in the Trees                                          | Yes           | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
@@ -456,3 +456,10 @@
 | Astrid              | Lindgren           | Pippi Langstrømpe                                                | No            | No             | M           | Danish   |
 | Junji               | Ito                | No Longer Human                                                  | Yes           | No             | M           | Graphic  |
 | Gou                 | Tanabe             | At the Mountains of Madness                                      | Yes           | No             | M           | Graphic  |
+| Junji               | Ito                | Uzumaki                                                          | No            | No             | M           | Graphic  |
+| Pat                 | Frank              | Alas, Babylon                                                    | Yes           | Yes            | M           | Main     |
+| Chelsea             | Summers            | A Certain Hunger                                                 | Yes           | No             | M           | Main     |
+| Haruki              | Murakami           | Sputnik Sweetheart                                               | Yes           | No             | M           | Main     |
+| Robert              | Graves             | I, Claudius                                                      | No            | No             | E           | Main     |
+| Barbara             | Demick             | Nothing to Envy: Ordinary Lives in North Korea                   | No            | Yes            | E           | Main     |
+| Graeme              | Simsion            | The Rosie Project                                                | No            | No             | E           | Main     |

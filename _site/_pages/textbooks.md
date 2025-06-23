@@ -58,3 +58,4 @@
 | Blakey              | University Mathematics                        | M    | Floor      |
 | Flower              | Webb's Physics of Medical Imaging             | M    | Floor      |
 | Hau                 | Handbook of Laboratory Animal Science         | M    | Floor      |
+| Engelske Forfattere for Gymnasiet | Two Centuries of English Poetry | E    | Floor      |

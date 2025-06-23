@@ -1,0 +1,90 @@
+
+
+<style>
+
+  body {
+    background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/home.jpg");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: top center;
+    margin: 0;
+    padding: 0;
+    font-family: 'Palatino', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .image-grid-container {
+    width: 100%;
+    max-width: 1200px; /* Keeps content nicely sized on wide screens */
+    margin: 80px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 0 20px; /* Keeps margin on mobile */
+    box-sizing: border-box;
+  }
+
+  .row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Wraps to new line if needed on small screens */
+    gap: 5vx;
+  }
+
+  .page-title {
+    position: absolute;
+    top: 90vh;
+    left: 5vw;
+    transform: translateX(-10%);
+    font-size: 36px;
+    font-weight: bold;
+    color: #aebd99;
+    font-family: 'Palatino', sans-serif;
+    z-index: 20;
+  }
+
+  .manual-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* or however tall your layout needs to be */
+}
+
+.bug {
+  position: absolute;
+}
+
+.bug1 { top: 25vh; left: 33vw; transform: rotate(10deg);}
+.bug1 img {width: 15vw;}
+.bug2 { top: 20vh; left: 60vw; transform: rotate(-30deg); }
+.bug2 img {width: 8vw;}
+.bug3 { top: 50vh; left: 70vw; transform: rotate(-45deg); }
+.bug3 img {width: 13vw;}
+.bug4 { top: 55vh; left: 40vw; transform: rotate(0deg); }
+.bug4 img {width: 15vw;}
+
+</style>
+
+<div class="text-center">
+
+  <div class="manual-container">
+    <a href="{{ site.baseurl }}/library" class="bug bug1">
+      <img src="{{ site.baseurl }}/images/bugart/libraryIm.png" alt="Library">
+    </a>
+  
+    <a href="{{ site.baseurl }}/readinglog" class="bug bug2">
+      <img src="{{ site.baseurl }}/images/bugart/readingLogIm.png" alt="Reading Log">
+    </a>
+
+    <div class="page-title">Et Roligt Sted</div>
+  
+    <a href="{{ site.baseurl }}/doodleddiary" class="bug bug3">
+      <img src="{{ site.baseurl }}/images/bugart/doodledDiaryIm.png" alt="Doodled Diary">
+    </a>
+
+    <a href="{{ site.baseurl }}/junkjournal" class="bug bug4">
+      <img src="{{ site.baseurl }}/images/bugart/junkJournalIm.png" alt="Junk Journal">
+    </a>
+  </div>
