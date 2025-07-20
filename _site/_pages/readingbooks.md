@@ -298,7 +298,7 @@
 | George              | Orwell             | Burmese Days                                                     | Yes           | Yes            | M           | Main     |
 | George              | Orwell             | Coming Up for Air                                                | No            | No             | E           | Main     |
 | George              | Orwell             | Homage to Catalonia                                              | No            | Yes            | E           | Main     |
-| George              | Orwell             | Keep the Apidistra Flying                                        | No            | No             | M        | Main     |
+| George              | Orwell             | Keep the Apidistra Flying                                        | No            | No             | M           | Main     |
 | George              | Orwell             | Nineteen Eighty-Four                                             | Yes           | Yes            | M           | Main     |
 | George              | Orwell             | The Lion and the Unicorn                                         | No            | Yes            | E           | Main     |
 | Julie               | Otsuka             | The Swimmers                                                     | Yes           | No             | M           | Main     |
@@ -309,7 +309,7 @@
 | Jean-Michael        | Palmier            | Weimar in Exile                                                  | No            | No             | E           | Main     |
 | Orhan               | Pamuk              | Silent House                                                     | No            | No             | M           | Main     |
 | Ann                 | Patchett           | The Dutch House                                                  | No            | No             | M           | Main     |
-| James               | Patterson          | Invisible                                                        | No            | No             | M        | Main     |
+| James               | Patterson          | Invisible                                                        | No            | No             | M           | Main     |
 | James               | Patterson          | The Thomas Berryman Number                                       | No            | No             | M           | Main     |
 | Michelle            | Paver              | Dark Matter                                                      | Yes           | Yes            | M           | Main     |
 | David               | Peace              | Tokyo Year Zero                                                  | No            | No             | E           | Main     |
@@ -318,7 +318,7 @@
 | Sylvia              | Plath              | The Bell Jar                                                     | Yes           | No             | M           | Main     |
 | nan                 | Plutarch           | Fall of the Roman Republic                                       | No            | No             | E           | Main     |
 | Edgar Allen         | Poe                | Selected Poems                                                   | No            | No             | M           | Main     |
-| Edgar Allan         | Poe                | The Masque of the Red Death                                      | No            | No             | M        | Main     |
+| Edgar Allan         | Poe                | The Masque of the Red Death                                      | No            | No             | M           | Main     |
 | Edgar Allan         | Poe                | The Murders in the Rue Morgue                                    | No            | No             | M           | Main     |
 | Edgar Allan         | Poe                | The Tell-Tale Heart                                              | No            | No             | M           | Main     |
 | Justin              | Pollard            | Alfred the Great                                                 | No            | No             | E           | Main     |
@@ -389,7 +389,7 @@
 | Louis               | Theroux            | Theroux the Keyhole                                              | No            | No             | E           | Main     |
 | Russ                | Thomas             | Firewatching                                                     | Yes           | No             | M           | Main     |
 | Hunter              | Thompson           | Fear and Loathing in Las Vegas                                   | Yes           | No             | M           | Main     |
-| Emma                   | Thomson            | A History of the World (x2)                                      | Yes           | Yes            | E, M | Main     |
+| Emma                | Thomson            | A History of the World (x2)                                      | Yes           | Yes            | E, M        | Main     |
 | Henry David         | Thoreu             | Walden                                                           | No            | No             | M           | Window   |
 | Greta               | Thunberg           | No Ones too Small to Make a Difference                           | Yes           | No             | M           | Main     |
 | J.R.R               | Tolkien            | The Lord of the Rings                                            | No            | Yes            | M           | Main     |
@@ -436,7 +436,7 @@
 | Rachel              | Yoder              | Nightbitch                                                       | Yes           | No             | M           | Main     |
 | Seishi              | Yokomizo           | The Honjin Murders                                               | Yes           | No             | M           | Main     |
 | Kim                 | Young-Ha           | Diary of a Murderer                                              | No            | No             | M           | Main     |
-| Kang                | Young-Sook         | At Night He Lifts Weights                                        | No            | No             | M           | Window   |
+| Kang                | Young-Sook         | At Night He Lifts Weights                                        | No            | No             | M           | Main     |
 | Ayatsuji            | Yukito             | The Decagon House Murders                                        | Yes           | No             | M           | ??       |
 | Carlos Ruiz         | Zafon              | The Shadow of the Wind                                           | No            | No             | M           | Main     |
 | Stefan              | Zweig              | Chess                                                            | No            | No             | E           | Main     |
@@ -447,7 +447,7 @@
 | Blake               | Crouch             | Dark Matter                                                      | Yes           | No             | M           | Main     |
 | R.L.                | Stevenson          | Skatteøen                                                        | No            | No             | E           | Danish   |
 | J.R.R.              | Tolkien            | Hobbiten                                                         | No            | No             | E           | Danish   |
-| Ottessa             | Moshfegh           | McGlue                                                           | No            | No             | M           | Window   |
+| Ottessa             | Moshfegh           | McGlue                                                           | Yes           | No             | M           | Main     |
 | Hanya               | Yanagihara         | The People in the Trees                                          | Yes           | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
 | H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | Yes            | M           | Main     |

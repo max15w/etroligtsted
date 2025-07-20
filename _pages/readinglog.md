@@ -111,6 +111,20 @@ permalink: /readinglog.html
             <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span>
         </div>
     </div>
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/mcgluemoshfegh.jpg" class="book-image">
+        <div class="star-rating">
+        <!-- 1.5 stars-->
+            <span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
+        </div>
+    </div>
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/sputnikmurakami.jpg" class="book-image">
+        <div class="star-rating">
+        <!-- 2 stars-->
+            <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
+        </div>
+    </div>
 </div>
 
 <h1>2024</h1>

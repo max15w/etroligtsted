@@ -6,6 +6,3 @@ sitemap: false
 permalink: /
 ---
 
-A collection of projects without a home.
-
-<br>
