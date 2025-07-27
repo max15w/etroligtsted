@@ -125,6 +125,30 @@ permalink: /readinglog.html
             <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
         </div>
     </div>
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/incestdiary.jpeg" class="book-image">
+        <div class="star-rating">
+        <!-- 5 stars-->
+            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span>
+        </div>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/wedonotpartkang.jpeg" class="book-image">
+        <div class="star-rating">
+        <!-- 2.5 stars-->
+            <span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span>
+        </div>
+    </div>
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/hunchbackichikawa.jpeg" class="book-image">
+        <div class="star-rating">
+        <!-- 5 stars-->
+            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span>
+        </div>
+    </div>
 </div>
 
 <h1>2024</h1>

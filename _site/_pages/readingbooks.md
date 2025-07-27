@@ -463,3 +463,5 @@
 | Robert              | Graves             | I, Claudius                                                      | No            | No             | E           | Main     |
 | Barbara             | Demick             | Nothing to Envy: Ordinary Lives in North Korea                   | No            | Yes            | E           | Main     |
 | Graeme              | Simsion            | The Rosie Project                                                | No            | No             | E           | Main     |
+| Annie               | Jacobsen           | Nuclear War: A Scenario                                          | No            | Yes            | E           | Main     |
+| Saou                | Ichikawa           | Hunchback                                                        | Yes           | No             | M           | Main     |
