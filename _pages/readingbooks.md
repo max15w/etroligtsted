@@ -465,3 +465,5 @@
 | Graeme              | Simsion            | The Rosie Project                                                | No            | No             | E           | Main     |
 | Annie               | Jacobsen           | Nuclear War: A Scenario                                          | No            | Yes            | E           | Main     |
 | Saou                | Ichikawa           | Hunchback                                                        | Yes           | No             | M           | Main     |
+| Christopher         | Berry-Dee          | Talking with Psychopaths                                         | No            | No             | M           | Main     |
+| Yael                | Van Der Wouden     | The Safekeep                                                     | No            | No             | M           | Main     |
