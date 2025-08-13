@@ -460,8 +460,10 @@
 | Pat                 | Frank              | Alas, Babylon                                                    | Yes           | Yes            | M           | Main     |
 | Chelsea             | Summers            | A Certain Hunger                                                 | Yes           | No             | M           | Main     |
 | Haruki              | Murakami           | Sputnik Sweetheart                                               | Yes           | No             | M           | Main     |
-| Robert              | Graves             | I, Claudius                                                      | No            | No             | E           | Main     |
+| Robert              | Graves             | I, Claudius                                                      | No            | Yes            | E           | Main     |
 | Barbara             | Demick             | Nothing to Envy: Ordinary Lives in North Korea                   | No            | Yes            | E           | Main     |
 | Graeme              | Simsion            | The Rosie Project                                                | No            | No             | E           | Main     |
 | Annie               | Jacobsen           | Nuclear War: A Scenario                                          | No            | Yes            | E           | Main     |
-| Saou                | Ichikawa           | Hunchback                                                        | Yes           | No             | M           | Main     |
+| Saou                | Ichikawa           | Hunchback                                                        | Yes           | Yes            | M           | Main     |
+| Christopher         | Berry-Dee          | Talking with Psychopaths                                         | No            | No             | M           | Main     |
+| Yael                | Van Der Wouden     | The Safekeep                                                     | No            | No             | M           | Main     |
