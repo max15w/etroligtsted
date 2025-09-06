@@ -163,7 +163,7 @@
 | Khaled              | Hosseini           | A Thousand Splendid Sun                                          | No            | No             | M           | Main     |
 | David               | Hume               | On Suicide                                                       | No            | No             | M           | Main     |
 | Aldous              | Huxley             | Brave New World                                                  | Yes           | Yes            | M           | Main     |
-| Kazuo               | Ishiguro           | Never Let Me Go                                                  | No            | No             | M           | Main     |
+| Kazuo               | Ishiguro           | Never Let Me Go                                                  | Yes           | No             | M           | Main     |
 | Kazuo               | Ishiguro           | Klara and the Sun                                                | Yes           | No             | M           | Main     |
 | Shirley             | Jackson            | Hangsaman                                                        | Yes           | No             | M           | Main     |
 | Shirley             | Jackson            | The Bird's Nest                                                  | Yes           | No             | M           | Main     |
@@ -173,7 +173,7 @@
 | Jonas               | Jonasson           | The Hundred Year Old Man                                         | No            | Yes            | M           | Main     |
 | Franz               | Kafka              | Metamorphosis                                                    | No            | No             | M           | Main     |
 | Franz               | Kafta              | The Trial                                                        | Yes           | No             | M           | Main     |
-| Arja                | Kajermo            | The Iron Age                                                     | Yes           | Yes            | M        | Main     |
+| Arja                | Kajermo            | The Iron Age                                                     | Yes           | Yes            | M           | Main     |
 | Han                 | Kang               | Greek Lessons                                                    | Yes           | No             | M           | Main     |
 | Han                 | Kang               | The Vegetarian                                                   | Yes           | No             | M           | Main     |
 | Anna                | Kavan              | Ice                                                              | No            | No             | M           | Window   |
@@ -451,7 +451,7 @@
 | Hanya               | Yanagihara         | The People in the Trees                                          | Yes           | No             | M           | Window   |
 | Chuck               | Tingle             | Bury Your Gays                                                   | No            | No             | M           | Window   |
 | H G                 | Wells              | The Island of Dr Moreau                                          | Yes           | Yes            | M           | Main     |
-| Han                 | Kang               | We Do Not Part                                                   | No            | No             | M           | Window   |
+| Han                 | Kang               | We Do Not Part                                                   | Yes           | No             | M           | Window   |
 | Samantha            | Harvey             | Orbital                                                          | No            | No             | M           | Main     |
 | Astrid              | Lindgren           | Pippi Langstrømpe                                                | No            | No             | M           | Danish   |
 | Junji               | Ito                | No Longer Human                                                  | Yes           | No             | M           | Graphic  |
@@ -467,3 +467,8 @@
 | Saou                | Ichikawa           | Hunchback                                                        | Yes           | Yes            | M           | Main     |
 | Christopher         | Berry-Dee          | Talking with Psychopaths                                         | No            | No             | M           | Main     |
 | Yael                | Van Der Wouden     | The Safekeep                                                     | No            | No             | M           | Main     |
+| Hugh                | Howey              | Wool                                                             | No            | Yes            | E           | Main     |
+| Adam                | Forrest Kay        | Escape from Shadow Physics                                       | No            | No             | M           | Main     |
+| Amia                | Srinivasan         | The Right to Sex                                                 | No            | No             | M           | Main     |
+| Monika              | Kim                | The Eyes Are the Best Part                                       | Yes           | No             | M           | Main     |
+| Emanuele            | Coccia             | Philosophy of the Home                                           | Yes           | No             | M           | Main     |
