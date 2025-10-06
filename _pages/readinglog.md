@@ -163,6 +163,13 @@ permalink: /readinglog.html
             <span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
         </div>
     </div>
+        <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/neverletmegoishiguro.jpg" class="book-image">
+        <div class="star-rating">
+        <!-- 3 stars-->
+            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
+        </div>
+    </div>
 </div>
 
 <h1>2024</h1>

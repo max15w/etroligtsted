@@ -16,14 +16,14 @@ permalink: /library.html
         table {
             width: 100%;
             border-collapse: collapse;
-            opacity: 0.9; /* Semi-transparent table */
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            opacity: 0.7; /* Semi-transparent table */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
         }
         th, td {
             padding: 8px;
             border: 1px solid #ddd;
             text-align: left;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for cells */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for cells */
         }
         h1 {
             margin-top: 20px;
@@ -35,8 +35,11 @@ permalink: /library.html
 <h1>Reading Books</h1>
 <div id="tableContainer1"></div> <!-- Container for the first table -->
 
+<div style="height: 100px;"></div> 
+
 <h1>Textbooks</h1>
 <div id="tableContainer2"></div> <!-- Container for the second table -->
+
 
 <!-- Include DataTables, jQuery, and Markdown-it -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

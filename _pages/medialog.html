@@ -1,0 +1,164 @@
+---
+title: "Media Log"
+layout: readinglog
+permalink: /medialog.html
+---
+
+<style>
+  body { color:#111; }
+  .media-log { max-width:1100px; margin:2rem auto; padding:0 1rem; }
+
+  /* Grid: two cards per row */
+  .grid {
+    display:grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap:16px 20px;
+  }
+
+  /* Year heading spans across both columns */
+  .year-heading{
+    grid-column: 1 / -1;
+    font-size: 40px;
+    margin: 1.5rem 0 0.5rem 0;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 4px;
+  }
+
+  /* Card */
+  .media-entry {
+    --accent: #888; /* fallback */
+    display:grid;
+    grid-template-columns: 80px 1fr;
+    gap:12px;
+    padding:14px;
+    border:1px solid #e5e5e5;
+    border-radius:10px;
+    background:rgba(251, 249, 244, 0.9);
+    position:relative;
+    /* colored flare on the left */
+    border-left: 6px solid var(--accent);
+  }
+
+  .media-thumb {
+    width:80px; height:112px; object-fit:cover;
+    border:1px solid #999; border-radius:6px; background:#f3f3f3;
+  }
+
+  .media-header { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-bottom:6px; }
+  .media-title { font-weight:700; }
+
+  .badge {
+    font-size:12px; padding:2px 8px;
+    border:1px solid var(--accent);
+    border-radius:999px; color:#111;
+    background: color-mix(in oklab, var(--accent) 18%, white);
+  }
+
+  .date { font-size:14px; color:#222; }
+
+  .rating { display:inline-flex; gap:2px; font-size:16px; line-height:1; }
+  .rating .full { color:#222; }
+  .rating .half { 
+    background: linear-gradient(to right, #222 50%, transparent 50%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .rating .empty { color:#bbb; }
+
+  .comment { margin:6px 0 0 0; color:#111; }
+
+  /* Type colors via data attribute on the card */
+  .media-entry[data-type="Book"]   { --accent:rgba(94, 160, 211, 0.9); }
+  .media-entry[data-type="Film"]  { --accent:rgba(217, 106, 130, 0.9); }
+  .media-entry[data-type="TV"]     { --accent:rgba(130, 217, 106, 0.9); }
+
+  @media (max-width: 720px) { .grid { grid-template-columns: 1fr; } }
+  @media (max-width: 480px) {
+    .media-entry { grid-template-columns: 64px 1fr; }
+    .media-thumb { width:64px; height:90px; }
+  }
+</style>
+
+<div class="media-log">
+
+
+  <div class="grid">
+    {%- assign items = site.data.medialog -%}  
+    {%- assign current_key = "" -%}
+    
+    {%- for entry in items -%}
+      {%- comment -%} Parse DD/MM/YY into dd, mm, yyyy {%- endcomment -%}
+      {%- assign parts = entry.date | split: '/' -%}
+      {%- assign dd = parts[0] | plus: 0 -%}
+      {%- assign mm = parts[1] | plus: 0 -%}
+      {%- assign yy2 = parts[2] | plus: 0 -%}
+      {%- if yy2 < 70 -%}
+        {%- assign yyyy = 2000 | plus: yy2 -%}
+      {%- else -%}
+        {%- assign yyyy = 1900 | plus: yy2 -%}
+      {%- endif -%}
+    
+      {%- case mm -%}
+        {%- when 1 -%}{% assign m_name = "January" %}{% assign m_abbr = "Jan" %}
+        {%- when 2 -%}{% assign m_name = "February" %}{% assign m_abbr = "Feb" %}
+        {%- when 3 -%}{% assign m_name = "March" %}{% assign m_abbr = "Mar" %}
+        {%- when 4 -%}{% assign m_name = "April" %}{% assign m_abbr = "Apr" %}
+        {%- when 5 -%}{% assign m_name = "May" %}{% assign m_abbr = "May" %}
+        {%- when 6 -%}{% assign m_name = "June" %}{% assign m_abbr = "Jun" %}
+        {%- when 7 -%}{% assign m_name = "July" %}{% assign m_abbr = "Jul" %}
+        {%- when 8 -%}{% assign m_name = "August" %}{% assign m_abbr = "Aug" %}
+        {%- when 9 -%}{% assign m_name = "September" %}{% assign m_abbr = "Sep" %}
+        {%- when 10 -%}{% assign m_name = "October" %}{% assign m_abbr = "Oct" %}
+        {%- when 11 -%}{% assign m_name = "November" %}{% assign m_abbr = "Nov" %}
+        {%- when 12 -%}{% assign m_name = "December" %}{% assign m_abbr = "Dec" %}
+      {%- endcase -%}
+    
+      {%- comment -%} Month+Year heading key and display date {%- endcomment -%}
+      {%- assign heading_key = yyyy | append: "-" | append: mm -%}
+      {%- capture display_date -%}{{ dd }} {{ m_abbr }} {{ yyyy }}{%- endcapture -%}
+    
+      {%- if heading_key != current_key -%}
+        <h2 class="year-heading">{{ m_name }} {{ yyyy }}</h2>
+        {%- assign current_key = heading_key -%}
+      {%- endif -%}
+    
+      {%- assign img = entry.image -%}
+      {%- if img and img contains '://' -%}
+        {%- assign src = img -%}
+      {%- else -%}
+        {%- assign src = site.baseurl | append: img -%}
+      {%- endif -%}
+    
+      {%- assign rating_num = entry.rating | default: 0 | plus: 0 -%}
+      {%- assign r10 = rating_num | times: 10 | round: 0 -%}
+      {%- assign half_mod = r10 | modulo: 10 -%}
+      {%- if half_mod == 5 -%}{% assign half_star = 1 %}{% else %}{% assign half_star = 0 %}{% endif %}
+      {%- assign full_stars = rating_num | floor -%}
+      {%- assign next_after_full = full_stars | plus: 1 -%}
+    
+      <article class="media-entry" data-type="{{ entry.type }}" data-date="{{ entry.date }}">
+        <img class="media-thumb" src="{{ src }}" alt="{{ entry.title | escape }}" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">{{ entry.title }}</span>
+            <span class="badge">{{ entry.type }}</span>
+            <span class="date">{{ display_date }}</span>
+    
+            <span class="rating" aria-label="{{ rating_num }} out of 5">
+              {% for i in (1..5) %}
+                {% if i <= full_stars %}
+                  <span class="full">★</span>
+                {% elsif half_star == 1 and i == next_after_full %}
+                  <span class="half">★</span>
+                {% else %}
+                  <span class="empty">☆</span>
+                {% endif %}
+              {% endfor %}
+            </span>
+          </div>
+    
+          <p class="comment">{{ entry.comment }}</p>
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+</div>

@@ -18,33 +18,35 @@
     <style>
 	/* Navbar styling */
 	.navbar {
-	  background-color: rgba(123, 128, 144, 0.3); /* Replace with a color from your background image in RGBA format */
-	  border: none; /* Remove the default border */
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+	  background-color: rgba(221, 216, 202, 0.4);
+	  border: none;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 	}
   
-	.navbar-brand img {
-	  position: relative;
-	  top: -10px;
-	}
+	.navbar-brand img { position: relative; top: -10px; }
   
 	.navbar-default .navbar-nav > li > a {
-	  color: #36324b; /* Adjust text color for visibility */
+	  color: #36324b;
 	  font-size: 16px;
 	}
+	.navbar-default .navbar-nav > li > a:hover { color: #01143055; }
+	.navbar-default .navbar-brand { color: #ffffff; }
+	.navbar-default .navbar-brand:hover { color: #01143055; }
   
-	.navbar-default .navbar-nav > li > a:hover {
-	  color: #01143055; /* Adjust hover color */
+	/* ⬇︎ Make links flush to the left edge */
+	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
+	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
+	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
+  
+	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
+	@media (min-width: 768px) {
+	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
 	}
   
-	.navbar-default .navbar-brand {
-	  color: #ffffff; /* Adjust brand text color */
-	}
-  
-	.navbar-default .navbar-brand:hover {
-	  color: #01143055; /* Adjust brand hover color */
-	}
+	/* Optional: also remove any left padding on the whole bar if needed */
+	.navbar.navbar-default { padding-left: 0; }
   </style>
+  
   
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
 	<div class="container-fluid">
@@ -57,13 +59,15 @@
 		</button>
 	  </div>
 	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-		<ul class="nav navbar-nav navbar-right">
+		<ul class="nav navbar-nav navbar-left">
 		  <li><a href="http://localhost:4000/">Home</a></li>
 		  <li><a href="http://localhost:4000/library">Library</a></li>
-		  <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li>
-		  <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li>
+		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
+		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
 		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
+		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
 		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
+		  <li><a href="http://localhost:4000/videos">Videos</a></li>
 		</ul>
 	  </div>
 	</div>
@@ -74,7 +78,7 @@
           <style>
   /* Flexbox for centering the main content */
   body {
-    background-image: url("http://localhost:4000/images/backgrounds/library.png"); /* Replace with your image path */
+    background-image: url("http://localhost:4000/images/backgrounds/background.png"); /* Replace with your image path */
     background-repeat: repeat-y;
     background-size: 100% auto;
     background-position: top center;
@@ -88,11 +92,11 @@
 
   /* Style for the main content wrapper */
   #homeid {
-    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
+    background-color: rgba(215, 212, 203, 0.8); /* Add slight transparency for readability */
     padding: 20px;
     border-radius: 8px;
     width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1200px; /* Optional: Limit the maximum width */
+    max-width: 1500px; /* Optional: Limit the maximum width */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
     /* margin: auto; /* Center the box vertically */
     /* Add font styles here */
@@ -103,15 +107,15 @@
 
 <!-- Main Content -->
 <div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="/images/titles/library.png" class="rounded float-right">
+  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="/images/backgrounds/background.png" class="rounded float-right">
   
   <!-- Add gap -->
-  <div style="height: 200px;"></div>
+  <!---- <div style="height: 200px;"></div> -->
 
   <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
 
   <!-- Add gap -->
-  <div style="height: 50px;"></div>
+  <div style="height: 100px;"></div>
 
   <div id="homeid" class="col-sm-12">
     <html lang="en">
@@ -124,14 +128,14 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            opacity: 0.9; /* Semi-transparent table */
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            opacity: 0.7; /* Semi-transparent table */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
         }
         th, td {
             padding: 8px;
             border: 1px solid #ddd;
             text-align: left;
-            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for cells */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background for cells */
         }
         h1 {
             margin-top: 20px;
@@ -143,8 +147,11 @@
 <h1>Reading Books</h1>
 <div id="tableContainer1"></div> <!-- Container for the first table -->
 
+<div style="height: 100px;"></div> 
+
 <h1>Textbooks</h1>
 <div id="tableContainer2"></div> <!-- Container for the second table -->
+
 
 <!-- Include DataTables, jQuery, and Markdown-it -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -210,7 +217,10 @@
 
     <!-- Add gap -->
     <div style="height: 200px;"></div>
+
 </div>
+
+<div style="height: 200px;"></div>
         </div>
       </div>
     </div>

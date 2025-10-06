@@ -1,0 +1,274 @@
+
+- title: "The Next Generation: Season 4"
+  date: 01/10/25
+  type: TV
+  rating: 2.5
+  image: "/images/media/TNG.jpg"
+  comment: "I'm losing momentum"
+
+- title: "Weapons"
+  date: 27/09/25
+  type: Film
+  rating: 4
+  image: "/images/media/Weapons.jpg"
+  comment: "Rewatch"
+
+- title: "Humane"
+  date: 20/09/25
+  type: Film
+  rating: 2
+  image: "/images/media/Humane.jpg"
+  comment: "Great idea, poor execution. Final scene should have been cut"
+
+- title: "Elio"
+  date: 14/09/25
+  type: Film
+  rating: 4.5
+  image: "/images/media/Elio.jpeg"
+  comment: "Cute. I cried"
+
+- title: "Ad Astra"
+  date: 14/09/25
+  type: Film
+  rating: 2
+  image: "/images/media/AdAstra.jpg"
+  comment: "Space capitalism, daddy issues and inner monologues"
+
+- title: "Wonder Woman 84"
+  date: 12/09/25
+  type: Film
+  rating: 2
+  image: "/images/media/WonderWoman1984.jpg"
+  comment: "Not as bad as it could have been"
+
+- title: "Smokin' Aces"
+  date: 10/09/25
+  type: Film
+  rating: 3.5
+  image: "/images/media/SmokinAces.jpg"
+  comment: "Cool premise, good set up. Too much fighting... But nice pay off!"
+
+- title: "Superman"
+  date: 9/09/25
+  type: Film
+  rating: 4
+  image: "/images/media/Superman.jpg"
+  comment: "Wow, a good superhero movie!"
+
+- title: "In the Mouth of Madness"
+  date: 08/09/25
+  type: Film
+  rating: 2
+  image: "/images/media/InTheMouthOfMadness.jpg"
+  comment: "Too chaotic and little payoff"
+
+- title: "Candyman"
+  date: 06/09/25
+  type: Film
+  rating: 4
+  image: "/images/media/Candyman.jpg"
+  comment: "Rewatch"
+
+- title: "The Philosophy of the Home" 
+  date: 06/09/25
+  type: Book
+  rating: 1.5
+  image: "/images/readinglog/philosophycoccia.jpeg"
+  comment: "Verbose and uninspiring"
+
+- title: "The Eyes Are The Best Part"
+  date: 6/09/25
+  type: Book
+  rating: 4.5
+  image: "/images/readinglog/theeyeskim.jpg"
+  comment: "Single sitting read"
+
+- title: "Weapons"
+  date: 05/09/25
+  type: Film
+  rating: 4
+  image: "/images/media/Weapons.jpg"
+  comment: "On CSA, fear and burden"
+
+- title: "Never Let Me Go"
+  date: 30/08/25
+  type: Book
+  rating: 3
+  image: "/images/readinglog/neverletmegoishiguro.jpg"
+  comment: "Interesting premise, not fully explored"
+
+- title: "Pink Floyd: The Wall"
+  date: 24/08/25
+  type: Film
+  rating: 4
+  image: "/images/media/PinkFloydTheWall.jpg"
+  comment: "Art"
+
+- title: "My Dinner with Andre"
+  date: 22/08/25
+  type: Film
+  rating: 2.5
+  image: "/images/media/MyDinnerwithAndre.jpg"
+  comment: "2 hour schizophrenic ramble"
+
+- title: "The Damned"
+  date: 13/08/25
+  type: Film
+  rating: 1.5
+  image: "/images/media/TheDamned.jpg"
+  comment: "Can't be sympathetic to you if you create all your own problems"
+
+- title: "M3gan 2.0"
+  date: 10/08/25
+  type: Film
+  rating: 2
+  image: "/images/media/M3gan2.jpg"
+  comment: "Should have left it at one"
+
+- title: "The Talented Mr Ripley"
+  date: 09/08/25
+  type: Film
+  rating: 4
+  image: "/images/media/TheTalentedMrRipley.jpg"
+  comment: "Be gay, do crime"
+
+- title: "28 Years Later"
+  date: 09/08/25
+  type: Film
+  rating: 2
+  image: "/images/media/28YearsLater.jpeg"
+  comment: "Okay until the end then :("
+
+- title: "Together"
+  date: 8/8/25
+  type: Film
+  rating: 3
+  image: "/images/media/Together.jpeg"
+  comment: "The Substance for heterosexuals"
+
+- title: "Sinners"
+  date: 8/8/25
+  type: Film
+  rating: 4.5
+  image: "/images/media/Sinners.jpg"
+  comment: "A masterpiece"
+
+- title: "Star Trek VI: The Undiscovered Country"
+  date: 29/07/25
+  type: Film
+  rating: 3
+  image: "/images/media/TheUndiscoveredCountry.jpg"
+  comment: "Pretty good"
+
+- title: "Longlegs"
+  date: 28/07/25
+  type: Film
+  rating: 2
+  image: "/images/media/Longlegs.jpg"
+  comment: "Felt unfinished/unpolished"
+
+- title: "Bring Her Back"
+  date: 28/07/25
+  type: Film
+  rating: 4
+  image: "/images/media/BringHerBack.jpeg"
+  comment: "Grief at its most desperate"
+
+- title: "Hunchback"
+  date: 27/07/25
+  type: Book
+  rating: 5
+  image: "/images/readinglog/hunchbackichikawa.jpeg"
+  comment: "Unique"
+
+- title: "Final Destination: Bloodlines"
+  date: 27/07/25
+  type: Film
+  rating: 4
+  image: "/images/media/FinalDestinationBloodlines.jpg"
+  comment: "A comedy. Horrible MR science"
+
+- title: "We Do Not Part"
+  date: 27/07/25
+  type: Book
+  rating: 2.5
+  image: "/images/readinglog/wedonotpartkang.jpeg"
+  comment: "Vague"
+
+- title: "Maurice"
+  date: 26/07/25
+  type: Film
+  rating: 4
+  image: "/images/media/Maurice.jpg"
+  comment: "Fuck Durham"
+
+- title: "The Incest Diary"
+  date: 26/07/25
+  type: Book
+  rating: 5
+  image: "/images/readinglog/incestdiary.jpeg"
+  comment: "Unspeakable"
+
+- title: "Isle of Dogs"
+  date: 21/07/25
+  type: Film
+  rating: 4.5
+  image: "/images/media/IsleofDogs.jpg"
+  comment: "Spectacular and unique"
+
+- title: "The Next Generation: Season 3"
+  date: 18/07/25
+  type: TV
+  rating: 3
+  image: "/images/media/TNG.jpg"
+  comment: "Good background noise"
+
+- title: "Star Trek V: The Final Frontier"
+  date: 16/07/25
+  type: Film
+  rating: 3.5
+  image: "/images/media/TheFinalFrontier.jpg"
+  comment: "Nostalgia bait but I like it"
+
+- title: "Sputnik Sweetheart"
+  date: 16/07/25
+  type: Book
+  rating: 2
+  image: "/images/readinglog/sputnikmurakami.jpg"
+  comment: "Sweet but drawn out"
+
+- title: "McGlue"
+  date: 13/07/25
+  type: Book
+  rating: 1.5
+  image: "/images/readinglog/mcgluemoshfegh.jpg"
+  comment: "Confusing. Temporally inaccurate slurs every second word"
+
+- title: "Everything Everywhere All at Once"
+  date: 12/07/25
+  type: Film
+  rating: 3
+  image: "/images/media/EverythingEverywhereAllatOnce.jpg"
+  comment: "Scott Pilgrim on steroids"
+
+- title: "Brokeback Mountain"
+  date: 12/07/25
+  type: Film
+  rating: 4
+  image: "/images/media/BrokebackMountain.jpg"
+  comment: "Heavy"
+
+- title: "Star Trek: Beyond"
+  date: 11/07/25
+  type: Film
+  rating: 2.5
+  image: "/images/media/StarTrekBeyond.jpg"
+  comment: "Bring back old Trek budget"
+
+- title: "But I'm a Cheerleader"
+  date: 11/07/25
+  type: Film
+  rating: 5
+  image: "/images/media/ButI'mACheerleader.jpg"
+  comment: "Rewatch"
+

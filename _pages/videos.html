@@ -1,0 +1,111 @@
+---
+title: "Videos"
+layout: readinglog
+permalink: /videos.html
+---
+
+<style>
+  body { color:#111; }
+  .container, .page-content, .wrapper { max-width: 100% !important; }
+  .videos { max-width: 2000px; margin: 2rem auto; }
+
+  /* 3 per row on desktop, 2 on tablets, 1 on phones */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  
+  @media (max-width: 1200px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: rgba(218, 212, 198, 0.8);
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* 16:9 player box */
+  .player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; padding-top: 0;
+    background: rgba(234, 232, 225, 0.8);
+  }
+  .player iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  .title {
+    padding: 10px 170px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+</style>
+
+<div class="videos">
+
+  <div class="grid" id="video-grid">
+    <!-- Duplicate .card blocks and change data-url + title text -->
+    <div class="card">
+      <div class="player" data-url="https://www.youtube.com/watch?v=cw0zx2cStlU&t=1715s"></div>
+      <div class="title">VE: Movies I Thought About While My Wife Was Dying</div>
+    </div>
+
+    <div class="card">
+      <div class="player" data-url="https://www.youtube.com/watch?v=EniRqV_PcWA"></div>
+      <div class="title"> VE: Why Being Seen Feels Like Hell: Sartre, Shame, and No Exit</div>
+    </div>
+
+    <div class="card">
+      <div class="player" data-url="https://www.youtube.com/watch?v=bxXIVt83hI0"></div>
+      <div class="title">VE: The Aesthetics of Fascism</div>
+    </div>
+
+    
+  </div>
+</div>
+
+<script>
+  // Turn YouTube links into embeds. Supports watch?v=, youtu.be/, and shorts/
+  (function () {
+    function extractYouTubeID(url) {
+      try {
+        var u = new URL(url);
+        if (u.hostname.includes('youtu.be')) {
+          return u.pathname.slice(1);
+        }
+        if (u.pathname.startsWith('/shorts/')) {
+          return u.pathname.split('/')[2];
+        }
+        if (u.searchParams.get('v')) {
+          return u.searchParams.get('v');
+        }
+        // Fallback: try last path segment
+        var parts = u.pathname.split('/');
+        return parts.pop() || parts.pop();
+      } catch (e) { return null; }
+    }
+
+    function makeEmbed(id) {
+      // privacy-enhanced embed
+      var src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0";
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('src', src);
+      iframe.setAttribute('allow',
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', 'true');
+      return iframe;
+    }
+
+    document.querySelectorAll('.player[data-url]').forEach(function (box) {
+      var id = extractYouTubeID(box.getAttribute('data-url'));
+      if (!id) return;
+      box.innerHTML = '';
+      box.appendChild(makeEmbed(id));
+    });
+  })();
+</script>

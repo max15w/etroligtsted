@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Et Roligt Sted - Videos</title>
+  <meta name="description" content="A place for creative projects with no home.
+">
+  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/videos.html">
+
+
+</head>
+
+  <body>
+    
+    <style>
+	/* Navbar styling */
+	.navbar {
+	  background-color: rgba(221, 216, 202, 0.4);
+	  border: none;
+	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+	}
+  
+	.navbar-brand img { position: relative; top: -10px; }
+  
+	.navbar-default .navbar-nav > li > a {
+	  color: #36324b;
+	  font-size: 16px;
+	}
+	.navbar-default .navbar-nav > li > a:hover { color: #01143055; }
+	.navbar-default .navbar-brand { color: #ffffff; }
+	.navbar-default .navbar-brand:hover { color: #01143055; }
+  
+	/* ⬇︎ Make links flush to the left edge */
+	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
+	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
+	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
+  
+	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
+	@media (min-width: 768px) {
+	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
+	}
+  
+	/* Optional: also remove any left padding on the whole bar if needed */
+	.navbar.navbar-default { padding-left: 0; }
+  </style>
+  
+  
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container-fluid">
+	  <div class="navbar-header">
+		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+		  <span class="sr-only">Toggle navigation</span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		  <span class="icon-bar"></span>
+		</button>
+	  </div>
+	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
+		<ul class="nav navbar-nav navbar-left">
+		  <li><a href="http://localhost:4000/">Home</a></li>
+		  <li><a href="http://localhost:4000/library">Library</a></li>
+		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
+		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
+		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
+		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
+		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
+		  <li><a href="http://localhost:4000/videos">Videos</a></li>
+		</ul>
+	  </div>
+	</div>
+  </div>
+
+    <div class="container-fluid">
+        <div class="row">
+          <style>
+  /* Flexbox for centering the main content */
+  body {
+    background-image: url("http://localhost:4000/images/backgrounds/background.png"); /* Replace with your image path */
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: top center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+
+  /* Style for the main content wrapper */
+  #homeid {
+    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Set a fixed or relative width for the box */
+    max-width: 1500px; /* Optional: Limit the maximum width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
+    /* margin: auto; /* Center the box vertically */
+    /* Add font styles here */
+    font-family: 'Optima', sans-serif;
+  }
+
+</style>
+
+<!-- Main Content -->
+<div class="text-center">
+  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="/images/backgrounds/background.png" class="rounded float-right">
+  
+  <!-- Add gap -->
+  <!--- <div style="height: 200px;"></div> -->
+
+  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
+
+  <!-- Add gap -->
+  <div style="height: 50px;"></div>
+
+  <div id="homeid" class="col-sm-12">
+    <style>
+  body { color:#111; }
+  .container, .page-content, .wrapper { max-width: 100% !important; }
+  .videos { max-width: 2000px; margin: 2rem auto; }
+
+  /* 3 per row on desktop, 2 on tablets, 1 on phones */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+  }
+  
+  @media (max-width: 1200px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 1000px) { .grid { grid-template-columns: 1fr; } }
+
+  .card {
+    background: rgba(218, 212, 198, 0.8);
+    border: 1px solid #e5e5e5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* 16:9 player box */
+  .player {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; padding-top: 0;
+    background: rgba(234, 232, 225, 0.8);
+  }
+  .player iframe {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    border: 0;
+  }
+
+  .title {
+    padding: 10px 170px;
+    font-weight: 400;
+    line-height: 1.3;
+  }
+</style>
+
+<div class="videos">
+
+  <div class="grid" id="video-grid">
+    <!-- Duplicate .card blocks and change data-url + title text -->
+    <div class="card">
+      <div class="player" data-url="https://www.youtube.com/watch?v=cw0zx2cStlU&t=1715s"></div>
+      <div class="title">VE: Movies I Thought About While My Wife Was Dying</div>
+    </div>
+
+    <div class="card">
+      <div class="player" data-url="https://www.youtube.com/watch?v=EniRqV_PcWA"></div>
+      <div class="title"> VE: Why Being Seen Feels Like Hell: Sartre, Shame, and No Exit</div>
+    </div>
+
+    <div class="card">
+      <div class="player" data-url="https://www.youtube.com/watch?v=bxXIVt83hI0"></div>
+      <div class="title">VE: The Aesthetics of Fascism</div>
+    </div>
+
+    
+  </div>
+</div>
+
+<script>
+  // Turn YouTube links into embeds. Supports watch?v=, youtu.be/, and shorts/
+  (function () {
+    function extractYouTubeID(url) {
+      try {
+        var u = new URL(url);
+        if (u.hostname.includes('youtu.be')) {
+          return u.pathname.slice(1);
+        }
+        if (u.pathname.startsWith('/shorts/')) {
+          return u.pathname.split('/')[2];
+        }
+        if (u.searchParams.get('v')) {
+          return u.searchParams.get('v');
+        }
+        // Fallback: try last path segment
+        var parts = u.pathname.split('/');
+        return parts.pop() || parts.pop();
+      } catch (e) { return null; }
+    }
+
+    function makeEmbed(id) {
+      // privacy-enhanced embed
+      var src = "https://www.youtube-nocookie.com/embed/" + id + "?rel=0";
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('src', src);
+      iframe.setAttribute('allow',
+        'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('allowfullscreen', 'true');
+      return iframe;
+    }
+
+    document.querySelectorAll('.player[data-url]').forEach(function (box) {
+      var id = extractYouTubeID(box.getAttribute('data-url'));
+      if (!id) return;
+      box.innerHTML = '';
+      box.appendChild(makeEmbed(id));
+    });
+  })();
+</script>
+
+  </div>
+
+    <!-- Add gap -->
+    <div style="height: 200px;"></div>
+</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
