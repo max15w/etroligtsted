@@ -472,3 +472,7 @@
 | Amia                | Srinivasan         | The Right to Sex                                                 | No            | No             | M           | Main     |
 | Monika              | Kim                | The Eyes Are the Best Part                                       | Yes           | No             | M           | Main     |
 | Emanuele            | Coccia             | Philosophy of the Home                                           | Yes           | No             | M           | Main     |
+| Toni                | Morrison           | Paradise                                                         | No            | No             | M           | Main     |
+| Deborah             | Levy               | Hot Milk                                                         | No            | No             | M           | Main     |
+| Simone              | de Beauvoir        | Misunderstandings in Moscow                                      | Yes           | No             | M           | Main     |
+| Clarice             | Lispector          | The Hour of the Star                                             | Yes           | No             | M           | Main     |

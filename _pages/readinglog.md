@@ -179,6 +179,23 @@ permalink: /readinglog.html
     </div>
 </div>
 
+<div class="row justify-content-center">
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/thehourofthestarlispector.jpg" class="book-image">
+        <div class="star-rating">
+        <!-- 0.5 star-->
+            <span class="half">★</span> <span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
+        </div>
+    </div>
+    <div class="col-sm-2 text-center">
+        <img src="{{ site.url }}{{ site.baseurl }}/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" class="book-image">
+        <div class="star-rating">
+        <!-- 1.5 stars-->
+            <span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
+        </div>
+    </div>
+</div>
+
 <h1>2024</h1>
 
 <!-- Row-->

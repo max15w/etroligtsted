@@ -1,3 +1,23 @@
+- title: "Misunderstanding in Moscow"
+  date: 19/10/25
+  type: Book
+  rating: 1.5
+  image: "/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg"
+  comment: "Dull but reflective"
+
+- title: The Hour of the Star
+  date: 19/10/25
+  type: Book
+  rating: 0.5
+  image: "/images/readinglog/thehourofthestarlispector.jpg"
+  comment: "Would have DNFed if it was longer..."
+
+- title: Scream
+  date: 18/10/25
+  type: Film
+  rating: 3
+  image: "/images/media/Scream.jpg"
+  comment: "Not surprising given the spoilers I've seen, but fun"
 
 - title: Norwegian Wood
   date: 07/10/25
@@ -115,7 +135,7 @@
   date: 22/08/25
   type: Film
   rating: 2.5
-  image: "/images/media/MyDinnerwithAndre.jpg"
+  image: "/images/media/MyDinnerWithAndre.jpg"
   comment: "2 hour schizophrenic ramble"
 
 - title: "The Damned"
@@ -220,7 +240,7 @@
   date: 21/07/25
   type: Film
   rating: 4.5
-  image: "/images/media/IsleofDogs.jpg"
+  image: "/images/media/IsleOfDogs.jpg"
   comment: "Spectacular and unique"
 
 - title: "The Next Generation: Season 3"
