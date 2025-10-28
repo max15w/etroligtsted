@@ -1,3 +1,24 @@
+- title: "Crash"
+  date: 28/10/25
+  type: Film
+  rating: 3.5
+  image: "/images/media/Crash.jpg"
+  comment: "woah"
+
+- title: "The Woman in Cabin 10"
+  date: 28/10/25
+  type: Film
+  rating: 2.5
+  image: "/images/media/WomanInCabin.png"
+  comment: "For once I wish I could hear a Norweigian accent..."
+
+- title: "West End Girl"
+  date: 28/10/25
+  type: Album
+  rating: 4
+  image: "/images/media/WestEndGirl.jpg"
+  comment: "Changed my mood for a whole day. No misses."
+
 - title: "Misunderstanding in Moscow"
   date: 19/10/25
   type: Book
