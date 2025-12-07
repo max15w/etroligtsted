@@ -67,6 +67,7 @@
 		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
 		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
 		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
+		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
 		  <li><a href="http://localhost:4000/videos">Videos</a></li>
 		</ul>
 	  </div>
@@ -121,376 +122,1144 @@
     <html lang="en">
 <head>
 <style>
-/* Image Styling */
-.book-image {
-  width: 150px; /* Set the width of the image */
-  height: 220px; /* Keep the aspect ratio */
-  border: 2px solid grey; /* Add a grey border */
-  border-radius: 5px; /* Optional: Add rounded corners */
-  padding: 2px; /* Add space between the image and the border */
-}
-/* Star rating container */
-.star-rating {
-  font-size: 20px;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 2px;
-}
-.star-rating .full {
-  color: grey; /* Full star color */
+  .reading-log { max-width: 1100px; margin: 0 auto; padding: 0 1rem; color:#111; }
+  .year-heading { font-size: 40px; margin: 2rem 0 1rem; border-bottom: 2px solid #ccc; padding-bottom: 4px; }
+
+  .reading-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
+    gap: 18px 20px;
   }
-.star-rating .half {
-  background: linear-gradient(to right, grey 50%, #fff 50%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @media (max-width: 1100px) { .reading-grid { grid-template-columns: repeat(5, 1fr); } }
+  @media (max-width: 900px)  { .reading-grid { grid-template-columns: repeat(4, 1fr); } }
+  @media (max-width: 720px)  { .reading-grid { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 520px)  { .reading-grid { grid-template-columns: repeat(2, 1fr); } }
+
+  .book { text-align: center; }
+
+  .book-image {
+    width: 150px; height: 220px; object-fit: cover;
+    border: 2px solid grey; border-radius: 5px; padding: 2px; background: #f7f7f7;
+    margin: 0 auto; display: block;
   }
-.star-rating .empty {
-  color: #ccc; /* Empty star color */
+  .star-rating {
+    font-size: 20px; margin-top: 10px;
+    display: flex; justify-content: center; gap: 2px;
   }
+  .star-rating .full  { color: grey; }
+  .star-rating .half  {
+    background: linear-gradient(to right, grey 50%, #fff 50%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .star-rating .empty { color: #ccc; }
 </style>
-</head>
-<body>
 
-<h1>2025</h1>
+<div class="reading-log"><h2 class="year-heading">2025</h2>
+      <div class="reading-grid"><figure class="book">
+            <img class="book-image" src="/images/readinglog/theislandwells.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/lookbarclay.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/darkmattercrouch.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thepeopleyanagihara.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/nolongerhumanito.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/mountainsofmadnesstanabe.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/certainhungersummers.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="4.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/piglethazell.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/babylonfrank.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="3.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/mcgluemoshfegh.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="1.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/sputnikmurakami.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/incestdiary.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/wedonotpartkang.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/hunchbackichikawa.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/theeyeskim.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="4.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/philosophycoccia.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="1.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/neverletmegoishiguro.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/norwegianwoodmurakami.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thehourofthestarlispector.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="0.5 out of 5">
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="1.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/hotmilklevy.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/gliffsmith.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/bluesteyemorrison.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="4.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+            </div>
+          </figure></div><h2 class="year-heading">2024</h2>
+      <div class="reading-grid"><figure class="book">
+            <img class="book-image" src="/images/readinglog/eileenmoshfegh.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thewallhaushofer.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/dopaminenationlembke.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thesailormishima.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/theholeoyamada.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thebelljarplath.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/cannibalstanaka.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/fearandloathingthompson.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="1 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/klaraishiguro.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/themissinglangan.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/comeclosergran.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thedeepcutter.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/themaniaclabatut.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/whenweceaselabatut.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="2 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/humanactskang.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/theruinssmith.jpg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/atnightyoungsook.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="1 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/swimmingjedrowski.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/thewhitebookkang.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/shyporter.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure><figure class="book">
+            <img class="book-image" src="/images/readinglog/greeklessonskang.jpeg" alt="Book cover" />
+            <div class="star-rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </div>
+          </figure></div></div>
 
-<!-- Row-->
 
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/theislandwells.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/lookbarclay.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 2.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/darkmattercrouch.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-         <img src="http://localhost:4000/images/readinglog/thepeopleyanagihara.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-             <img src="http://localhost:4000/images/readinglog/nolongerhumanito.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-                 <img src="http://localhost:4000/images/readinglog/mountainsofmadnesstanabe.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-</div>
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/certainhungersummers.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 4.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/piglethazell.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/babylonfrank.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/mcgluemoshfegh.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 1.5 stars-->
-            <span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/sputnikmurakami.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 2 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/incestdiary.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span>
-        </div>
-    </div>
-</div>
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/wedonotpartkang.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 2.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/hunchbackichikawa.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/theeyeskim.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 4.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/philosophycoccia.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 1.5 stars-->
-            <span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-        <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/neverletmegoishiguro.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-        <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/norwegianwoodmurakami.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-</div>
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/thehourofthestarlispector.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 0.5 star-->
-            <span class="half">★</span> <span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" class="book-image" />
-        <div class="star-rating">
-        <!-- 1.5 stars-->
-            <span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-</div>
-
-<h1>2024</h1>
-
-<!-- Row-->
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/eileenmoshfegh.jpg" class="book-image" />
-        <div class="star-rating">
-        <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/thewallhaushofer.jpg" class="book-image" />
-        <div class="star-rating">
-        <!--2.5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/dopaminenationlembke.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/thesailormishima.jpg" class="book-image" />
-        <div class="star-rating">
-            <!--2 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/theholeoyamada.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 1.5 star-->
-            <span class="full">★</span><span class="full">★</span><span class="half">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/thebelljarplath.jpg" class="book-image" />
-        <div class="star-rating">
-            <!--3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-</div>
-
-<!-- Row-->
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/cannibalstanaka.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 2 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/fearandloathingthompson.jpg" class="book-image" />
-        <div class="star-rating">
-            <!--1 star-->
-            <span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/klaraishiguro.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/themissinglangan.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/comeclosergran.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/thedeepcutter.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-</div>
-
-<!-- Row-->
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/themaniaclabatut.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/whenweceaselabatut.jpg" class="book-image" />
-        <div class="star-rating">
-            <!--2 star-->
-            <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/humanactskang.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 5 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span>       
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/theruinssmith.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/atnightyoungsook.jpeg" class="book-image" />
-        <div class="star-rating">
-            <!-- 1 star-->
-            <span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/swimmingjedrowski.jpeg" class="book-image" />
-        <div class="star-rating">
-            <!-- 4 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span>
-        </div>
-    </div>
-</div>
-
-<!-- Row-->
-
-<div class="row justify-content-center">
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/thewhitebookkang.jpeg" class="book-image" />
-        <div class="star-rating">
-            <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/shyporter.jpeg" class="book-image" />
-        <div class="star-rating">
-            <!--3 star-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <img src="http://localhost:4000/images/readinglog/snuffpalahniuk.jpg" class="book-image" />
-        <div class="star-rating">
-            <!-- 2 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-            <img src="http://localhost:4000/images/readinglog/greeklessonskang.jpeg" class="book-image" />
-        <div class="star-rating">
-            <!-- 3 stars-->
-            <span class="full">★</span><span class="full">★</span><span class="full">★</span><span class="empty">☆</span><span class="empty">☆</span>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-    </div>
-    <div class="col-sm-2 text-center">
-</div>
-</div>
-
-</body>
-</html>
-
+</head></html>
 
   </div>
 

@@ -68,6 +68,7 @@
 		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
 		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
 		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
+		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
 		  <li><a href="http://localhost:4000/videos">Videos</a></li>
 		</ul>
 	  </div>
@@ -182,8 +183,10 @@
   .comment { margin:6px 0 0 0; color:#111; }
 
   /* Type colors via data attribute on the card */
-  .media-entry[data-type="Book"]   { --accent:rgba(94, 160, 211, 0.9); }
-  .media-entry[data-type="Film"]  { --accent:rgba(217, 106, 130, 0.9); }
+  .media-entry[data-type="Fiction"]   { --accent:rgba(94, 160, 211, 0.9); }
+  .media-entry[data-type="Non-Fiction"] { --accent:rgba(130, 106, 217, 0.9); }
+  .media-entry[data-type="Poetry"] { --accent:rgba(211, 106, 200, 0.9); }
+  .media-entry[data-type="Film"]  { --accent:rgba(217, 106, 106, 0.9); }
   .media-entry[data-type="TV"]     { --accent:rgba(130, 217, 106, 0.9); }
   .media-entry[data-type="Album"]   { --accent:rgba(211, 142, 14, 0.9); }
 
@@ -197,7 +200,357 @@
 <div class="media-log">
 
 
-  <div class="grid"><h2 class="year-heading">October 2025</h2><article class="media-entry" data-type="Film" data-date="28/10/25">
+  <div class="grid"><h2 class="year-heading">November 2025</h2><article class="media-entry" data-type="Film" data-date="28/11/25">
+        <img class="media-thumb" src="/images/media/Wicked2.jpeg" alt="Wicked: Part II" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Wicked: Part II</span>
+            <span class="badge">Film</span>
+            <span class="date">28 Nov 2025</span>
+    
+            <span class="rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Meh</p>
+        </div>
+      </article><article class="media-entry" data-type="Film" data-date="21/11/25">
+        <img class="media-thumb" src="/images/media/WrathOfKhan.jpg" alt="Star Trek: The Wrath of Khan" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Star Trek: The Wrath of Khan</span>
+            <span class="badge">Film</span>
+            <span class="date">21 Nov 2025</span>
+    
+            <span class="rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Rewatch</p>
+        </div>
+      </article><article class="media-entry" data-type="Fiction" data-date="05/11/25">
+        <img class="media-thumb" src="/images/readinglog/bluesteyemorrison.jpeg" alt="The Bluest Eye" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">The Bluest Eye</span>
+            <span class="badge">Fiction</span>
+            <span class="date">5 Nov 2025</span>
+    
+            <span class="rating" aria-label="4.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Powerful</p>
+        </div>
+      </article><article class="media-entry" data-type="TV" data-date="04/11/25">
+        <img class="media-thumb" src="/images/media/OverTheGardenWall.jpg" alt="Over the Garden Wall" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Over the Garden Wall</span>
+            <span class="badge">TV</span>
+            <span class="date">4 Nov 2025</span>
+    
+            <span class="rating" aria-label="4 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Heartwarming autumn vibes</p>
+        </div>
+      </article><article class="media-entry" data-type="Fiction" data-date="04/11/25">
+        <img class="media-thumb" src="/images/readinglog/gliffsmith.jpeg" alt="Gliff" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Gliff</span>
+            <span class="badge">Fiction</span>
+            <span class="date">4 Nov 2025</span>
+    
+            <span class="rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Brave New World told through a kid's eyes</p>
+        </div>
+      </article><article class="media-entry" data-type="Film" data-date="03/11/25">
+        <img class="media-thumb" src="/images/media/RabbitTrap.jpeg" alt="Rabbit Trap" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Rabbit Trap</span>
+            <span class="badge">Film</span>
+            <span class="date">3 Nov 2025</span>
+    
+            <span class="rating" aria-label="3 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Wales = scary... I guess</p>
+        </div>
+      </article><article class="media-entry" data-type="Film" data-date="03/11/25">
+        <img class="media-thumb" src="/images/media/DontLogOff.jpg" alt="Dont Log Off" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Dont Log Off</span>
+            <span class="badge">Film</span>
+            <span class="date">3 Nov 2025</span>
+    
+            <span class="rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Trash ofc. But very compelling trash</p>
+        </div>
+      </article><article class="media-entry" data-type="Fiction" data-date="03/11/25">
+        <img class="media-thumb" src="/images/readinglog/hotmilklevy.jpg" alt="Hot Milk" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">Hot Milk</span>
+            <span class="badge">Fiction</span>
+            <span class="date">3 Nov 2025</span>
+    
+            <span class="rating" aria-label="3.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Crash-out litetarure</p>
+        </div>
+      </article><h2 class="year-heading">October 2025</h2><article class="media-entry" data-type="Film" data-date="30/10/25">
+        <img class="media-thumb" src="/images/media/TheCompanion.jpg" alt="The Companion" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">The Companion</span>
+            <span class="badge">Film</span>
+            <span class="date">30 Oct 2025</span>
+    
+            <span class="rating" aria-label="2.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">Good for her</p>
+        </div>
+      </article><article class="media-entry" data-type="Film" data-date="29/10/25">
+        <img class="media-thumb" src="/images/media/TheLongWalk.jpg" alt="The Long Walk" />
+        <div>
+          <div class="media-header">
+            <span class="media-title">The Long Walk</span>
+            <span class="badge">Film</span>
+            <span class="date">29 Oct 2025</span>
+    
+            <span class="rating" aria-label="3.5 out of 5">
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="full">★</span>
+                
+              
+                
+                  <span class="half">★</span>
+                
+              
+                
+                  <span class="empty">☆</span>
+                
+              
+            </span>
+          </div>
+    
+          <p class="comment">That thing that boys go through...</p>
+        </div>
+      </article><article class="media-entry" data-type="Film" data-date="28/10/25">
         <img class="media-thumb" src="/images/media/Crash.jpg" alt="Crash" />
         <div>
           <div class="media-header">
@@ -302,12 +655,12 @@
     
           <p class="comment">Changed my mood for a whole day. No misses.</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="19/10/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="19/10/25">
         <img class="media-thumb" src="/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" alt="Misunderstanding in Moscow" />
         <div>
           <div class="media-header">
             <span class="media-title">Misunderstanding in Moscow</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">19 Oct 2025</span>
     
             <span class="rating" aria-label="1.5 out of 5">
@@ -337,12 +690,12 @@
     
           <p class="comment">Dull but reflective</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="19/10/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="19/10/25">
         <img class="media-thumb" src="/images/readinglog/thehourofthestarlispector.jpg" alt="The Hour of the Star" />
         <div>
           <div class="media-header">
             <span class="media-title">The Hour of the Star</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">19 Oct 2025</span>
     
             <span class="rating" aria-label="0.5 out of 5">
@@ -407,12 +760,12 @@
     
           <p class="comment">Not surprising given the spoilers I've seen, but fun</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="07/10/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="07/10/25">
         <img class="media-thumb" src="/images/readinglog/norwegianwoodmurakami.jpg" alt="Norwegian Wood" />
         <div>
           <div class="media-header">
             <span class="media-title">Norwegian Wood</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">7 Oct 2025</span>
     
             <span class="rating" aria-label="3.5 out of 5">
@@ -792,12 +1145,12 @@
     
           <p class="comment">Rewatch</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="06/09/25">
+      </article><article class="media-entry" data-type="Non-Fiction" data-date="06/09/25">
         <img class="media-thumb" src="/images/readinglog/philosophycoccia.jpeg" alt="The Philosophy of the Home" />
         <div>
           <div class="media-header">
             <span class="media-title">The Philosophy of the Home</span>
-            <span class="badge">Book</span>
+            <span class="badge">Non-Fiction</span>
             <span class="date">6 Sep 2025</span>
     
             <span class="rating" aria-label="1.5 out of 5">
@@ -827,12 +1180,12 @@
     
           <p class="comment">Verbose and uninspiring</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="6/09/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="6/09/25">
         <img class="media-thumb" src="/images/readinglog/theeyeskim.jpg" alt="The Eyes Are The Best Part" />
         <div>
           <div class="media-header">
             <span class="media-title">The Eyes Are The Best Part</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">6 Sep 2025</span>
     
             <span class="rating" aria-label="4.5 out of 5">
@@ -897,12 +1250,12 @@
     
           <p class="comment">On CSA, fear and burden</p>
         </div>
-      </article><h2 class="year-heading">August 2025</h2><article class="media-entry" data-type="Book" data-date="30/08/25">
+      </article><h2 class="year-heading">August 2025</h2><article class="media-entry" data-type="Fiction" data-date="30/08/25">
         <img class="media-thumb" src="/images/readinglog/neverletmegoishiguro.jpg" alt="Never Let Me Go" />
         <div>
           <div class="media-header">
             <span class="media-title">Never Let Me Go</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">30 Aug 2025</span>
     
             <span class="rating" aria-label="3 out of 5">
@@ -1317,12 +1670,12 @@
     
           <p class="comment">Grief at its most desperate</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="27/07/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="27/07/25">
         <img class="media-thumb" src="/images/readinglog/hunchbackichikawa.jpeg" alt="Hunchback" />
         <div>
           <div class="media-header">
             <span class="media-title">Hunchback</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">27 Jul 2025</span>
     
             <span class="rating" aria-label="5 out of 5">
@@ -1387,12 +1740,12 @@
     
           <p class="comment">A comedy. Horrible MR science</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="27/07/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="27/07/25">
         <img class="media-thumb" src="/images/readinglog/wedonotpartkang.jpeg" alt="We Do Not Part" />
         <div>
           <div class="media-header">
             <span class="media-title">We Do Not Part</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">27 Jul 2025</span>
     
             <span class="rating" aria-label="2.5 out of 5">
@@ -1457,12 +1810,12 @@
     
           <p class="comment">Fuck Durham</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="26/07/25">
+      </article><article class="media-entry" data-type="Non-Fiction" data-date="26/07/25">
         <img class="media-thumb" src="/images/readinglog/incestdiary.jpeg" alt="The Incest Diary" />
         <div>
           <div class="media-header">
             <span class="media-title">The Incest Diary</span>
-            <span class="badge">Book</span>
+            <span class="badge">Non-Fiction</span>
             <span class="date">26 Jul 2025</span>
     
             <span class="rating" aria-label="5 out of 5">
@@ -1597,12 +1950,12 @@
     
           <p class="comment">Nostalgia bait but I like it</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="16/07/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="16/07/25">
         <img class="media-thumb" src="/images/readinglog/sputnikmurakami.jpg" alt="Sputnik Sweetheart" />
         <div>
           <div class="media-header">
             <span class="media-title">Sputnik Sweetheart</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">16 Jul 2025</span>
     
             <span class="rating" aria-label="2 out of 5">
@@ -1632,12 +1985,12 @@
     
           <p class="comment">Sweet but drawn out</p>
         </div>
-      </article><article class="media-entry" data-type="Book" data-date="13/07/25">
+      </article><article class="media-entry" data-type="Fiction" data-date="13/07/25">
         <img class="media-thumb" src="/images/readinglog/mcgluemoshfegh.jpg" alt="McGlue" />
         <div>
           <div class="media-header">
             <span class="media-title">McGlue</span>
-            <span class="badge">Book</span>
+            <span class="badge">Fiction</span>
             <span class="date">13 Jul 2025</span>
     
             <span class="rating" aria-label="1.5 out of 5">

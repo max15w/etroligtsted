@@ -1,3 +1,73 @@
+- title: "Wicked: Part II"
+  date: 28/11/25
+  type: Film
+  rating: 4
+  image: "/images/media/Wicked2.jpeg"
+  comment: "Meh"
+
+- title: "Star Trek: The Wrath of Khan"
+  date: 21/11/25
+  type: Film
+  rating: 4
+  image: "/images/media/WrathOfKhan.jpg"
+  comment: "Rewatch"
+
+- title: "The Bluest Eye"
+  date: 05/11/25
+  type: Fiction
+  rating: 4.5
+  image: "/images/readinglog/bluesteyemorrison.jpeg"
+  comment: "Powerful"
+
+- title: "Over the Garden Wall"
+  date: 04/11/25
+  type: TV
+  rating: 4
+  image: "/images/media/OverTheGardenWall.jpg"
+  comment: "Heartwarming autumn vibes"
+
+- title: "Gliff"
+  date: 04/11/25
+  type: Fiction
+  rating: 3
+  image: "/images/readinglog/gliffsmith.jpeg"
+  comment: "Brave New World told through a kid's eyes"
+
+- title: "Rabbit Trap"
+  date: 03/11/25
+  type: Film
+  rating: 3
+  image: "/images/media/RabbitTrap.jpeg"
+  comment: "Wales = scary... I guess"
+
+- title: "Dont Log Off"
+  date: 03/11/25
+  type: Film
+  rating: 2.5
+  image: "/images/media/DontLogOff.jpg"
+  comment: "Trash ofc. But very compelling trash"
+
+- title: "Hot Milk"
+  date: 03/11/25
+  type: Fiction
+  rating: 3.5
+  image: "/images/readinglog/hotmilklevy.jpg"
+  comment: "Crash-out litetarure"
+
+- title: "The Companion"
+  date: 30/10/25
+  type: Film
+  rating: 2.5
+  image: "/images/media/TheCompanion.jpg"
+  comment: "Good for her"
+
+- title: "The Long Walk"
+  date: 29/10/25
+  type: Film
+  rating: 3.5
+  image: "/images/media/TheLongWalk.jpg"
+  comment: "That thing that boys go through..."
+
 - title: "Crash"
   date: 28/10/25
   type: Film
@@ -21,14 +91,14 @@
 
 - title: "Misunderstanding in Moscow"
   date: 19/10/25
-  type: Book
+  type: Fiction
   rating: 1.5
   image: "/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg"
   comment: "Dull but reflective"
 
 - title: The Hour of the Star
   date: 19/10/25
-  type: Book
+  type: Fiction
   rating: 0.5
   image: "/images/readinglog/thehourofthestarlispector.jpg"
   comment: "Would have DNFed if it was longer..."
@@ -42,7 +112,7 @@
 
 - title: Norwegian Wood
   date: 07/10/25
-  type: Book
+  type: Fiction
   rating: 3.5
   image: "/images/readinglog/norwegianwoodmurakami.jpg"
   comment: "Heartfelt lamentations with hyggesexism"
@@ -119,14 +189,14 @@
 
 - title: "The Philosophy of the Home" 
   date: 06/09/25
-  type: Book
+  type: Non-Fiction
   rating: 1.5
   image: "/images/readinglog/philosophycoccia.jpeg"
   comment: "Verbose and uninspiring"
 
 - title: "The Eyes Are The Best Part"
   date: 6/09/25
-  type: Book
+  type: Fiction
   rating: 4.5
   image: "/images/readinglog/theeyeskim.jpg"
   comment: "Single sitting read"
@@ -140,7 +210,7 @@
 
 - title: "Never Let Me Go"
   date: 30/08/25
-  type: Book
+  type: Fiction
   rating: 3
   image: "/images/readinglog/neverletmegoishiguro.jpg"
   comment: "Interesting premise, not fully explored"
@@ -224,7 +294,7 @@
 
 - title: "Hunchback"
   date: 27/07/25
-  type: Book
+  type: Fiction
   rating: 5
   image: "/images/readinglog/hunchbackichikawa.jpeg"
   comment: "Unique"
@@ -238,7 +308,7 @@
 
 - title: "We Do Not Part"
   date: 27/07/25
-  type: Book
+  type: Fiction
   rating: 2.5
   image: "/images/readinglog/wedonotpartkang.jpeg"
   comment: "Vague"
@@ -252,7 +322,7 @@
 
 - title: "The Incest Diary"
   date: 26/07/25
-  type: Book
+  type: Non-Fiction
   rating: 5
   image: "/images/readinglog/incestdiary.jpeg"
   comment: "Unspeakable"
@@ -280,14 +350,14 @@
 
 - title: "Sputnik Sweetheart"
   date: 16/07/25
-  type: Book
+  type: Fiction
   rating: 2
   image: "/images/readinglog/sputnikmurakami.jpg"
   comment: "Sweet but drawn out"
 
 - title: "McGlue"
   date: 13/07/25
-  type: Book
+  type: Fiction
   rating: 1.5
   image: "/images/readinglog/mcgluemoshfegh.jpg"
   comment: "Confusing. Temporally inaccurate slurs every second word"

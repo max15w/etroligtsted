@@ -5,10 +5,10 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Et Roligt Sted - Junk Journal</title>
-  <meta name="description" content="Et Roligt Sted - Junk Journal">
+  <title>Et Roligt Sted - Gallery</title>
+  <meta name="description" content="Et Roligt Sted - Gallery">
   <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/junkjournal.html">
+  <link rel="canonical" href="http://localhost:4000/gallery.html">
 
 
 </head>
@@ -128,93 +128,93 @@
   <div style="height: 50px;"></div>
 
   <div id="homeid" class="col-sm-12">
-    <h1 id="may-2024">May 2024</h1>
+    <html lang="en">
+<head>
+<style>
+  /* ========= section heading ========= */
+  .month {
+    margin: 2.5rem 0 1.75rem;
+  }
+  .month__title {
+    margin: 0 0 .6rem 0;                  /* space above the underline */
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: .01em;
+  }
+  .month__rule {
+    height: 1px;
+    background: rgba(0,0,0,.18);          /* hairline UNDER the title */
+  }
 
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/may24.jpg" style="width: 1200px" /></p>
-  </div>
-</div>
+  /* ========= grid ========= */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
 
-<h1 id="july-2023">July 2023</h1>
+  /* ========= card ========= */
+  .card {
+    background: rgba(255,255,255,0.75);
+    border-radius: 8px;                   /* softer corners */
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+    overflow: hidden;                     /* clip image/caption to card */
+    padding: 0;                           /* NO internal padding -> prevents fake second bar */
+  }
 
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/july2_23.png" style="width: 1200px" /></p>
-  </div>
-</div>
+  /* reset any global figure rules */
+  .card figure { margin: 0; }
+  .card figure,
+  .card figcaption { position: static !important; z-index: auto !important; }
 
-<h1 id="june-2023">June 2023</h1>
+  /* square image box */
+  .thumb-wrap {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    overflow: hidden;
+    background: #e9e9e9;
+  }
+  .thumb {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
 
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/june2_23.png" style="width: 1200px" /></p>
-  </div>
-</div>
+  /* the ONLY caption block */
+  .caption {
+    padding: .65rem .85rem .85rem;
+    background: rgba(255,255,255,.92);
+    color: #222;
+    line-height: 1.25;
+    font-size: .95rem;
+  }
 
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/june23.png" style="width: 1200px" /></p>
-  </div>
-</div>
+  /* fallback for browsers without aspect-ratio */
+  @supports not (aspect-ratio: 1 / 1) {
+    .thumb-wrap { position: relative; }
+    .thumb-wrap::before { content:""; display:block; padding-top:100%; }
+    .thumb { position:absolute; inset:0; }
+  }
+</style><section>
+    <div class="month">
+      <h2 class="month__title">November 2025</h2>
+      <div class="month__rule"></div>
+    </div>
 
-<h1 id="may-2023">May 2023</h1>
-
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/may3_23.png" style="width: 1200px" /></p>
-  </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/may2_23.png" style="width: 1200px" /></p>
-  </div>
-</div>
-
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/may23.png" style="width: 1200px" /></p>
-  </div>
-</div>
-
-<h1 id="april-2023">April 2023</h1>
-
-<div class="row justify-content-center">
-  <div class="col-sm-4 text-center">
-    <p><img src="http://localhost:4000/images/junkjournal/april23.png" style="width: 1200px" /></p>
-  </div>
-</div>
-
-<!-- 
-
-# April 2024
-
-# March 2024
-
-# February 2024
-
-# January 2024
-
-# December 2023
-
-# November 2023
-
-# October 2023
-
-# September 2023
-
-# August 2023
-
-# July 2023
-
-# June 2023
-
-# May 2023
-
-# April 2023
-
--->
+    <div class="gallery-grid"><article class="card">
+          <figure>
+            <div class="thumb-wrap">
+              <img src="/images/doodleddiary/230402.png" alt="The Bluest Eye — finished 5 Nov 2025" class="thumb" loading="lazy" />
+            </div>
+            <figcaption class="caption">The Bluest Eye — finished 5 Nov 2025</figcaption>
+          </figure>
+        </article></div>
+  </section>
+</head></html>
 
   </div>
 
