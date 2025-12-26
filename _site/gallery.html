@@ -18,7 +18,7 @@
     <style>
 	/* Navbar styling */
 	.navbar {
-	  background-color: rgba(221, 216, 202, 0.4);
+	  background-color: rgba(245, 239, 238, 0.4);
 	  border: none;
 	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 	}
@@ -29,9 +29,9 @@
 	  color: #36324b;
 	  font-size: 16px;
 	}
-	.navbar-default .navbar-nav > li > a:hover { color: #01143055; }
+	.navbar-default .navbar-nav > li > a:hover { color: rgba(141, 71, 71, 0.2);}
 	.navbar-default .navbar-brand { color: #ffffff; }
-	.navbar-default .navbar-brand:hover { color: #01143055; }
+	.navbar-default .navbar-brand:hover { color: rgba(226, 225, 209, 0.333); }
   
 	/* ⬇︎ Make links flush to the left edge */
 	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
@@ -131,90 +131,288 @@
     <html lang="en">
 <head>
 <style>
-  /* ========= section heading ========= */
-  .month {
-    margin: 2.5rem 0 1.75rem;
-  }
-  .month__title {
-    margin: 0 0 .6rem 0;                  /* space above the underline */
-    text-align: center;
-    font-size: clamp(1.8rem, 4vw, 3rem);
-    font-weight: 400;
-    line-height: 1.1;
-    letter-spacing: .01em;
-  }
-  .month__rule {
-    height: 1px;
-    background: rgba(0,0,0,.18);          /* hairline UNDER the title */
+  /* ========= Pinterest-style masonry board (no JS) ========= */
+  .board {
+    column-gap: 1rem;
+    column-count: 3;     /* ALWAYS 3 columns */
+    padding: .25rem 0 0;
   }
 
-  /* ========= grid ========= */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
+  /* Optional: make it usable on very small screens */
+  @media (max-width: 700px) {
+    .board { column-count: 1; }
   }
 
-  /* ========= card ========= */
-  .card {
-    background: rgba(255,255,255,0.75);
-    border-radius: 8px;                   /* softer corners */
-    box-shadow: 0 4px 16px rgba(0,0,0,.08);
-    overflow: hidden;                     /* clip image/caption to card */
-    padding: 0;                           /* NO internal padding -> prevents fake second bar */
-  }
+  /* ========= pin/card ========= */
+  .pin {
+    break-inside: avoid;
+    -webkit-column-break-inside: avoid;
+    margin: 0 0 1rem 0;
 
-  /* reset any global figure rules */
-  .card figure { margin: 0; }
-  .card figure,
-  .card figcaption { position: static !important; z-index: auto !important; }
-
-  /* square image box */
-  .thumb-wrap {
-    aspect-ratio: 1 / 1;
-    width: 100%;
+    border-radius: 12px;
     overflow: hidden;
-    background: #e9e9e9;
-  }
-  .thumb {
-    width: 100%;
-    height: 100%;
+    background: rgba(255,255,255,0.80);
+    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+
     display: block;
-    object-fit: cover;
-    object-position: center;
+    width: 100%;
   }
 
-  /* the ONLY caption block */
-  .caption {
+  /* Defensive reset against theme rules that commonly break captions/layout */
+  .pin, .pin * { box-sizing: border-box; }
+  .pin figure { margin: 0 !important; padding: 0 !important; }
+  .pin figure,
+  .pin img {
+    position: static !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+
+  /* ========= image ========= */
+  .pin__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+  }
+
+  /* ========= caption ========= */
+  .pin__caption {
+    display: block;
+    position: relative;
+    z-index: 2;
+
     padding: .65rem .85rem .85rem;
     background: rgba(255,255,255,.92);
-    color: #222;
+    color: #222 !important;
     line-height: 1.25;
-    font-size: .95rem;
+    font-size: 1.3rem;
+
+    text-shadow: none !important;
+    mix-blend-mode: normal !important;
   }
 
-  /* fallback for browsers without aspect-ratio */
-  @supports not (aspect-ratio: 1 / 1) {
-    .thumb-wrap { position: relative; }
-    .thumb-wrap::before { content:""; display:block; padding-top:100%; }
-    .thumb { position:absolute; inset:0; }
-  }
-</style><section>
-    <div class="month">
-      <h2 class="month__title">November 2025</h2>
-      <div class="month__rule"></div>
-    </div>
+  .pin:hover { box-shadow: 0 8px 24px rgba(0,0,0,.12); }
+</style><div class="board"><article class="pin">
+      <figure>
+        <img src="/images/gallery/231225.jpg" alt="Dec 23th 2025: Lunch with the parents" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Dec 23th 2025: Lunch with the parents</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/211225.png" alt="Dec 21th 2025: Cocktails at the Botanist" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Dec 21th 2025: Cocktails at the Botanist</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/121225.png" alt="Dec 12th 2025: 10 year anniversary!!" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Dec 12th 2025: 10 year anniversary!!</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/111225.png" alt="Dec 11th 2025: Celebrating my LF grant!" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Dec 11th 2025: Celebrating my LF grant!</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/031225.png" alt="Dec 3th 2025: Putting up the Christmas tree" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Dec 3th 2025: Putting up the Christmas tree</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/011225.png" alt="Dec 1st 2025: E&#39;s birthday party" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Dec 1st 2025: E's birthday party</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/291125.png" alt="Nov 29th 2025: Seeing Marco&#39;s band" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 29th 2025: Seeing Marco's band</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/271025.png" alt="Oct 27th 2025: New Lamp" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 27th 2025: New Lamp</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/101125_3.png" alt="Nov 10th 2025: At the Pyramids" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 10th 2025: At the Pyramids</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/101125_2.png" alt="Nov 10th 2025: Exploring Cairo&#39;s tombs" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 10th 2025: Exploring Cairo's tombs</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/101125.png" alt="Nov 10th 2025: By the Sphinx" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 10th 2025: By the Sphinx</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/091125_2.JPG" alt="Nov 9th 2025: At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 9th 2025: At Nina and Ahmed's wedding</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/091125.png" alt="Nov 9th 2025: On the Nile River" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 9th 2025: On the Nile River</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/091125_4.png" alt="Nov 9th 2025: At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 9th 2025: At Nina and Ahmed's wedding</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/091125_3.JPG" alt="Nov 9th 2025: At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Nov 9th 2025: At Nina and Ahmed's wedding</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/231025.png" alt="Oct 23th 2025: Beamtime scanning" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 23th 2025: Beamtime scanning</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/191025.png" alt="Oct 19th 2025: Last outdoor cocktails of the year" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 19th 2025: Last outdoor cocktails of the year</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/181025.JPG" alt="Oct 18th 2025: Ruby&#39;s visiting" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 18th 2025: Ruby's visiting</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/101025.png" alt="Oct 10th 2025: Golden hour in Marseille" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 10th 2025: Golden hour in Marseille</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/081025.JPG" alt="Oct 8th 2025: Getting ready to moderate at ESMRMB" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 8th 2025: Getting ready to moderate at ESMRMB</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/071025.png" alt="Oct 7th 2025: Arriving in Marseille" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 7th 2025: Arriving in Marseille</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/011025.JPG" alt="Oct 1st 2025: Team outing to Bastard Café" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Oct 1st 2025: Team outing to Bastard Café</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/240925.JPG" alt="Sep 24th 2025: Fresh flowers for the house" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Sep 24th 2025: Fresh flowers for the house</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/170925.png" alt="Sep 17th 2025: First flower from this plant" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Sep 17th 2025: First flower from this plant</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/120925.png" alt="Sep 12th 2025: Dinner at Cholon" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Sep 12th 2025: Dinner at Cholon</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/040925.png" alt="Sep 4th 2025: A small visitor" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Sep 4th 2025: A small visitor</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/180825.png" alt="Aug 18th 2025: Sunny day in the park" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 18th 2025: Sunny day in the park</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/170825.JPG" alt="Aug 17th 2025: Walk with Ruby" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 17th 2025: Walk with Ruby</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/070825.JPG" alt="Aug 7th 2025: At a Chapell Roan concert!" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 7th 2025: At a Chapell Roan concert!</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/070825.PNG" alt="Aug 7th 2025: Chapell Roan concert!" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 7th 2025: Chapell Roan concert!</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/020825.JPG" alt="Aug 2nd 2025: BBQ at Nana&#39;s" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 2nd 2025: BBQ at Nana's</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/010825.JPG" alt="Aug 1st 2025: At The Ivy" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 1st 2025: At The Ivy</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/010825_2.png" alt="Aug 1st 2025: Scones in town" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Aug 1st 2025: Scones in town</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/310725.JPG" alt="Jul 31st 2025: Walking with Ruby" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 31st 2025: Walking with Ruby</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/290725.png" alt="Jul 29th 2025: Dessert at Ravage" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 29th 2025: Dessert at Ravage</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/190725_2.JPG" alt="Jul 19th 2025: Paddleboarding with Ruby" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 19th 2025: Paddleboarding with Ruby</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/190725.jpg" alt="Jul 19th 2025: Paddleboarding with Ruby" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 19th 2025: Paddleboarding with Ruby</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/180725.png" alt="Jul 18th 2025: Visit from Amy and James" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 18th 2025: Visit from Amy and James</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/140725.JPG" alt="Jul 14th 2025: Canal walk with Ruby" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 14th 2025: Canal walk with Ruby</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/130725.png" alt="Jul 13th 2025: Hanging out with Ruby" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 13th 2025: Hanging out with Ruby</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/070725.png" alt="Jul 7th 2025: Cocktails by the canal" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jul 7th 2025: Cocktails by the canal</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/270625.png" alt="Jun 27th 2025: A bird for my collection" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jun 27th 2025: A bird for my collection</div>
+      </figure>
+    </article><article class="pin">
+      <figure>
+        <img src="/images/gallery/140124.JPG" alt="Jan 14th 2025: Inauguration of King Frederik X" class="pin__img" loading="lazy" />
+        <div class="pin__caption">Jan 14th 2025: Inauguration of King Frederik X</div>
+      </figure>
+    </article></div>
 
-    <div class="gallery-grid"><article class="card">
-          <figure>
-            <div class="thumb-wrap">
-              <img src="/images/doodleddiary/230402.png" alt="The Bluest Eye — finished 5 Nov 2025" class="thumb" loading="lazy" />
-            </div>
-            <figcaption class="caption">The Bluest Eye — finished 5 Nov 2025</figcaption>
-          </figure>
-        </article></div>
-  </section>
-</head></html>
+</head>
+</html>
 
   </div>
 

@@ -1,3 +1,38 @@
+- title: "Frankenstein"
+  date: 26/12/25
+  type: Film
+  rating: 4
+  image: "/images/media/Frankenstein.jpg"
+  comment: "Surprisingly good... and Danish"
+
+- title: "Zootropolis"
+  date: 26/12/25
+  type: Film
+  rating: 3.5
+  image: "/images/media/Zootropolis.jpg"
+  comment: "Cutest copaganda I've ever seen"
+
+- title: "The Correction Unit"
+  date: 20/12/25
+  type: Film
+  rating: 0.5
+  image: "/images/media/TheCorrectionUnit.jpeg"
+  comment: "DNF at 50 minutes. Trash"
+
+- title: "Wake Up Dead Man"
+  date: 14/12/25
+  type: Film
+  rating: 4
+  image: "/images/media/WakeUpDeadMan.jpg"
+  comment: "V good but will never beat the first film"
+
+- title: "Star Trek: Deep Space Nine: Season 1"
+  date: 05/12/25
+  type: TV
+  rating: 3.5
+  image: "/images/media/DS9_Season1.jpg"
+  comment: "E and I's new default background noise"
+
 - title: "Wicked: Part II"
   date: 28/11/25
   type: Film

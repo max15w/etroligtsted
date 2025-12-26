@@ -3,57 +3,98 @@ layout: default
 ---
 
 <style>
-    /* Flexbox for centering the main content */
-    body {
-      background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/background.png"); /* Replace with your image path */
-      background-repeat: repeat-y;
-      background-size: 100% auto;
-      background-position: top center;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column; /* Stack elements vertically */
-      min-height: 100vh; 
-      box-sizing: border-box;
+  /* Keep your background exactly as-is */
+  body {
+    background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/background.png");
+    background-repeat: repeat-y;
+    background-size: 100% auto;
+    background-position: top center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: 'Optima', sans-serif;
   }
 
-  /* Style for the main content wrapper */
-  #homeid {
-    background-color: rgba(255, 255, 255, 0); /* Add slight transparency for readability */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1500px; /* Optional: Limit the maximum width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
-    margin: auto; /* Center the box vertically */
-    /* Add font styles here */
-    font-family: 'Optima', sans-serif; /* Use a web-safe font */
+  /* Hide the site navbar/header ONLY on homepage.
+     Your nav uses Bootstrap: .navbar.navbar-default.navbar-fixed-top */
+  .navbar.navbar-default.navbar-fixed-top {
+    display: none !important;
   }
 
-  /* Footer styling */
-  footer {
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent dark footer */
-    color: white;
+  /* Centered landing content */
+  .home-landing {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;     /* vertical center */
+    justify-content: center; /* horizontal center */
     text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom */
+    padding: 40px 20px;
   }
+
+  .home-card {
+    background: rgba(255, 255, 255, 0.0); /* transparent like your example */
+    max-width: 900px;
+    width: 100%;
+    padding: 40px 20px;
+  }
+
+  .home-title {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    font-weight: 500;
+    letter-spacing: .06em;
+    margin: 0 0 18px 0;
+    color: #3b3940; /* adjust if you want */
+  }
+
+  .home-subtitle {
+    font-size: 1.5rem;
+    margin: 0 0 28px 0;
+    color: rgba(58, 57, 64, 0.75);
+  }
+
+  /* Links centered, like a simple menu */
+  .home-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .home-nav a {
+    display: inline-block;
+    padding: 10px 28px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #49484b;
+    background: rgba(244, 241, 241, 0.55);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: transform .15s ease, background-color .15s ease;
+  }
+
+  .home-nav a:hover {
+    transform: translateY(-1px);
+    background: rgba(255,255,255,0.75);
+  }
+
+  /* Optional: if your layout adds top padding to offset the fixed navbar, remove it on homepage */
+  body { padding-top: 0 !important; }
 </style>
 
-<!-- Main Content -->
-<div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="{{ site.baseurl }}/images/titles/etroligtsted.png" class="rounded float-right">
+<div class="home-landing">
+  <div class="home-card">
+    <h1 class="home-title">Et Roligt Sted</h1>
+    <p class="home-subtitle">⭐️🧸 </p>
 
-  <!-- Add gap -->
-  <div style="height: 610px;"></div>
-
-  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
-
-  <!-- Add gap -->
-  <div style="height: 50px;"></div>
-
-
-    <!-- Add gap -->
-    <div style="height: 200px;"></div>
+    <ul class="home-nav">
+      <li><a href="{{ site.baseurl }}/library">Library</a></li>
+      <li><a href="{{ site.baseurl }}/medialog">Media Log</a></li>
+      <li><a href="{{ site.baseurl }}/readinglog">Reading Log</a></li>
+      <li><a href="{{ site.baseurl }}/gallery">Gallery</a></li>
+      <li><a href="{{ site.baseurl }}/videos">Videos</a></li>
+    </ul>
+  </div>
 </div>
