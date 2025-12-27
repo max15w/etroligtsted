@@ -477,7 +477,7 @@
 | Simone              | de Beauvoir        | Misunderstandings in Moscow                                      | Yes           | No             | M           | Main     |
 | Clarice             | Lispector          | The Hour of the Star                                             | Yes           | No             | M           | Main     |
 | Toni                | Morrison           | The Bluest Eye                                                   | Yes           | No             | M           | Main     |
-| David               | Szalay             | Flesh                                                            | No            | No             | M           | Main     |
+| David               | Szalay             | Flesh                                                            | Yes           | No             | M           | Main     |
 | Hiromi              | Kawakami           | Under the Eye of the Big Bird                                    | No            | No             | M           | Main     |
-| Christian           | Kracht             | Eurotrash                                                        | No            | No             | M           | Main     |
+| Christian           | Kracht             | Eurotrash                                                        | Yes           | No             | M           | Main     |
 | Johnathan           | Coe                | The Proof of My Innocence                                        | No            | No             | M           | Main     |

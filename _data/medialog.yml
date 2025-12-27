@@ -1,3 +1,17 @@
+- title: "Flesh"
+  date: 27/12/25
+  type: Fiction
+  rating: 1.5
+  image: "/images/readinglog/fleshszalay.jpeg"
+  comment: "As interesting as a book about a man who only says 'Okay' could be"
+
+- title: "Eurotrash"
+  date: 27/12/25
+  type: Fiction
+  rating: 2.5
+  image: "/images/readinglog/eurotrashkracht.jpg"
+  comment: "Worse than I heard it would be"
+
 - title: "Frankenstein"
   date: 26/12/25
   type: Film
