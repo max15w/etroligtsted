@@ -110,11 +110,11 @@ Build sortable tokens like "2025-11-05|||INDEX".
 
     <article class="pin">
       <figure>
-        <img
-          src="{{ it.src | escape }}"
-          alt="{{ it.alt | default: it.caption | escape }}"
-          class="pin__img"
-          loading="lazy">
+      <img
+        src="{{ it.src | relative_url | escape }}"
+        alt="{{ it.alt | default: it.caption | escape }}"
+        class="pin__img"
+        loading="lazy">
         <div class="pin__caption">{{ it.caption }}</div>
       </figure>
     </article>
