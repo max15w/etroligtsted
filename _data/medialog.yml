@@ -1,3 +1,67 @@
+
+- title: "Winter Burrow"
+  date: 7/1/26
+  type: Game
+  rating: 3.5
+  image: "/images/media/WinterBurrow.jpg"
+  comment: "Cute and fun but a lot of backtracking"
+
+- title: "Persepolis"
+  date: 4/1/26
+  type: Fiction
+  rating: 4
+  image: "/images/readinglog/persepolissatrapi.jpeg"
+  comment: "Powerful and witty"
+
+- title: "Graveyard Shift"
+  date: 1/1/26
+  type: Fiction
+  rating: 1.5
+  image: "/images/readinglog/graveyardrio.jpg"
+  comment: "Ugh"
+
+- title: "Lilo and Stitch"
+  date: 31/12/25
+  type: Film
+  rating: 4
+  image: "/images/media/LiloAndStitch.png"
+  comment: "Super cute"
+
+- title: "Ponyo"
+  date: 29/12/25
+  type: Film
+  rating: 4.5
+  image: "/images/media/Ponyo.jpg"
+  comment: "Rewatch"
+
+- title: "Paper Mario: The Thousand-Year Door"
+  date: 29/12/25
+  type: Game
+  rating: 2.5
+  image: "/images/media/PaperMarioTheThousandYearDoor.jpg"
+  comment: "Too much plot. Gameplay repetitive"
+
+- title: "Under The Eye of The Big Bird"
+  date: 28/12/25
+  type: Fiction
+  rating: 2
+  image: "/images/readinglog/undertheeyekawakami.jpg"
+  comment: "Interesting but confusingly structured"
+
+- title: "Chicken Run"
+  date: 28/12/25
+  type: Film
+  rating: 3
+  image: "/images/media/ChickenRun.jpg"
+  comment: "Rewatch"
+
+- title: "The Thursday Murder Club"
+  date: 28/12/25
+  type: Film
+  rating: 3.5
+  image: "/images/media/ThursdayMurderClub.jpeg"
+  comment: "Suprisingly engaging"
+
 - title: "Flesh"
   date: 27/12/25
   type: Fiction

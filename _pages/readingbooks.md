@@ -466,7 +466,7 @@
 | Annie               | Jacobsen           | Nuclear War: A Scenario                                          | No            | Yes            | E           | Main     |
 | Saou                | Ichikawa           | Hunchback                                                        | Yes           | Yes            | M           | Main     |
 | Christopher         | Berry-Dee          | Talking with Psychopaths                                         | No            | No             | M           | Main     |
-| Yael                | Van Der Wouden     | The Safekeep                                                     | No            | No             | M           | Main     |
+| Yael                | Van Der Wouden     | The Safekeep                                                     | Yes           | No             | M           | Main     |
 | Hugh                | Howey              | Wool                                                             | No            | Yes            | E           | Main     |
 | Adam                | Forrest Kay        | Escape from Shadow Physics                                       | No            | No             | M           | Main     |
 | Amia                | Srinivasan         | The Right to Sex                                                 | No            | No             | M           | Main     |
@@ -478,6 +478,26 @@
 | Clarice             | Lispector          | The Hour of the Star                                             | Yes           | No             | M           | Main     |
 | Toni                | Morrison           | The Bluest Eye                                                   | Yes           | No             | M           | Main     |
 | David               | Szalay             | Flesh                                                            | Yes           | No             | M           | Main     |
-| Hiromi              | Kawakami           | Under the Eye of the Big Bird                                    | No            | No             | M           | Main     |
+| Hiromi              | Kawakami           | Under the Eye of the Big Bird                                    | Yes           | No             | M           | Main     |
 | Christian           | Kracht             | Eurotrash                                                        | Yes           | No             | M           | Main     |
-| Johnathan           | Coe                | The Proof of My Innocence                                        | No            | No             | M           | Main     |
+| Johnathan           | Coe                | The Proof of My Innocence                                        | No            | No             | M           | Window   |
+| Sally               | Rooney             | Intermezzo                                                       | No            | No             | M           | Window   |
+| Vincenzo            | Latronico          | Perfection                                                       | Yes           | No             | M           | Mainvv   |
+| M. L.               | Rio                | GraveYard Shift                                                  | Yes           | No             | M           | Main     |
+| Marco               | Polo               | The Travels                                                      | No            | No             | E           | Main     |
+| N.M                 | Borodin            | One Man in His Time                                              | No            | No             | E           | Main     |
+| Mary                | Beard              | SPQR: A History of Ancient Rome                                  | No            | No             | E           | Main     |
+| Marjan              | Satrapi            | Persepolis                                                       | Yes           | No             | M           | Main     |
+| Stefan              | Zweig              | Burning Secret                                                   | No            | No             | E           | Window   |
+| Gabriel             | Garcia Marquez     | Chronicle of a Death Foretold                                    | No            | No             | M           | Window   |
+| Arthur              | Conan Doyle        | The Exploits of Brigadier Gerard                                 | No            | No             | E           | Main     |
+| Charles             | Dickens            | David Copperfield                                                | No            | No             | E           | Main     |
+| Charles             | Dickens            | Our Mutual Friend                                                | No            | No             | E           | Main     |
+| Robin               | Wall Kimmerer      | Braiding Sweetgrass                                              | No            | No             | M           | Window   |
+| Romesh              | Gunesekera         | Reef                                                             | No            | No             | M           | Window   |
+| P.D.                | James              | The Children of Men                                              | No            | Yes            | E           | Main     |
+| George R.R          | Martin             | A Feast for Crows                                                | No            | Yes            | E           | Main     |
+| Terry               | Pratchett          | Going Postal                                                     | No            | Yes            | E           | Main     |
+| Justin              | Fox                | Malta Inferno                                                    | No            | Yes            | E           | Main     |
+| Bronwen             | Everill            | Africonomics                                                     | Yes           | No             | M           | Window   |
+| Asako               | Yuzuki             | Hooked                                                           | Yes           | No             | M           | Main     |

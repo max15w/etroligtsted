@@ -478,6 +478,19 @@
 | Clarice             | Lispector          | The Hour of the Star                                             | Yes           | No             | M           | Main     |
 | Toni                | Morrison           | The Bluest Eye                                                   | Yes           | No             | M           | Main     |
 | David               | Szalay             | Flesh                                                            | Yes           | No             | M           | Main     |
-| Hiromi              | Kawakami           | Under the Eye of the Big Bird                                    | No            | No             | M           | Main     |
+| Hiromi              | Kawakami           | Under the Eye of the Big Bird                                    | Yes           | No             | M           | Main     |
 | Christian           | Kracht             | Eurotrash                                                        | Yes           | No             | M           | Main     |
-| Johnathan           | Coe                | The Proof of My Innocence                                        | No            | No             | M           | Main     |
+| Johnathan           | Coe                | The Proof of My Innocence                                        | No            | No             | M           | Window   |
+| Sally               | Rooney             | Intermezzo                                                       | No            | No             | M           | Window   |
+| Vincenzo            | Latronico          | Perfection                                                       | No            | No             | M           | Window   |
+| M. L.               | Rio                | GraveYard Shift                                                  | Yes           | No             | M           | Main     |
+| Marco               | Polo               | The Travels                                                      | No            | No             | E           | Main     |
+| N.M                 | Borodin            | One Man in His Time                                              | No            | No             | E           | Main     |
+| Mary                | Beard              | SPQR: A History of Ancient Rome                                  | No            | No             | E           | Main     |
+| Marjan              | Satrapi            | Persepolis                                                       | Yes           | No             | M           | Main     |
+| Stefan              | Zweig              | Burning Secret                                                   | No            | No             | E           | Window   |
+| Gabriel             | Garcia Marquez     | Chronicle of a Death Foretold                                    | No            | No             | M           | Window   |
+| Arthur              | Conan Doyle        | The Exploits of Brigadier Gerard                                 | No            | No             | E           | Main     |
+| Charles             | Dickens            | David Copperfield                                                | No            | No             | E           | Main     |
+| Charles             | Dickens            | Our Mutual Friend                                                | No            | No             | E           | Main     |
+,

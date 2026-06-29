@@ -1,3 +1,13 @@
+- year: 2026
+  image: "/images/readinglog/graveyardrio.jpg"
+  rating: 2
+
+- year: 2026
+  image: "/images/readinglog/persepolissatrapi.jpeg"
+  rating: 4
+
+## 2025
+
 - year: 2025
   image: "/images/readinglog/theislandwells.jpg"
   rating: 2
@@ -97,6 +107,10 @@
 - year: 2025
   image: "/images/readinglog/fleshszalay.jpeg"
   rating: 1.5
+
+- year: 2025
+  image: "/images/readinglog/undertheeyekawakami.jpg"
+  rating: 2
 
 ## 2024 
 

@@ -59,3 +59,13 @@
 | Flower              | Webb's Physics of Medical Imaging             | M    | Floor      |
 | Hau                 | Handbook of Laboratory Animal Science         | M    | Floor      |
 | Engelske Forfattere for Gymnasiet | Two Centuries of English Poetry | E    | Floor      |
+|                     | Politikens Store Naturbog                     | M    | Floor      |
+|                     | Biologisk forskning                           | M    | Floor      |
+|Pengiun Books        | Science News: 40                              | M    | Floor      |
+|Pengiun Books        | Science News: 26                              | M    | Floor      |
+|Pengiun Books        | Science News: 35                              | M    | Floor      |
+|Pengiun Books        | Science News: 25                              | M    | Floor      |
+|Pengiun Books        | Science News: 9                               | M    | Floor      |
+|Pengiun Books        | Science News: 4                               | M    | Floor      |
+
+
