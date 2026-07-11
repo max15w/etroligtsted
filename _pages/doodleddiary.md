@@ -1,7 +1,7 @@
 ---
 title: "Doodle Diary"
 layout: doodleddiary
-excerpt: "Et Roligt Sted - Doodled Diary"
+excerpt: "Arkivet - Doodled Diary"
 sitemap: false
 permalink: /doodleddiary.html
 ---

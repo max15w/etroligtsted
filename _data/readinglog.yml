@@ -1,10 +1,30 @@
 - year: 2026
+  image: "/images/readinglog/persepolissatrapi.jpeg"
+  rating: 4
+
+- year: 2026
   image: "/images/readinglog/graveyardrio.jpg"
   rating: 2
 
 - year: 2026
-  image: "/images/readinglog/persepolissatrapi.jpeg"
+  image: "/images/readinglog/hookedyuzuki.jpeg"
+  rating: 3
+
+- year: 2026
+  image: "/images/readinglog/perfectionlatronico.jpeg"
+  rating: 3.5
+
+- year: 2026
+  image: "/images/readinglog/strangersburden.jpeg"
   rating: 4
+
+- year: 2026
+  image: "/images/readinglog/collapselouis.jpg"
+  rating: 3.5
+
+- year: 2026
+  image: "/images/readinglog/ghostwallmoss.jpg"
+  rating: 4.5
 
 ## 2025
 

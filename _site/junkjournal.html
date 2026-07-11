@@ -5,74 +5,244 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Et Roligt Sted - Junk Journal</title>
-  <meta name="description" content="Et Roligt Sted - Junk Journal">
-  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/junkjournal.html">
 
+  <title>
+    Et Roligt Sted -
+    
+      Junk Journal
+    
+  </title>
 
+  <meta
+    name="description"
+    content="Arkivet - Junk Journal"
+  >
+
+  <style>
+    @font-face {
+      font-family: "CustomFont";
+      src: url("/fonts/Rons.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="canonical"
+    href="http://localhost:4000/junkjournal.html"
+  >
+
+  
 </head>
 
   <body>
     
-    <style>
-	/* Navbar styling */
-	.navbar {
-	  background-color: rgba(245, 239, 238, 0.4);
-	  border: none;
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-  
-	.navbar-brand img { position: relative; top: -10px; }
-  
-	.navbar-default .navbar-nav > li > a {
-	  color: #36324b;
-	  font-size: 16px;
-	}
-	.navbar-default .navbar-nav > li > a:hover { color: rgba(141, 71, 71, 0.2);}
-	.navbar-default .navbar-brand { color: #ffffff; }
-	.navbar-default .navbar-brand:hover { color: rgba(226, 225, 209, 0.333); }
-  
-	/* ⬇︎ Make links flush to the left edge */
-	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
-	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
-	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
-  
-	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
-	@media (min-width: 768px) {
-	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
-	}
-  
-	/* Optional: also remove any left padding on the whole bar if needed */
-	.navbar.navbar-default { padding-left: 0; }
-  </style>
-  
-  
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-	  </div>
-	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-		<ul class="nav navbar-nav navbar-left">
-		  <li><a href="http://localhost:4000/">Home</a></li>
-		  <li><a href="http://localhost:4000/library">Library</a></li>
-		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
-		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
-		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
-		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
-		  <li><a href="http://localhost:4000/videos">Videos</a></li>
-		</ul>
-	  </div>
-	</div>
+    
+
+
+<style>
+  :root {
+    --nav-background: #F4F1EB;
+    --nav-active: #D4D0C6;
+    --nav-hover: #E7E1D6;
+    --nav-line: rgba(52, 49, 46, 0.10);
+    --nav-shadow: rgba(70, 62, 52, 0.08);
+    --nav-ink: #554D46;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 56px;
+
+    background: rgba(238, 233, 224, 0.97);
+    border-bottom: 1px solid var(--nav-line);
+    box-shadow: 0 3px 10px var(--nav-shadow);
+
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .site-nav-inner {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 56px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 14px;
+
+    border-radius: 11px;
+    text-decoration: none;
+
+    color: var(--nav-ink);
+    font-family: "CustomFont", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    transition:
+      background-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-nav-links a:hover {
+    background: var(--nav-hover);
+    transform: translateY(-1px);
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a:focus {
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a.active {
+    background: var(--nav-active);
+  }
+
+  .nav-home {
+    font-size: 1.55rem;
+  }
+
+  @media (max-width: 780px) {
+    .site-nav {
+      min-height: 50px;
+    }
+
+    .site-nav-inner {
+      width: min(100% - 24px, 1240px);
+      min-height: 50px;
+    }
+
+    .site-nav-links {
+      gap: 4px;
+    }
+
+    .site-nav-links a {
+      height: 36px;
+      padding: 0 9px;
+      border-radius: 9px;
+      font-size: 1.3rem;
+    }
+
+    .nav-home {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav-inner">
+    <ul class="site-nav-links">
+
+      <li>
+        <a
+          class="nav-home"
+          href="/"
+          aria-label="Home">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/library"
+          aria-label="Library">
+          Library
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/art"
+          aria-label="Art">
+          Art
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/readinglog"
+          aria-label="Reading Log">
+          Reading Log
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/gallery"
+          aria-label="Gallery">
+          Gallery
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/videos"
+          aria-label="Videos">
+          Videos
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/sansebastian"
+          aria-label="San Sebastian">
+          San Sebastian
+        </a>
+      </li>
+
+    </ul>
   </div>
+</nav>
+
+
 
     <div class="container-fluid">
         <div class="row">

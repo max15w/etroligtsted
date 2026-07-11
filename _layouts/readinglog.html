@@ -3,51 +3,33 @@ layout: default
 ---
 
 <style>
-  /* Flexbox for centering the main content */
+  :root {
+    --page-background: #F7F4EE;
+    --ink: #302E2C;
+  }
+
   body {
-    background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/background.png"); /* Replace with your image path */
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: top center;
+    background: var(--page-background) !important;
+    background-image: none !important;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh;
-    box-sizing: border-box;
+    color: var(--ink);
   }
 
-  /* Style for the main content wrapper */
-  #homeid {
-    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1500px; /* Optional: Limit the maximum width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
-    /* margin: auto; /* Center the box vertically */
-    /* Add font styles here */
-    font-family: 'Optima', sans-serif;
+  .readinglog-layout {
+    width: min(1400px, calc(100% - 72px));
+    margin: 0 auto;
+    padding: 74px 0 110px;
   }
 
+  @media (max-width: 700px) {
+    .readinglog-layout {
+      width: min(100% - 28px, 1400px);
+      padding: 64px 0 80px;
+    }
+  }
 </style>
 
-<!-- Main Content -->
-<div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="{{ site.baseurl }}/images/backgrounds/background.png" class="rounded float-right">
-  
-  <!-- Add gap -->
-  <!--- <div style="height: 200px;"></div> -->
-
-  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
-
-  <!-- Add gap -->
-  <div style="height: 50px;"></div>
-
-  <div id="homeid" class="col-sm-12">
-    {{ content }}
-  </div>
-
-    <!-- Add gap -->
-    <div style="height: 200px;"></div>
-</div>
+<main class="readinglog-layout">
+  {{ content }}
+</main>

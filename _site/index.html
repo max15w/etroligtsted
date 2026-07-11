@@ -5,174 +5,669 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Et Roligt Sted - Et Roligt Sted - hjem</title>
-  <meta name="description" content="Et Roligt Sted">
-  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/">
 
+  <title>
+    Et Roligt Sted -
+    
+      Arkivet - hjem
+    
+  </title>
 
+  <meta
+    name="description"
+    content="Arkivet Sted"
+  >
+
+  <style>
+    @font-face {
+      font-family: "CustomFont";
+      src: url("/fonts/Rons.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="canonical"
+    href="http://localhost:4000/"
+  >
+
+  
 </head>
 
   <body>
     
-    <style>
-	/* Navbar styling */
-	.navbar {
-	  background-color: rgba(245, 239, 238, 0.4);
-	  border: none;
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-  
-	.navbar-brand img { position: relative; top: -10px; }
-  
-	.navbar-default .navbar-nav > li > a {
-	  color: #36324b;
-	  font-size: 16px;
-	}
-	.navbar-default .navbar-nav > li > a:hover { color: rgba(141, 71, 71, 0.2);}
-	.navbar-default .navbar-brand { color: #ffffff; }
-	.navbar-default .navbar-brand:hover { color: rgba(226, 225, 209, 0.333); }
-  
-	/* ⬇︎ Make links flush to the left edge */
-	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
-	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
-	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
-  
-	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
-	@media (min-width: 768px) {
-	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
-	}
-  
-	/* Optional: also remove any left padding on the whole bar if needed */
-	.navbar.navbar-default { padding-left: 0; }
-  </style>
-  
-  
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-	  </div>
-	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-		<ul class="nav navbar-nav navbar-left">
-		  <li><a href="http://localhost:4000/">Home</a></li>
-		  <li><a href="http://localhost:4000/library">Library</a></li>
-		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
-		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
-		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
-		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
-		  <li><a href="http://localhost:4000/videos">Videos</a></li>
-		</ul>
-	  </div>
-	</div>
-  </div>
+    
+
+
+<style>
+  :root {
+    --nav-background: #F4F1EB;
+    --nav-active: #D4D0C6;
+    --nav-hover: #E7E1D6;
+    --nav-line: rgba(52, 49, 46, 0.10);
+    --nav-shadow: rgba(70, 62, 52, 0.08);
+    --nav-ink: #554D46;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 56px;
+
+    background: rgba(238, 233, 224, 0.97);
+    border-bottom: 1px solid var(--nav-line);
+    box-shadow: 0 3px 10px var(--nav-shadow);
+
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .site-nav-inner {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 56px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 14px;
+
+    border-radius: 11px;
+    text-decoration: none;
+
+    color: var(--nav-ink);
+    font-family: "CustomFont", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    transition:
+      background-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-nav-links a:hover {
+    background: var(--nav-hover);
+    transform: translateY(-1px);
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a:focus {
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a.active {
+    background: var(--nav-active);
+  }
+
+  .nav-home {
+    font-size: 1.55rem;
+  }
+
+  @media (max-width: 780px) {
+    .site-nav {
+      min-height: 50px;
+    }
+
+    .site-nav-inner {
+      width: min(100% - 24px, 1240px);
+      min-height: 50px;
+    }
+
+    .site-nav-links {
+      gap: 4px;
+    }
+
+    .site-nav-links a {
+      height: 36px;
+      padding: 0 9px;
+      border-radius: 9px;
+      font-size: 1.3rem;
+    }
+
+    .nav-home {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+
 
     <div class="container-fluid">
         <div class="row">
-          <style>
-  /* Keep your background exactly as-is */
-  body {
-    background-image: url("http://localhost:4000/images/backgrounds/background.png");
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: top center;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    box-sizing: border-box;
-    font-family: 'Optima', sans-serif;
+          <!--
+Colour palette:
+#EEE9E0, #E7E1D6, #DDD9D0, #D4D0C6, #D0CAB8,
+#C8C2B1, #B8B396, #AAB09F, #909782, #B0B4B7,
+#BCC0C5, #9FA6AE, #C7B0A1, #C8A38F, #B9866F
+-->
+
+<style>
+  @font-face {
+    font-family: "CustomFont";
+    src: url("/fonts/Rons.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
 
-  /* Hide the site navbar/header ONLY on homepage.
-     Your nav uses Bootstrap: .navbar.navbar-default.navbar-fixed-top */
+  :root {
+    --background: #F4F1EB;
+
+    --folder-1: #D0CAB8;
+    --folder-2: #AAB09F;
+    --folder-3: #BCC0C5;
+    --folder-4: #C8A38F;
+    --folder-5: #B9866F;
+    --folder-6: #D4D0C6;
+
+    --text-colour: #554D46;
+
+    --tab-height: clamp(48px, 4.8vh, 58px);
+    --tab-top: clamp(-48px, -4.7vh, -58px);
+
+    /*
+      Horizontal space around each folder label.
+      Longer labels naturally create wider tabs.
+    */
+    --tab-padding-x: 58px;
+    --tab-min-width: clamp(150px, 16vw, 225px);
+  }
+
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background: var(--background);
+    padding-top: 0 !important;
+    font-family: "CustomFont", Georgia, serif;
+  }
+
   .navbar.navbar-default.navbar-fixed-top {
     display: none !important;
   }
 
-  /* Centered landing content */
-  .home-landing {
+  .folder-home {
+    width: 100vw;
     min-height: 100vh;
-    display: flex;
-    align-items: center;     /* vertical center */
-    justify-content: center; /* horizontal center */
-    text-align: center;
-    padding: 40px 20px;
+    margin-left: calc(50% - 50vw);
+    overflow: hidden;
   }
 
-  .home-card {
-    background: rgba(255, 255, 255, 0.0); /* transparent like your example */
-    max-width: 900px;
-    width: 100%;
-    padding: 40px 20px;
+  /* -----------------------------------------------------------------------
+     Homepage title
+     ----------------------------------------------------------------------- */
+
+  .home-header {
+    height: 20vh;
+    min-height: 135px;
+    max-height: 250px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+    box-sizing: border-box;
   }
 
   .home-title {
-    font-size: clamp(2.2rem, 5vw, 4rem);
-    font-weight: 500;
-    letter-spacing: .06em;
-    margin: 0 0 18px 0;
-    color: #3b3940; /* adjust if you want */
-  }
-
-  .home-subtitle {
-    font-size: 1.5rem;
-    margin: 0 0 28px 0;
-    color: rgba(58, 57, 64, 0.75);
-  }
-
-  /* Links centered, like a simple menu */
-  .home-nav {
-    list-style: none;
-    padding: 0;
     margin: 0;
-    display: inline-flex;
-    flex-direction: column;
-    gap: 14px;
+
+    font-family: "CustomFont", Georgia, serif;
+    font-size: clamp(5rem, 10vw, 10rem);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.015em;
+
+    color: var(--text-colour);
+    text-align: center;
   }
 
-  .home-nav a {
-    display: inline-block;
-    padding: 10px 28px;
-    border-radius: 999px;
+  /* -----------------------------------------------------------------------
+     Folder stack
+     ----------------------------------------------------------------------- */
+
+  .folder-stack {
+    position: relative;
+    height: calc(100vh - 20vh);
+    min-height: 540px;
+  }
+
+  .folder {
+    position: absolute;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    height: clamp(82px, 12vh, 135px);
+
+    overflow: visible;
     text-decoration: none;
-    font-size: 1.2rem;
-    color: #49484b;
-    background: rgba(244, 241, 241, 0.55);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-    transition: transform .15s ease, background-color .15s ease;
+    cursor: pointer;
+
+    background-color: var(--folder-colour);
+    border-radius: 0 18px 0 0;
+
+    box-shadow:
+      0 10px 20px rgba(58, 49, 41, 0.16),
+      inset 0 1px rgba(255, 255, 255, 0.16),
+      inset 0 -2px rgba(58, 47, 38, 0.04);
+
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease;
   }
 
-  .home-nav a:hover {
-    transform: translateY(-1px);
-    background: rgba(255,255,255,0.75);
+  .folder::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+    opacity: 0.14;
+
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.16 0.24' numOctaves='2' seed='8' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='table' tableValues='0 0.38'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.7'/%3E%3C/svg%3E");
+
+    background-size: 180px 180px;
+    background-repeat: repeat;
+    mix-blend-mode: multiply;
   }
 
-  /* Optional: if your layout adds top padding to offset the fixed navbar, remove it on homepage */
-  body { padding-top: 0 !important; }
+  .folder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08) 0%,
+        transparent 24%
+      ),
+      linear-gradient(
+        105deg,
+        rgba(255, 255, 255, 0.035),
+        transparent 45%,
+        rgba(70, 55, 45, 0.02)
+      );
+  }
+
+  .folder:hover,
+  .folder:focus-visible {
+    transform: translateY(-10px);
+
+    box-shadow:
+      0 17px 28px rgba(58, 49, 41, 0.20),
+      inset 0 1px rgba(255, 255, 255, 0.16),
+      inset 0 -2px rgba(58, 47, 38, 0.04);
+
+    outline: none;
+    text-decoration: none;
+  }
+
+  /* -----------------------------------------------------------------------
+     Folder tabs
+     ----------------------------------------------------------------------- */
+
+  .tab-group {
+    position: absolute;
+    top: var(--tab-top);
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: max-content;
+    min-width: var(--tab-min-width);
+    height: var(--tab-height);
+
+    pointer-events: none;
+  }
+
+  .folder-tab {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .folder-tab svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .folder-tab path {
+    fill: var(--folder-colour);
+    stroke: rgba(58, 47, 38, 0.045);
+    stroke-width: 0.7;
+    vector-effect: non-scaling-stroke;
+  }
+
+  .folder-label {
+    position: relative;
+    z-index: 2;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    box-sizing: border-box;
+    padding: 3px var(--tab-padding-x) 1px;
+
+    font-family: "CustomFont", Georgia, serif;
+    font-size: clamp(1.5rem, 1.8vw, 2.1rem);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+
+    color: var(--text-colour);
+    white-space: nowrap;
+  }
+
+  /* -----------------------------------------------------------------------
+     Individual folder positions and colours
+     ----------------------------------------------------------------------- */
+
+  .folder-library {
+    bottom: 60%;
+    z-index: 1;
+    --folder-colour: var(--folder-1);
+  }
+
+  .folder-library .tab-group {
+    left: 16%;
+  }
+
+  .folder-media {
+    bottom: 48%;
+    z-index: 3;
+    --folder-colour: var(--folder-2);
+  }
+
+  .folder-media .tab-group {
+    right: 10%;
+  }
+
+  .folder-reading {
+    bottom: 36%;
+    z-index: 5;
+    --folder-colour: var(--folder-3);
+  }
+
+  .folder-reading .tab-group {
+    left: 39%;
+  }
+
+  .folder-gallery {
+    bottom: 24%;
+    z-index: 7;
+    --folder-colour: var(--folder-4);
+  }
+
+  .folder-gallery .tab-group {
+    left: 11%;
+  }
+
+  .folder-videos {
+    bottom: 12%;
+    z-index: 9;
+    --folder-colour: var(--folder-5);
+  }
+
+  .folder-videos .tab-group {
+    left: 5%;
+  }
+
+  .folder-hold {
+    bottom: 0;
+    z-index: 11;
+    --folder-colour: var(--folder-6);
+  }
+
+  .folder-hold .tab-group {
+    right: 14%;
+  }
+
+  /* -----------------------------------------------------------------------
+     Mobile layout
+     ----------------------------------------------------------------------- */
+
+  @media (max-width: 760px) {
+    :root {
+      --tab-height: 40px;
+      --tab-top: -39px;
+      --tab-padding-x: 30px;
+      --tab-min-width: 138px;
+    }
+
+    .home-header {
+      height: 135px;
+    }
+
+    .home-title {
+      font-size: clamp(4rem, 15vw, 7rem);
+    }
+
+    .folder-stack {
+      height: calc(100vh - 135px);
+      min-height: 520px;
+    }
+
+    .folder {
+      height: clamp(72px, 12vh, 100px);
+    }
+
+    .folder-label {
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+    }
+
+    .folder-library .tab-group {
+      left: 13%;
+    }
+
+    .folder-media .tab-group {
+      right: 6%;
+    }
+
+    .folder-reading .tab-group {
+      left: 37%;
+    }
+
+    .folder-gallery .tab-group {
+      left: 9%;
+    }
+
+    .folder-videos .tab-group {
+      left: 4%;
+    }
+
+    .folder-hold .tab-group {
+      right: 7%;
+    }
+  }
 </style>
 
-<div class="home-landing">
-  <div class="home-card">
-    <h1 class="home-title">Et Roligt Sted</h1>
-    <p class="home-subtitle">⭐️🧸 </p>
+<main class="folder-home">
 
-    <ul class="home-nav">
-      <li><a href="/library">Library</a></li>
-      <li><a href="/medialog">Media Log</a></li>
-      <li><a href="/readinglog">Reading Log</a></li>
-      <li><a href="/gallery">Gallery</a></li>
-      <li><a href="/videos">Videos</a></li>
-    </ul>
-  </div>
-</div>
+  <header class="home-header">
+    <h1 class="home-title">ARKIVET</h1>
+  </header>
 
+  <section class="folder-stack" aria-label="Website sections">
+
+    <a
+      class="folder folder-library"
+      href="/library"
+      aria-label="library"
+    >
+      <span class="tab-group">
+        <span class="folder-tab">
+          <svg
+            viewBox="0 0 100 50"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M 0 50 H 12 C 15 50 16 47 16 43 V 13 C 16 6 20 3 27 3 H 73 C 80 3 84 6 84 13 V 43 C 84 47 85 50 88 50 H 100 Z"></path>
+          </svg>
+        </span>
+
+        <span class="folder-label">library</span>
+      </span>
+    </a>
+
+    <a
+      class="folder folder-media"
+      href="/art"
+      aria-label="art"
+    >
+      <span class="tab-group">
+        <span class="folder-tab">
+          <svg
+            viewBox="0 0 100 50"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M 0 50 H 12 C 15 50 16 47 16 43 V 13 C 16 6 20 3 27 3 H 73 C 80 3 84 6 84 13 V 43 C 84 47 85 50 88 50 H 100 Z"></path>
+          </svg>
+        </span>
+
+        <span class="folder-label">art</span>
+      </span>
+    </a>
+
+    <a
+      class="folder folder-reading"
+      href="/readinglog"
+      aria-label="reading log"
+    >
+      <span class="tab-group">
+        <span class="folder-tab">
+          <svg
+            viewBox="0 0 100 50"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M 0 50 H 12 C 15 50 16 47 16 43 V 13 C 16 6 20 3 27 3 H 73 C 80 3 84 6 84 13 V 43 C 84 47 85 50 88 50 H 100 Z"></path>
+          </svg>
+        </span>
+
+        <span class="folder-label">reading log</span>
+      </span>
+    </a>
+
+    <a
+      class="folder folder-gallery"
+      href="/gallery"
+      aria-label="gallery"
+    >
+      <span class="tab-group">
+        <span class="folder-tab">
+          <svg
+            viewBox="0 0 100 50"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M 0 50 H 12 C 15 50 16 47 16 43 V 13 C 16 6 20 3 27 3 H 73 C 80 3 84 6 84 13 V 43 C 84 47 85 50 88 50 H 100 Z"></path>
+          </svg>
+        </span>
+
+        <span class="folder-label">gallery</span>
+      </span>
+    </a>
+
+    <a
+      class="folder folder-videos"
+      href="/videos"
+      aria-label="videos"
+    >
+      <span class="tab-group">
+        <span class="folder-tab">
+          <svg
+            viewBox="0 0 100 50"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M 0 50 H 12 C 15 50 16 47 16 43 V 13 C 16 6 20 3 27 3 H 73 C 80 3 84 6 84 13 V 43 C 84 47 85 50 88 50 H 100 Z"></path>
+          </svg>
+        </span>
+
+        <span class="folder-label">videos</span>
+      </span>
+    </a>
+
+    <a
+      class="folder folder-hold"
+      href="/sansebastian"
+      aria-label="san sebastian"
+    >
+      <span class="tab-group">
+        <span class="folder-tab">
+          <svg
+            viewBox="0 0 100 50"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <path d="M 0 50 H 12 C 15 50 16 47 16 43 V 13 C 16 6 20 3 27 3 H 73 C 80 3 84 6 84 13 V 43 C 84 47 85 50 88 50 H 100 Z"></path>
+          </svg>
+        </span>
+
+        <span class="folder-label">san sebastian</span>
+      </span>
+    </a>
+
+  </section>
+</main>
         </div>
       </div>
     </div>

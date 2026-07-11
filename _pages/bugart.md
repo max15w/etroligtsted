@@ -1,7 +1,7 @@
 ---
 title: "Bug Art"
 layout: bugart
-excerpt: "Et Roligt Sted - Bug Art"
+excerpt: "Arkivet- Bug Art"
 sitemap: false
 permalink: /bugart.html
 ---

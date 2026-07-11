@@ -5,1393 +5,2495 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Et Roligt Sted - Reading Log</title>
-  <meta name="description" content="Et Roligt Sted - Reading Log">
-  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/readinglog.html">
 
+  <title>
+    Et Roligt Sted -
+    
+      Reading Log
+    
+  </title>
 
+  <meta
+    name="description"
+    content="Arkivet - Reading Log"
+  >
+
+  <style>
+    @font-face {
+      font-family: "CustomFont";
+      src: url("/fonts/Rons.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="canonical"
+    href="http://localhost:4000/readinglog.html"
+  >
+
+  
 </head>
 
   <body>
     
-    <style>
-	/* Navbar styling */
-	.navbar {
-	  background-color: rgba(245, 239, 238, 0.4);
-	  border: none;
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-  
-	.navbar-brand img { position: relative; top: -10px; }
-  
-	.navbar-default .navbar-nav > li > a {
-	  color: #36324b;
-	  font-size: 16px;
-	}
-	.navbar-default .navbar-nav > li > a:hover { color: rgba(141, 71, 71, 0.2);}
-	.navbar-default .navbar-brand { color: #ffffff; }
-	.navbar-default .navbar-brand:hover { color: rgba(226, 225, 209, 0.333); }
-  
-	/* ⬇︎ Make links flush to the left edge */
-	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
-	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
-	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
-  
-	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
-	@media (min-width: 768px) {
-	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
-	}
-  
-	/* Optional: also remove any left padding on the whole bar if needed */
-	.navbar.navbar-default { padding-left: 0; }
-  </style>
-  
-  
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-	  </div>
-	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-		<ul class="nav navbar-nav navbar-left">
-		  <li><a href="http://localhost:4000/">Home</a></li>
-		  <li><a href="http://localhost:4000/library">Library</a></li>
-		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
-		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
-		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
-		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
-		  <li><a href="http://localhost:4000/videos">Videos</a></li>
-		</ul>
-	  </div>
-	</div>
+    
+
+
+<style>
+  :root {
+    --nav-background: #F4F1EB;
+    --nav-active: #D4D0C6;
+    --nav-hover: #E7E1D6;
+    --nav-line: rgba(52, 49, 46, 0.10);
+    --nav-shadow: rgba(70, 62, 52, 0.08);
+    --nav-ink: #554D46;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 56px;
+
+    background: rgba(238, 233, 224, 0.97);
+    border-bottom: 1px solid var(--nav-line);
+    box-shadow: 0 3px 10px var(--nav-shadow);
+
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .site-nav-inner {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 56px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 14px;
+
+    border-radius: 11px;
+    text-decoration: none;
+
+    color: var(--nav-ink);
+    font-family: "CustomFont", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    transition:
+      background-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-nav-links a:hover {
+    background: var(--nav-hover);
+    transform: translateY(-1px);
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a:focus {
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a.active {
+    background: var(--nav-active);
+  }
+
+  .nav-home {
+    font-size: 1.55rem;
+  }
+
+  @media (max-width: 780px) {
+    .site-nav {
+      min-height: 50px;
+    }
+
+    .site-nav-inner {
+      width: min(100% - 24px, 1240px);
+      min-height: 50px;
+    }
+
+    .site-nav-links {
+      gap: 4px;
+    }
+
+    .site-nav-links a {
+      height: 36px;
+      padding: 0 9px;
+      border-radius: 9px;
+      font-size: 1.3rem;
+    }
+
+    .nav-home {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav-inner">
+    <ul class="site-nav-links">
+
+      <li>
+        <a
+          class="nav-home"
+          href="/"
+          aria-label="Home">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/library"
+          aria-label="Library">
+          Library
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/art"
+          aria-label="Art">
+          Art
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="active"
+          href="/readinglog"
+          aria-label="Reading Log">
+          Reading Log
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/gallery"
+          aria-label="Gallery">
+          Gallery
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/videos"
+          aria-label="Videos">
+          Videos
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/sansebastian"
+          aria-label="San Sebastian">
+          San Sebastian
+        </a>
+      </li>
+
+    </ul>
   </div>
+</nav>
+
+
 
     <div class="container-fluid">
         <div class="row">
           <style>
-  /* Flexbox for centering the main content */
+  :root {
+    --page-background: #F7F4EE;
+    --ink: #302E2C;
+  }
+
   body {
-    background-image: url("http://localhost:4000/images/backgrounds/background.png"); /* Replace with your image path */
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: top center;
+    background: var(--page-background) !important;
+    background-image: none !important;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    min-height: 100vh;
-    box-sizing: border-box;
+    color: var(--ink);
   }
 
-  /* Style for the main content wrapper */
-  #homeid {
-    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1500px; /* Optional: Limit the maximum width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
-    /* margin: auto; /* Center the box vertically */
-    /* Add font styles here */
-    font-family: 'Optima', sans-serif;
+  .readinglog-layout {
+    width: min(1400px, calc(100% - 72px));
+    margin: 0 auto;
+    padding: 74px 0 110px;
   }
 
+  @media (max-width: 700px) {
+    .readinglog-layout {
+      width: min(100% - 28px, 1400px);
+      padding: 64px 0 80px;
+    }
+  }
 </style>
 
-<!-- Main Content -->
-<div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="/images/backgrounds/background.png" class="rounded float-right">
-  
-  <!-- Add gap -->
-  <!--- <div style="height: 200px;"></div> -->
+<main class="readinglog-layout">
+  <style>
+  @font-face {
+    font-family: "CustomFont";
+    src: url("/fonts/Rons.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
 
-  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
+  :root {
+    --page-background: #F7F4EE;
+    --paper: #FCFBF8;
+    --ink: #302E2C;
+    --line: #DDD9D0;
 
-  <!-- Add gap -->
-  <div style="height: 50px;"></div>
+    --sage-tab: #B8BDA9;
+    --sage-header: #D9DECF;
+    --sage-accent: #A8AE9B;
+    --sage-hover: #E9EDE4;
 
-  <div id="homeid" class="col-sm-12">
-    <html lang="en">
-<head>
-<style>
-  .reading-log { max-width: 1100px; margin: 0 auto; padding: 0 1rem; color:#111; }
-  .year-heading { font-size: 40px; margin: 2rem 0 1rem; border-bottom: 2px solid #ccc; padding-bottom: 4px; }
+    --blue-tab: #B0B4B7;
+    --blue-header: #D8DDE0;
+    --blue-accent: #9FA6AE;
+    --blue-hover: #E9EDF0;
+
+    --peach-tab: #C7B0A1;
+    --peach-header: #E4D4CA;
+    --peach-accent: #C8A38F;
+    --peach-hover: #F2E9E3;
+
+    --olive-tab: #C8C2B1;
+    --olive-header: #E3DED2;
+    --olive-accent: #B8B396;
+    --olive-hover: #F0EEE7;
+
+    --star-empty: #D8D6CE;
+  }
+
+  body {
+    background: var(--page-background) !important;
+    background-image: none !important;
+    color: var(--ink);
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .reading-log-page {
+    width: 100%;
+    margin: 0 auto;
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .reading-log-title {
+    margin: 8px auto 82px;
+
+    font-family: "CustomFont", Georgia, serif;
+    font-size: clamp(5rem, 9vw, 9.5rem);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.015em;
+
+    color: var(--ink);
+    text-align: center;
+  }
+
+  .year-section {
+    position: relative;
+    margin-bottom: 92px;
+    padding-top: 42px;
+  }
+
+  .year-tab {
+    position: absolute;
+    top: 0;
+    left: 38px;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 56px;
+    padding: 0 32px;
+    border-radius: 17px 17px 0 0;
+  }
+
+  .year-tab-title {
+    display: block;
+
+    font-family: "CustomFont", Georgia, serif;
+    font-size: clamp(1.9rem, 2.3vw, 2.7rem);
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+
+    color: var(--ink);
+    white-space: nowrap;
+  }
+
+  .year-panel {
+    padding: 38px 34px 34px;
+    border-top: 1px solid var(--line);
+  }
+
+  /* Year colour themes */
+
+  .year-sage .year-tab {
+    background: var(--sage-tab);
+  }
+
+  .year-sage .year-panel {
+    background: linear-gradient(
+      180deg,
+      rgba(184, 189, 169, 0.22) 0%,
+      rgba(247, 244, 238, 0) 100%
+    );
+  }
+
+  .year-sage .book-cover-wrap {
+    border-color: rgba(168, 174, 155, 0.58);
+  }
+
+  .year-sage .book-cover-wrap:hover {
+    background: var(--sage-hover);
+  }
+
+  .year-sage .star-rating .full,
+  .year-sage .star-rating .half {
+    color: #7F8774;
+  }
+
+  .year-blue .year-tab {
+    background: var(--blue-tab);
+  }
+
+  .year-blue .year-panel {
+    background: linear-gradient(
+      180deg,
+      rgba(176, 180, 183, 0.25) 0%,
+      rgba(247, 244, 238, 0) 100%
+    );
+  }
+
+  .year-blue .book-cover-wrap {
+    border-color: rgba(159, 166, 174, 0.58);
+  }
+
+  .year-blue .book-cover-wrap:hover {
+    background: var(--blue-hover);
+  }
+
+  .year-blue .star-rating .full,
+  .year-blue .star-rating .half {
+    color: #7E8790;
+  }
+
+  .year-peach .year-tab {
+    background: var(--peach-tab);
+  }
+
+  .year-peach .year-panel {
+    background: linear-gradient(
+      180deg,
+      rgba(199, 176, 161, 0.25) 0%,
+      rgba(247, 244, 238, 0) 100%
+    );
+  }
+
+  .year-peach .book-cover-wrap {
+    border-color: rgba(200, 163, 143, 0.58);
+  }
+
+  .year-peach .book-cover-wrap:hover {
+    background: var(--peach-hover);
+  }
+
+  .year-peach .star-rating .full,
+  .year-peach .star-rating .half {
+    color: #A27B6C;
+  }
+
+  .year-olive .year-tab {
+    background: var(--olive-tab);
+  }
+
+  .year-olive .year-panel {
+    background: linear-gradient(
+      180deg,
+      rgba(200, 194, 177, 0.30) 0%,
+      rgba(247, 244, 238, 0) 100%
+    );
+  }
+
+  .year-olive .book-cover-wrap {
+    border-color: rgba(184, 179, 150, 0.58);
+  }
+
+  .year-olive .book-cover-wrap:hover {
+    background: var(--olive-hover);
+  }
+
+  .year-olive .star-rating .full,
+  .year-olive .star-rating .half {
+    color: #8F8B70;
+  }
 
   .reading-grid {
     display: grid;
-    grid-template-columns: repeat(6, minmax(120px, 1fr));
-    gap: 18px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    gap: 30px 24px;
   }
-  @media (max-width: 1100px) { .reading-grid { grid-template-columns: repeat(5, 1fr); } }
-  @media (max-width: 900px)  { .reading-grid { grid-template-columns: repeat(4, 1fr); } }
-  @media (max-width: 720px)  { .reading-grid { grid-template-columns: repeat(3, 1fr); } }
-  @media (max-width: 520px)  { .reading-grid { grid-template-columns: repeat(2, 1fr); } }
 
-  .book { text-align: center; }
+  .book {
+    margin: 0;
+    text-align: center;
+  }
+
+  .book-cover-wrap {
+    display: block;
+    padding: 10px;
+
+    background: var(--paper);
+    border: 1px solid;
+    border-radius: 16px;
+
+    transition:
+      transform 0.18s ease,
+      background-color 0.18s ease,
+      box-shadow 0.18s ease;
+  }
+
+  .book-cover-wrap:hover {
+    box-shadow: 0 8px 18px rgba(80, 80, 70, 0.10);
+    transform: translateY(-3px);
+  }
 
   .book-image {
-    width: 150px; height: 220px; object-fit: cover;
-    border: 2px solid grey; border-radius: 5px; padding: 2px; background: #f7f7f7;
-    margin: 0 auto; display: block;
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+    border-radius: 10px;
+    background: #EEE9E0;
   }
+
   .star-rating {
-    font-size: 20px; margin-top: 10px;
-    display: flex; justify-content: center; gap: 2px;
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    margin-top: 11px;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.12rem;
+    line-height: 1;
   }
-  .star-rating .full  { color: grey; }
-  .star-rating .half  {
-    background: linear-gradient(to right, grey 50%, #fff 50%);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+
+  .star-rating .half {
+    background: linear-gradient(
+      to right,
+      currentColor 50%,
+      var(--star-empty) 50%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+    color: transparent;
   }
-  .star-rating .empty { color: #ccc; }
+
+  .star-rating .empty {
+    color: var(--star-empty);
+  }
+
+  .empty-reading-log {
+    padding: 28px;
+
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--paper);
+
+    font-family: "CustomFont", Georgia, serif;
+    font-size: 1.15rem;
+  }
+
+  @media (max-width: 900px) {
+    .reading-grid {
+      grid-template-columns: repeat(auto-fill, minmax(145px, 1fr));
+      gap: 24px 18px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .reading-log-title {
+      margin-bottom: 60px;
+      font-size: clamp(4rem, 15vw, 7rem);
+    }
+
+    .year-section {
+      margin-bottom: 66px;
+      padding-top: 36px;
+    }
+
+    .year-tab {
+      left: 20px;
+      height: 48px;
+      padding: 0 24px;
+      border-radius: 14px 14px 0 0;
+    }
+
+    .year-tab-title {
+      font-size: clamp(1.5rem, 5vw, 2.1rem);
+    }
+
+    .year-panel {
+      padding: 30px 10px 10px;
+    }
+
+    .reading-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px 14px;
+    }
+
+    .book-cover-wrap {
+      padding: 7px;
+      border-radius: 12px;
+    }
+
+    .book-image {
+      border-radius: 8px;
+    }
+  }
 </style>
 
-<div class="reading-log"><h2 class="year-heading">2026</h2>
-      <div class="reading-grid"><figure class="book">
-            <img class="book-image" src="/images/readinglog/graveyardrio.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/persepolissatrapi.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure></div><h2 class="year-heading">2025</h2>
-      <div class="reading-grid"><figure class="book">
-            <img class="book-image" src="/images/readinglog/theislandwells.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/lookbarclay.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/darkmattercrouch.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thepeopleyanagihara.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="2.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/nolongerhumanito.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/mountainsofmadnesstanabe.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/certainhungersummers.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="4.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/piglethazell.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/babylonfrank.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="3.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/mcgluemoshfegh.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="1.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/sputnikmurakami.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/incestdiary.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/wedonotpartkang.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="2.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/hunchbackichikawa.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/theeyeskim.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="4.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/philosophycoccia.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="1.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/neverletmegoishiguro.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/norwegianwoodmurakami.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thehourofthestarlispector.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="0.5 out of 5">
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="1.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/hotmilklevy.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/gliffsmith.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/bluesteyemorrison.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="4.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/eurotrashkracht.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/fleshszalay.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="1.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/undertheeyekawakami.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure></div><h2 class="year-heading">2024</h2>
-      <div class="reading-grid"><figure class="book">
-            <img class="book-image" src="/images/readinglog/eileenmoshfegh.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thewallhaushofer.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/dopaminenationlembke.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thesailormishima.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/theholeoyamada.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2.5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="half">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thebelljarplath.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/cannibalstanaka.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/fearandloathingthompson.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="1 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/klaraishiguro.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/themissinglangan.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/comeclosergran.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thedeepcutter.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/themaniaclabatut.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/whenweceaselabatut.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="2 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/humanactskang.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="5 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/theruinssmith.jpg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/atnightyoungsook.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="1 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/swimmingjedrowski.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="4 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/thewhitebookkang.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/shyporter.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure><figure class="book">
-            <img class="book-image" src="/images/readinglog/greeklessonskang.jpeg" alt="Book cover" />
-            <div class="star-rating" aria-label="3 out of 5">
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="full">★</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-                
-                  <span class="empty">☆</span>
-                
-              
-            </div>
-          </figure></div></div>
+<div class="reading-log-page">
 
+  <h1 class="reading-log-title">Reading Log</h1>
 
-</head></html>
+      
 
-  </div>
+      <section class="year-section year-sage">
 
-    <!-- Add gap -->
-    <div style="height: 200px;"></div>
-</div>
+        <div class="year-tab">
+          <span class="year-tab-title">2026</span>
+        </div>
+
+        <div class="year-panel">
+          <div class="reading-grid"><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/persepolissatrapi.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/persepolissatrapi.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/graveyardrio.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/graveyardrio.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/hookedyuzuki.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/hookedyuzuki.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/perfectionlatronico.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/perfectionlatronico.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/strangersburden.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/strangersburden.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/collapselouis.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/collapselouis.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/ghostwallmoss.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/ghostwallmoss.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+
+                </div>
+
+              </figure></div>
+        </div>
+
+      </section>
+
+      
+
+      <section class="year-section year-blue">
+
+        <div class="year-tab">
+          <span class="year-tab-title">2025</span>
+        </div>
+
+        <div class="year-panel">
+          <div class="reading-grid"><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/theislandwells.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/theislandwells.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/lookbarclay.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/lookbarclay.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/darkmattercrouch.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/darkmattercrouch.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thepeopleyanagihara.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thepeopleyanagihara.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/nolongerhumanito.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/nolongerhumanito.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/mountainsofmadnesstanabe.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/mountainsofmadnesstanabe.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/certainhungersummers.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/certainhungersummers.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/piglethazell.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/piglethazell.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/babylonfrank.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/babylonfrank.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/mcgluemoshfegh.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/mcgluemoshfegh.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="1.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/sputnikmurakami.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/sputnikmurakami.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/incestdiary.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/incestdiary.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/wedonotpartkang.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/wedonotpartkang.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/hunchbackichikawa.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/hunchbackichikawa.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/theeyeskim.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/theeyeskim.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/philosophycoccia.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/philosophycoccia.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="1.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/neverletmegoishiguro.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/neverletmegoishiguro.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/norwegianwoodmurakami.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/norwegianwoodmurakami.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thehourofthestarlispector.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thehourofthestarlispector.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="0.5 out of 5">
+
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/misunderstandinginmoscowbeauvoir.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="1.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/hotmilklevy.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/hotmilklevy.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/gliffsmith.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/gliffsmith.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/bluesteyemorrison.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/bluesteyemorrison.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/eurotrashkracht.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/eurotrashkracht.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/fleshszalay.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/fleshszalay.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="1.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/undertheeyekawakami.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/undertheeyekawakami.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure></div>
+        </div>
+
+      </section>
+
+      
+
+      <section class="year-section year-peach">
+
+        <div class="year-tab">
+          <span class="year-tab-title">2024</span>
+        </div>
+
+        <div class="year-panel">
+          <div class="reading-grid"><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/eileenmoshfegh.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/eileenmoshfegh.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thewallhaushofer.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thewallhaushofer.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/dopaminenationlembke.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/dopaminenationlembke.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thesailormishima.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thesailormishima.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/theholeoyamada.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/theholeoyamada.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2.5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="half">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thebelljarplath.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thebelljarplath.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/cannibalstanaka.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/cannibalstanaka.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/fearandloathingthompson.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/fearandloathingthompson.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="1 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/klaraishiguro.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/klaraishiguro.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/themissinglangan.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/themissinglangan.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/comeclosergran.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/comeclosergran.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thedeepcutter.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thedeepcutter.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/themaniaclabatut.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/themaniaclabatut.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/whenweceaselabatut.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/whenweceaselabatut.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="2 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/humanactskang.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/humanactskang.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="5 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/theruinssmith.jpg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/theruinssmith.jpg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/atnightyoungsook.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/atnightyoungsook.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="1 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/swimmingjedrowski.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/swimmingjedrowski.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="4 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/thewhitebookkang.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/thewhitebookkang.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/shyporter.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/shyporter.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure><figure class="book">
+
+                <a class="book-cover-wrap" href="/images/readinglog/greeklessonskang.jpeg" target="_blank" rel="noopener" aria-label="Open book cover">
+
+                  <img class="book-image" src="/images/readinglog/greeklessonskang.jpeg" alt="Book cover" />
+
+                </a>
+
+                <div class="star-rating" aria-label="3 out of 5">
+
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="full">★</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+                    
+                      <span class="empty">☆</span>
+                    
+                  
+
+                </div>
+
+              </figure></div>
+        </div>
+
+      </section></div>
+
+</main>
         </div>
       </div>
     </div>

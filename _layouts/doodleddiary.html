@@ -3,60 +3,60 @@ layout: default
 ---
 
 <style>
-  /* Flexbox for centering the main content */
+  html,
   body {
-    background-image: url("{{ site.url }}{{ site.baseurl }}/images/backgrounds/background.png"); /* Replace with your image path */
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: top center;
     margin: 0;
     padding: 0;
+    min-height: 100%;
+    background: #F7F4EE !important;
+    background-image: none !important;
+  }
+
+  body {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;
   }
 
-  /* Style for the main content wrapper */
-  #homeid {
-    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1500px; /* Optional: Limit the maximum width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
-    margin: auto; /* Center the box vertically */
-    /* Add font styles here */
-    font-family: 'Optima', sans-serif;
+  .doodleddiary-page {
+    width: 100%;
+    min-height: 100vh;
+
+    /*
+      Top padding accounts for the fixed navigation bar.
+      Without this, the page title sits underneath the header.
+    */
+    padding: 90px 0 120px;
+
+    background: #F7F4EE;
   }
 
-  /* Footer styling */
+  .doodleddiary-content {
+    width: 100%;
+    margin: 0 auto;
+    background: transparent;
+  }
+
   footer {
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent dark footer */
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 0;
+
+    background-color: rgba(34, 34, 34, 0.8);
     color: white;
     text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom */
+  }
+
+  @media (max-width: 700px) {
+    .doodleddiary-page {
+      padding: 72px 0 80px;
+    }
   }
 </style>
 
-<!-- Main Content -->
-<div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="{{ site.baseurl }}/images/backgrounds/background.png" class="rounded float-right">
-  
-  <!-- Add gap -->
-  <!--- <div style="height: 200px;"></div> -->
-
-  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
-
-  <!-- Add gap -->
-  <div style="height: 50px;"></div>
-
-  <div id="homeid" class="col-sm-12">
+<main class="doodleddiary-page">
+  <div class="doodleddiary-content">
     {{ content }}
   </div>
-
-    <!-- Add gap -->
-    <div style="height: 200px;"></div>
-</div>
+</main>

@@ -5,495 +5,1331 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Et Roligt Sted - Gallery</title>
-  <meta name="description" content="Et Roligt Sted - Gallery">
-  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/gallery.html">
 
+  <title>
+    Et Roligt Sted -
+    
+      Gallery
+    
+  </title>
 
+  <meta
+    name="description"
+    content="Arkivet - Gallery""
+  >
+
+  <style>
+    @font-face {
+      font-family: "CustomFont";
+      src: url("/fonts/Rons.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="canonical"
+    href="http://localhost:4000/gallery.html"
+  >
+
+  
 </head>
 
   <body>
     
-    <style>
-	/* Navbar styling */
-	.navbar {
-	  background-color: rgba(245, 239, 238, 0.4);
-	  border: none;
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-  
-	.navbar-brand img { position: relative; top: -10px; }
-  
-	.navbar-default .navbar-nav > li > a {
-	  color: #36324b;
-	  font-size: 16px;
-	}
-	.navbar-default .navbar-nav > li > a:hover { color: rgba(141, 71, 71, 0.2);}
-	.navbar-default .navbar-brand { color: #ffffff; }
-	.navbar-default .navbar-brand:hover { color: rgba(226, 225, 209, 0.333); }
-  
-	/* ⬇︎ Make links flush to the left edge */
-	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
-	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
-	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
-  
-	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
-	@media (min-width: 768px) {
-	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
-	}
-  
-	/* Optional: also remove any left padding on the whole bar if needed */
-	.navbar.navbar-default { padding-left: 0; }
-  </style>
-  
-  
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-	  </div>
-	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-		<ul class="nav navbar-nav navbar-left">
-		  <li><a href="http://localhost:4000/">Home</a></li>
-		  <li><a href="http://localhost:4000/library">Library</a></li>
-		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
-		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
-		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
-		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
-		  <li><a href="http://localhost:4000/videos">Videos</a></li>
-		</ul>
-	  </div>
-	</div>
+    
+
+
+<style>
+  :root {
+    --nav-background: #F4F1EB;
+    --nav-active: #D4D0C6;
+    --nav-hover: #E7E1D6;
+    --nav-line: rgba(52, 49, 46, 0.10);
+    --nav-shadow: rgba(70, 62, 52, 0.08);
+    --nav-ink: #554D46;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 56px;
+
+    background: rgba(238, 233, 224, 0.97);
+    border-bottom: 1px solid var(--nav-line);
+    box-shadow: 0 3px 10px var(--nav-shadow);
+
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .site-nav-inner {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 56px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 14px;
+
+    border-radius: 11px;
+    text-decoration: none;
+
+    color: var(--nav-ink);
+    font-family: "CustomFont", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    transition:
+      background-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-nav-links a:hover {
+    background: var(--nav-hover);
+    transform: translateY(-1px);
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a:focus {
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a.active {
+    background: var(--nav-active);
+  }
+
+  .nav-home {
+    font-size: 1.55rem;
+  }
+
+  @media (max-width: 780px) {
+    .site-nav {
+      min-height: 50px;
+    }
+
+    .site-nav-inner {
+      width: min(100% - 24px, 1240px);
+      min-height: 50px;
+    }
+
+    .site-nav-links {
+      gap: 4px;
+    }
+
+    .site-nav-links a {
+      height: 36px;
+      padding: 0 9px;
+      border-radius: 9px;
+      font-size: 1.3rem;
+    }
+
+    .nav-home {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav-inner">
+    <ul class="site-nav-links">
+
+      <li>
+        <a
+          class="nav-home"
+          href="/"
+          aria-label="Home">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/library"
+          aria-label="Library">
+          Library
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/art"
+          aria-label="Art">
+          Art
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/readinglog"
+          aria-label="Reading Log">
+          Reading Log
+        </a>
+      </li>
+
+      <li>
+        <a
+          class="active"
+          href="/gallery"
+          aria-label="Gallery">
+          Gallery
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/videos"
+          aria-label="Videos">
+          Videos
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/sansebastian"
+          aria-label="San Sebastian">
+          San Sebastian
+        </a>
+      </li>
+
+    </ul>
   </div>
+</nav>
+
+
 
     <div class="container-fluid">
         <div class="row">
           <style>
-  /* Flexbox for centering the main content */
+  html,
   body {
-    background-image: url("http://localhost:4000/images/backgrounds/background.png"); /* Replace with your image path */
-    background-repeat: repeat-y;
-    background-size: 100% auto;
-    background-position: top center;
     margin: 0;
     padding: 0;
+    min-height: 100%;
+    background: #F7F4EE !important;
+    background-image: none !important;
+  }
+
+  body {
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
+    flex-direction: column;
     min-height: 100vh;
     box-sizing: border-box;
   }
 
-  /* Style for the main content wrapper */
-  #homeid {
-    background-color: rgba(255, 255, 255, 0.6); /* Add slight transparency for readability */
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%; /* Set a fixed or relative width for the box */
-    max-width: 1500px; /* Optional: Limit the maximum width */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow for visual appeal */
-    margin: auto; /* Center the box vertically */
-    /* Add font styles here */
-    font-family: 'Optima', sans-serif;
+  .doodleddiary-page {
+    width: 100%;
+    min-height: 100vh;
+
+    /*
+      Top padding accounts for the fixed navigation bar.
+      Without this, the page title sits underneath the header.
+    */
+    padding: 90px 0 120px;
+
+    background: #F7F4EE;
   }
 
-  /* Footer styling */
+  .doodleddiary-content {
+    width: 100%;
+    margin: 0 auto;
+    background: transparent;
+  }
+
   footer {
-    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent dark footer */
+    width: 100%;
+    margin-top: auto;
+    padding: 20px 0;
+
+    background-color: rgba(34, 34, 34, 0.8);
     color: white;
     text-align: center;
-    padding: 20px 0;
-    width: 100%;
-    margin-top: auto; /* Push footer to the bottom */
+  }
+
+  @media (max-width: 700px) {
+    .doodleddiary-page {
+      padding: 72px 0 80px;
+    }
   }
 </style>
 
-<!-- Main Content -->
-<div class="text-center">
-  <img style="position:absolute; left:0px; top:0px; width: 100vw; height: auto;" src="/images/backgrounds/background.png" class="rounded float-right">
-  
-  <!-- Add gap -->
-  <!--- <div style="height: 200px;"></div> -->
-
-  <hr style="border-top: 3px solid #e1e3e3;"> <!-- Add a faint horizontal line here -->
-
-  <!-- Add gap -->
-  <div style="height: 50px;"></div>
-
-  <div id="homeid" class="col-sm-12">
-    <html lang="en">
-<head>
-<style>
-  /* ========= Pinterest-style masonry board (no JS) ========= */
-  .board {
-    column-gap: 1rem;
-    column-count: 3;     /* ALWAYS 3 columns */
-    padding: .25rem 0 0;
+<main class="doodleddiary-page">
+  <div class="doodleddiary-content">
+    <style>
+  @font-face {
+    font-family: "CustomFont";
+    src: url("/fonts/Rons.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
   }
 
-  /* Optional: make it usable on very small screens */
-  @media (max-width: 700px) {
-    .board { column-count: 1; }
+  :root {
+    --page-background: #F7F4EE;
+
+    --panel-start: #E8E8DF;
+    --panel-mid: #F0EEE6;
+    --panel-end: #F7F4EE;
+
+    --card-background: rgba(252, 251, 248, 0.9);
+    --card-background-hover: rgba(255, 255, 255, 0.96);
+
+    --ink: #302E2C;
+    --muted-ink: rgba(48, 46, 44, 0.62);
+
+    --line: #DDD9D0;
+    --card-line: rgba(255, 255, 255, 0.96);
+
+    --card-shadow: rgba(70, 62, 52, 0.07);
+    --card-shadow-hover: rgba(70, 62, 52, 0.12);
+
+    --caption-font: Georgia, "Times New Roman", Times, serif;
   }
 
-  /* ========= pin/card ========= */
-  .pin {
-    break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    margin: 0 0 1rem 0;
+  body {
+    background: var(--page-background) !important;
+    background-image: none !important;
+    color: var(--ink);
+    font-family: "CustomFont", Georgia, serif;
+  }
 
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(255,255,255,0.80);
-    box-shadow: 0 4px 16px rgba(0,0,0,.08);
+  .gallery-page {
+    width: min(1760px, calc(100% - 24px));
+    margin: 0 auto;
+    padding: 0 0 80px;
+  }
 
+  .gallery-title {
     display: block;
     width: 100%;
+    margin: 0 auto 30px;
+
+    font-family: "CustomFont", Georgia, serif;
+    font-size: clamp(5rem, 9vw, 9.5rem);
+    font-weight: normal;
+    line-height: 1;
+    letter-spacing: 0.015em;
+
+    color: var(--ink);
+    text-align: center;
   }
 
-  /* Defensive reset against theme rules that commonly break captions/layout */
-  .pin, .pin * { box-sizing: border-box; }
-  .pin figure { margin: 0 !important; padding: 0 !important; }
-  .pin figure,
-  .pin img {
+  .gallery-panel {
+    width: 100%;
+    margin: 0 auto;
+
+    background:
+      linear-gradient(
+        135deg,
+        var(--panel-start) 0%,
+        var(--panel-mid) 50%,
+        var(--panel-end) 100%
+      );
+
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+
+    padding: 22px 12px 26px;
+    box-sizing: border-box;
+  }
+
+  .board {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 8px;
+    gap: 10px 8px;
+    align-items: start;
+  }
+
+  .pin {
+    display: block;
+    width: 100%;
+
+    overflow: hidden;
+    border-radius: 18px;
+
+    background: var(--card-background);
+    border: 1px solid var(--card-line);
+
+    box-shadow: 0 5px 14px var(--card-shadow);
+
+    padding: 6px;
+    box-sizing: border-box;
+
+    transition:
+      transform 180ms ease,
+      background-color 180ms ease,
+      box-shadow 180ms ease;
+  }
+
+  .pin:hover {
+    transform: translateY(-2px);
+    background: var(--card-background-hover);
+    box-shadow: 0 8px 18px var(--card-shadow-hover);
+  }
+
+  .pin,
+  .pin * {
+    box-sizing: border-box;
+  }
+
+  .pin figure {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
     position: static !important;
     transform: none !important;
     filter: none !important;
     opacity: 1 !important;
   }
 
-  /* ========= image ========= */
-  .pin__img {
+  .pin__link {
+    display: block !important;
     width: 100%;
-    height: auto;
-    display: block;
-    max-width: 100%;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    color: inherit;
+    text-decoration: none;
+    cursor: zoom-in;
   }
 
-  /* ========= caption ========= */
+  .pin__link:hover,
+  .pin__link:focus {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .pin__img {
+    display: block !important;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    position: static !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+
+    border-radius: 11px;
+    background: #EEE9E0;
+  }
+
   .pin__caption {
-    display: block;
-    position: relative;
-    z-index: 2;
+    display: block !important;
+    position: static !important;
+    transform: none !important;
 
-    padding: .65rem .85rem .85rem;
-    background: rgba(255,255,255,.92);
-    color: #222 !important;
-    line-height: 1.25;
-    font-size: 1.3rem;
+    width: 100%;
+    margin: 0 !important;
+    padding: 0.46rem 0.18rem 0.02rem !important;
 
+    clear: both;
+
+    background: transparent !important;
+    border-top: none;
+
+    color: var(--ink) !important;
+
+    font-family: var(--caption-font);
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.18;
+
+    text-align: center;
     text-shadow: none !important;
     mix-blend-mode: normal !important;
   }
 
-  .pin:hover { box-shadow: 0 8px 24px rgba(0,0,0,.12); }
-</style><div class="board"><article class="pin">
-      <figure>
-      <img src="/images/gallery/231225.jpg" alt="Dec 23th 2025: Lunch with the parents" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Dec 23th 2025: Lunch with the parents</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/211225.png" alt="Dec 21th 2025: Cocktails at the Botanist" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Dec 21th 2025: Cocktails at the Botanist</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/121225.png" alt="Dec 12th 2025: 10 year anniversary!!" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Dec 12th 2025: 10 year anniversary!!</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/111225.png" alt="Dec 11th 2025: Celebrating my LF grant!" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Dec 11th 2025: Celebrating my LF grant!</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/031225.png" alt="Dec 3th 2025: Putting up the Christmas tree" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Dec 3th 2025: Putting up the Christmas tree</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/011225.png" alt="Dec 1st 2025: E&#39;s birthday party" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Dec 1st 2025: E's birthday party</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/291125.png" alt="Nov 29th 2025: Seeing Marco&#39;s band" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 29th 2025: Seeing Marco's band</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/271025.png" alt="Oct 27th 2025: New Lamp" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 27th 2025: New Lamp</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/101125_3.png" alt="Nov 10th 2025: At the Pyramids" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 10th 2025: At the Pyramids</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/101125_2.png" alt="Nov 10th 2025: Exploring Cairo&#39;s tombs" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 10th 2025: Exploring Cairo's tombs</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/101125.png" alt="Nov 10th 2025: By the Sphinx" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 10th 2025: By the Sphinx</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/091125_2.JPG" alt="Nov 9th 2025: At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 9th 2025: At Nina and Ahmed's wedding</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/091125.png" alt="Nov 9th 2025: On the Nile River" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 9th 2025: On the Nile River</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/091125_4.png" alt="Nov 9th 2025: At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 9th 2025: At Nina and Ahmed's wedding</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/091125_3.JPG" alt="Nov 9th 2025: At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Nov 9th 2025: At Nina and Ahmed's wedding</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/231025.png" alt="Oct 23th 2025: Beamtime scanning" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 23th 2025: Beamtime scanning</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/191025.png" alt="Oct 19th 2025: Last outdoor cocktails of the year" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 19th 2025: Last outdoor cocktails of the year</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/181025.JPG" alt="Oct 18th 2025: Ruby&#39;s visiting" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 18th 2025: Ruby's visiting</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/101025.png" alt="Oct 10th 2025: Golden hour in Marseille" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 10th 2025: Golden hour in Marseille</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/081025.JPG" alt="Oct 8th 2025: Getting ready to moderate at ESMRMB" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 8th 2025: Getting ready to moderate at ESMRMB</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/071025.png" alt="Oct 7th 2025: Arriving in Marseille" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 7th 2025: Arriving in Marseille</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/011025.JPG" alt="Oct 1st 2025: Team outing to Bastard Café" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Oct 1st 2025: Team outing to Bastard Café</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/240925.JPG" alt="Sep 24th 2025: Fresh flowers for the house" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Sep 24th 2025: Fresh flowers for the house</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/170925.png" alt="Sep 17th 2025: First flower from this plant" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Sep 17th 2025: First flower from this plant</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/120925.png" alt="Sep 12th 2025: Dinner at Cholon" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Sep 12th 2025: Dinner at Cholon</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/040925.png" alt="Sep 4th 2025: A small visitor" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Sep 4th 2025: A small visitor</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/180825.png" alt="Aug 18th 2025: Sunny day in the park" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 18th 2025: Sunny day in the park</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/170825.JPG" alt="Aug 17th 2025: Walk with Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 17th 2025: Walk with Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/070825.JPG" alt="Aug 7th 2025: At a Chapell Roan concert!" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 7th 2025: At a Chapell Roan concert!</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/070825.PNG" alt="Aug 7th 2025: Chapell Roan concert!" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 7th 2025: Chapell Roan concert!</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/020825.JPG" alt="Aug 2nd 2025: BBQ at Nana&#39;s" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 2nd 2025: BBQ at Nana's</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/010825.JPG" alt="Aug 1st 2025: At The Ivy" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 1st 2025: At The Ivy</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/010825_2.png" alt="Aug 1st 2025: Scones in town" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Aug 1st 2025: Scones in town</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/310725.JPG" alt="Jul 31st 2025: Walking with Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 31st 2025: Walking with Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/290725.png" alt="Jul 29th 2025: Dessert at Ravage" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 29th 2025: Dessert at Ravage</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/190725_2.JPG" alt="Jul 19th 2025: Paddleboarding with Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 19th 2025: Paddleboarding with Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/190725.jpg" alt="Jul 19th 2025: Paddleboarding with Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 19th 2025: Paddleboarding with Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/180725.png" alt="Jul 18th 2025: Visit from Amy and James" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 18th 2025: Visit from Amy and James</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/140725.JPG" alt="Jul 14th 2025: Canal walk with Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 14th 2025: Canal walk with Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/130725.png" alt="Jul 13th 2025: Hanging out with Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 13th 2025: Hanging out with Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/070725.png" alt="Jul 7th 2025: Cocktails by the canal" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jul 7th 2025: Cocktails by the canal</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/270625.png" alt="Jun 27th 2025: A bird for my collection" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 27th 2025: A bird for my collection</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/260625_2.png" alt="Jun 26th 2025: Where no man has gone before" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 26th 2025: Where no man has gone before</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/260625.png" alt="Jun 26th 2025: Fancy birthday dinner" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 26th 2025: Fancy birthday dinner</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/230625.png" alt="Jun 23th 2025: Sankt Hans at Nyhavn" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 23th 2025: Sankt Hans at Nyhavn</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/140625.png" alt="Jun 14th 2025: First Chaosity" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 14th 2025: First Chaosity</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/090625.png" alt="Jun 9th 2025: Royal Run" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 9th 2025: Royal Run</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/080625.png" alt="Jun 8th 2025: Ruby at Ruby" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 8th 2025: Ruby at Ruby</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/060625.png" alt="Jun 6th 2025: Beamtime success" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 6th 2025: Beamtime success</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/050625_2.png" alt="Jun 5th 2025: Sample setup" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 5th 2025: Sample setup</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/050625.png" alt="Jun 5th 2025: New sticker" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 5th 2025: New sticker</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/010625.png" alt="Jun 1th 2025: Prebeamtime dinner" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jun 1th 2025: Prebeamtime dinner</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/180525_3.png" alt="May 18th 2025: Hot dog stand in NYC" class="pin__img" loading="lazy" />
-        <div class="pin__caption">May 18th 2025: Hot dog stand in NYC</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/180525_2.png" alt="May 18th 2025: Times Square" class="pin__img" loading="lazy" />
-        <div class="pin__caption">May 18th 2025: Times Square</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/180525.png" alt="May 18th 2025: Central Park in the sun" class="pin__img" loading="lazy" />
-        <div class="pin__caption">May 18th 2025: Central Park in the sun</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/170525.png" alt="May 17th 2025: Touristing Honolulu" class="pin__img" loading="lazy" />
-        <div class="pin__caption">May 17th 2025: Touristing Honolulu</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/070525.png" alt="May 7th 2025: Tasting the local delights in Hawaii" class="pin__img" loading="lazy" />
-        <div class="pin__caption">May 7th 2025: Tasting the local delights in Hawaii</div>
-      </figure>
-    </article><article class="pin">
-      <figure>
-      <img src="/images/gallery/140124.JPG" alt="Jan 14th 2025: Inauguration of King Frederik X" class="pin__img" loading="lazy" />
-        <div class="pin__caption">Jan 14th 2025: Inauguration of King Frederik X</div>
-      </figure>
-    </article></div>
+  .pin__date {
+    display: block;
+    margin-top: 0.16rem;
 
-</head>
-</html>
+    color: var(--muted-ink);
+    font-family: var(--caption-font);
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 5000;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 42px;
+
+    background: rgba(247, 244, 238, 0.94);
+    backdrop-filter: blur(6px);
+  }
+
+  .gallery-lightbox.is-open {
+    display: flex;
+  }
+
+  .gallery-lightbox-inner {
+    position: relative;
+
+    width: min(1150px, 94vw);
+    max-height: 92vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+    border-radius: 22px;
+
+    background: rgba(252, 251, 248, 0.98);
+    border: 1px solid var(--card-line);
+
+    box-shadow: 0 22px 60px rgba(45, 38, 32, 0.22);
+  }
+
+  .gallery-lightbox-image-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 0;
+    padding: 14px;
+    background: rgba(252, 251, 248, 0.98);
+  }
+
+  .gallery-lightbox-image {
+    display: block;
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: calc(92vh - 135px);
+
+    object-fit: contain;
+    border-radius: 14px;
+    background: #EEE9E0;
+  }
+
+  .gallery-lightbox-caption {
+    display: block;
+    padding: 0.8rem 1.2rem 1rem;
+
+    background: rgba(252, 251, 248, 0.98);
+    border-top: 1px solid var(--line);
+
+    color: var(--ink);
+
+    font-family: var(--caption-font);
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  .gallery-lightbox-date {
+    display: block;
+    margin-top: 0.25rem;
+
+    color: var(--muted-ink);
+    font-family: var(--caption-font);
+    font-size: 0.92rem;
+    font-weight: 400;
+  }
+
+  .gallery-lightbox-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(252, 251, 248, 0.9);
+
+    color: var(--ink);
+    font-family: var(--caption-font);
+    font-size: 1.35rem;
+    line-height: 1;
+
+    cursor: pointer;
+  }
+
+  .gallery-lightbox-close:hover {
+    background: #EEE9E0;
+  }
+
+  @media (max-width: 1240px) {
+    .gallery-page {
+      width: min(100% - 20px, 1760px);
+    }
+
+    .board {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 850px) {
+    .gallery-page {
+      width: min(100% - 18px, 1760px);
+    }
+
+    .gallery-panel {
+      padding: 16px 8px 20px;
+    }
+
+    .board {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px 6px;
+    }
+
+    .pin {
+      padding: 5px;
+      border-radius: 16px;
+    }
+
+    .pin__img {
+      border-radius: 10px;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .gallery-page {
+      width: min(100% - 12px, 1760px);
+      padding-bottom: 52px;
+    }
+
+    .gallery-title {
+      margin-bottom: 22px;
+      font-size: clamp(4rem, 15vw, 7rem);
+    }
+
+    .gallery-panel {
+      padding: 12px 6px 16px;
+    }
+
+    .board {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+
+    .pin {
+      padding: 5px;
+      border-radius: 16px;
+    }
+
+    .pin__caption {
+      font-size: 0.96rem;
+    }
+
+    .pin__date {
+      font-size: 0.84rem;
+    }
+
+    .gallery-lightbox {
+      padding: 18px;
+    }
+
+    .gallery-lightbox-inner {
+      width: 96vw;
+      max-height: 94vh;
+      border-radius: 20px;
+    }
+
+    .gallery-lightbox-image-wrap {
+      padding: 10px;
+    }
+
+    .gallery-lightbox-image {
+      max-height: calc(94vh - 130px);
+      border-radius: 12px;
+    }
+  }
+</style>
+<div class="gallery-page">
+
+  <h1 class="gallery-title">Gallery</h1>
+
+  <div class="gallery-panel">
+
+    <div class="board" aria-label="Gallery"><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/231225.jpg" data-full-src="/images/gallery/231225.jpg" data-alt="Lunch with the parents" data-caption="Lunch with the parents" data-date="23/12/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/231225.jpg" alt="Lunch with the parents" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Lunch with the parents<span class="pin__date">23/12/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/211225.png" data-full-src="/images/gallery/211225.png" data-alt="Cocktails at the Botanist" data-caption="Cocktails at the Botanist" data-date="21/12/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/211225.png" alt="Cocktails at the Botanist" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Cocktails at the Botanist<span class="pin__date">21/12/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/121225.png" data-full-src="/images/gallery/121225.png" data-alt="10 year anniversary!!" data-caption="10 year anniversary!!" data-date="12/12/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/121225.png" alt="10 year anniversary!!" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">10 year anniversary!!<span class="pin__date">12/12/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/111225.png" data-full-src="/images/gallery/111225.png" data-alt="Celebrating my LF grant!" data-caption="Celebrating my LF grant!" data-date="11/12/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/111225.png" alt="Celebrating my LF grant!" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Celebrating my LF grant!<span class="pin__date">11/12/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/031225.png" data-full-src="/images/gallery/031225.png" data-alt="Putting up the Christmas tree" data-caption="Putting up the Christmas tree" data-date="03/12/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/031225.png" alt="Putting up the Christmas tree" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Putting up the Christmas tree<span class="pin__date">03/12/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/011225.png" data-full-src="/images/gallery/011225.png" data-alt="E&#39;s birthday party" data-caption="E&#39;s birthday party" data-date="01/12/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/011225.png" alt="E&#39;s birthday party" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">E's birthday party<span class="pin__date">01/12/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/291125.png" data-full-src="/images/gallery/291125.png" data-alt="Seeing Marco&#39;s band" data-caption="Seeing Marco&#39;s band" data-date="29/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/291125.png" alt="Seeing Marco&#39;s band" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Seeing Marco's band<span class="pin__date">29/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/271025.png" data-full-src="/images/gallery/271025.png" data-alt="New Lamp" data-caption="New Lamp" data-date="12/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/271025.png" alt="New Lamp" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">New Lamp<span class="pin__date">12/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/101125_3.png" data-full-src="/images/gallery/101125_3.png" data-alt="At the Pyramids" data-caption="At the Pyramids" data-date="10/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/101125_3.png" alt="At the Pyramids" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">At the Pyramids<span class="pin__date">10/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/101125_2.png" data-full-src="/images/gallery/101125_2.png" data-alt="Exploring Cairo&#39;s tombs" data-caption="Exploring Cairo&#39;s tombs" data-date="10/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/101125_2.png" alt="Exploring Cairo&#39;s tombs" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Exploring Cairo's tombs<span class="pin__date">10/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/101125.png" data-full-src="/images/gallery/101125.png" data-alt="By the Sphinx" data-caption="By the Sphinx" data-date="10/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/101125.png" alt="By the Sphinx" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">By the Sphinx<span class="pin__date">10/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/091125_2.JPG" data-full-src="/images/gallery/091125_2.JPG" data-alt="At Nina and Ahmed&#39;s wedding" data-caption="At Nina and Ahmed&#39;s wedding" data-date="09/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/091125_2.JPG" alt="At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">At Nina and Ahmed's wedding<span class="pin__date">09/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/091125.png" data-full-src="/images/gallery/091125.png" data-alt="On the Nile River" data-caption="On the Nile River" data-date="09/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/091125.png" alt="On the Nile River" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">On the Nile River<span class="pin__date">09/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/091125_4.png" data-full-src="/images/gallery/091125_4.png" data-alt="At Nina and Ahmed&#39;s wedding" data-caption="At Nina and Ahmed&#39;s wedding" data-date="09/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/091125_4.png" alt="At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">At Nina and Ahmed's wedding<span class="pin__date">09/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/091125_3.JPG" data-full-src="/images/gallery/091125_3.JPG" data-alt="At Nina and Ahmed&#39;s wedding" data-caption="At Nina and Ahmed&#39;s wedding" data-date="09/11/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/091125_3.JPG" alt="At Nina and Ahmed&#39;s wedding" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">At Nina and Ahmed's wedding<span class="pin__date">09/11/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/231025.png" data-full-src="/images/gallery/231025.png" data-alt="Beamtime scanning" data-caption="Beamtime scanning" data-date="23/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/231025.png" alt="Beamtime scanning" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Beamtime scanning<span class="pin__date">23/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/191025.png" data-full-src="/images/gallery/191025.png" data-alt="Last outdoor cocktails of the year" data-caption="Last outdoor cocktails of the year" data-date="19/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/191025.png" alt="Last outdoor cocktails of the year" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Last outdoor cocktails of the year<span class="pin__date">19/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/181025.JPG" data-full-src="/images/gallery/181025.JPG" data-alt="Ruby&#39;s visiting" data-caption="Ruby&#39;s visiting" data-date="18/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/181025.JPG" alt="Ruby&#39;s visiting" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Ruby's visiting<span class="pin__date">18/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/101025.png" data-full-src="/images/gallery/101025.png" data-alt="Golden hour in Marseille" data-caption="Golden hour in Marseille" data-date="10/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/101025.png" alt="Golden hour in Marseille" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Golden hour in Marseille<span class="pin__date">10/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/081025.JPG" data-full-src="/images/gallery/081025.JPG" data-alt="Getting ready to moderate at ESMRMB" data-caption="Getting ready to moderate at ESMRMB" data-date="08/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/081025.JPG" alt="Getting ready to moderate at ESMRMB" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Getting ready to moderate at ESMRMB<span class="pin__date">08/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/071025.png" data-full-src="/images/gallery/071025.png" data-alt="Arriving in Marseille" data-caption="Arriving in Marseille" data-date="07/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/071025.png" alt="Arriving in Marseille" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Arriving in Marseille<span class="pin__date">07/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/011025.JPG" data-full-src="/images/gallery/011025.JPG" data-alt="Team outing to Bastard Café" data-caption="Team outing to Bastard Café" data-date="01/10/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/011025.JPG" alt="Team outing to Bastard Café" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Team outing to Bastard Café<span class="pin__date">01/10/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/240925.JPG" data-full-src="/images/gallery/240925.JPG" data-alt="Fresh flowers for the house" data-caption="Fresh flowers for the house" data-date="24/09/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/240925.JPG" alt="Fresh flowers for the house" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Fresh flowers for the house<span class="pin__date">24/09/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/170925.png" data-full-src="/images/gallery/170925.png" data-alt="First flower from this plant" data-caption="First flower from this plant" data-date="17/09/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/170925.png" alt="First flower from this plant" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">First flower from this plant<span class="pin__date">17/09/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/120925.png" data-full-src="/images/gallery/120925.png" data-alt="Dinner at Cholon" data-caption="Dinner at Cholon" data-date="12/09/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/120925.png" alt="Dinner at Cholon" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Dinner at Cholon<span class="pin__date">12/09/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/040925.png" data-full-src="/images/gallery/040925.png" data-alt="A small visitor" data-caption="A small visitor" data-date="04/09/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/040925.png" alt="A small visitor" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">A small visitor<span class="pin__date">04/09/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/180825.png" data-full-src="/images/gallery/180825.png" data-alt="Sunny day in the park" data-caption="Sunny day in the park" data-date="18/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/180825.png" alt="Sunny day in the park" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Sunny day in the park<span class="pin__date">18/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/170825.JPG" data-full-src="/images/gallery/170825.JPG" data-alt="Walk with Ruby" data-caption="Walk with Ruby" data-date="17/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/170825.JPG" alt="Walk with Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Walk with Ruby<span class="pin__date">17/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/070825.JPG" data-full-src="/images/gallery/070825.JPG" data-alt="Chapell Roan concert!" data-caption="Chapell Roan concert!" data-date="07/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/070825.JPG" alt="Chapell Roan concert!" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Chapell Roan concert!<span class="pin__date">07/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/070825.PNG" data-full-src="/images/gallery/070825.PNG" data-alt="Chapell Roan concert!" data-caption="Chapell Roan concert!" data-date="07/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/070825.PNG" alt="Chapell Roan concert!" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Chapell Roan concert!<span class="pin__date">07/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/020825.JPG" data-full-src="/images/gallery/020825.JPG" data-alt="BBQ at Nana&#39;s" data-caption="BBQ at Nana&#39;s" data-date="02/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/020825.JPG" alt="BBQ at Nana&#39;s" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">BBQ at Nana's<span class="pin__date">02/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/010825.JPG" data-full-src="/images/gallery/010825.JPG" data-alt="At The Ivy" data-caption="At The Ivy" data-date="02/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/010825.JPG" alt="At The Ivy" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">At The Ivy<span class="pin__date">02/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/010825_2.png" data-full-src="/images/gallery/010825_2.png" data-alt="Scones in town" data-caption="Scones in town" data-date="01/08/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/010825_2.png" alt="Scones in town" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Scones in town<span class="pin__date">01/08/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/310725.JPG" data-full-src="/images/gallery/310725.JPG" data-alt="Walking with Ruby" data-caption="Walking with Ruby" data-date="31/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/310725.JPG" alt="Walking with Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Walking with Ruby<span class="pin__date">31/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/290725.png" data-full-src="/images/gallery/290725.png" data-alt="Dessert at Ravage" data-caption="Dessert at Ravage" data-date="29/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/290725.png" alt="Dessert at Ravage" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Dessert at Ravage<span class="pin__date">29/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/190725_2.JPG" data-full-src="/images/gallery/190725_2.JPG" data-alt="Paddleboarding with Ruby" data-caption="Paddleboarding with Ruby" data-date="19/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/190725_2.JPG" alt="Paddleboarding with Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Paddleboarding with Ruby<span class="pin__date">19/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/190725.jpg" data-full-src="/images/gallery/190725.jpg" data-alt="Paddleboarding with Ruby" data-caption="Paddleboarding with Ruby" data-date="19/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/190725.jpg" alt="Paddleboarding with Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Paddleboarding with Ruby<span class="pin__date">19/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/180725.png" data-full-src="/images/gallery/180725.png" data-alt="Visit from Amy and James" data-caption="Visit from Amy and James" data-date="18/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/180725.png" alt="Visit from Amy and James" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Visit from Amy and James<span class="pin__date">18/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/140725.JPG" data-full-src="/images/gallery/140725.JPG" data-alt="Canal walk with Ruby" data-caption="Canal walk with Ruby" data-date="14/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/140725.JPG" alt="Canal walk with Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Canal walk with Ruby<span class="pin__date">14/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/130725.png" data-full-src="/images/gallery/130725.png" data-alt="Hanging out with Ruby" data-caption="Hanging out with Ruby" data-date="13/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/130725.png" alt="Hanging out with Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Hanging out with Ruby<span class="pin__date">13/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/070725.png" data-full-src="/images/gallery/070725.png" data-alt="Cocktails by the canal" data-caption="Cocktails by the canal" data-date="07/07/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/070725.png" alt="Cocktails by the canal" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Cocktails by the canal<span class="pin__date">07/07/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/270625.png" data-full-src="/images/gallery/270625.png" data-alt="A bird for my collection" data-caption="A bird for my collection" data-date="27/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/270625.png" alt="A bird for my collection" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">A bird for my collection<span class="pin__date">27/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/260625_2.png" data-full-src="/images/gallery/260625_2.png" data-alt="Where no man has gone before" data-caption="Where no man has gone before" data-date="26/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/260625_2.png" alt="Where no man has gone before" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Where no man has gone before<span class="pin__date">26/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/260625.png" data-full-src="/images/gallery/260625.png" data-alt="Fancy birthday dinner" data-caption="Fancy birthday dinner" data-date="26/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/260625.png" alt="Fancy birthday dinner" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Fancy birthday dinner<span class="pin__date">26/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/230625.png" data-full-src="/images/gallery/230625.png" data-alt="Sankt Hans at Nyhavn" data-caption="Sankt Hans at Nyhavn" data-date="23/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/230625.png" alt="Sankt Hans at Nyhavn" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Sankt Hans at Nyhavn<span class="pin__date">23/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/140625.png" data-full-src="/images/gallery/140625.png" data-alt="First Chaosity" data-caption="First Chaosity" data-date="14/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/140625.png" alt="First Chaosity" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">First Chaosity<span class="pin__date">14/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/090625.png" data-full-src="/images/gallery/090625.png" data-alt="Royal Run" data-caption="Royal Run" data-date="09/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/090625.png" alt="Royal Run" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Royal Run<span class="pin__date">09/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/080625.png" data-full-src="/images/gallery/080625.png" data-alt="Ruby at Ruby" data-caption="Ruby at Ruby" data-date="08/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/080625.png" alt="Ruby at Ruby" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Ruby at Ruby<span class="pin__date">08/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/060625.png" data-full-src="/images/gallery/060625.png" data-alt="Beamtime success" data-caption="Beamtime success" data-date="06/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/060625.png" alt="Beamtime success" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Beamtime success<span class="pin__date">06/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/050625_2.png" data-full-src="/images/gallery/050625_2.png" data-alt="Sample setup" data-caption="Sample setup" data-date="05/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/050625_2.png" alt="Sample setup" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Sample setup<span class="pin__date">05/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/050625.png" data-full-src="/images/gallery/050625.png" data-alt="New sticker" data-caption="New sticker" data-date="05/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/050625.png" alt="New sticker" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">New sticker<span class="pin__date">05/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/010625.png" data-full-src="/images/gallery/010625.png" data-alt="Prebeamtime dinner" data-caption="Prebeamtime dinner" data-date="01/06/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/010625.png" alt="Prebeamtime dinner" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Prebeamtime dinner<span class="pin__date">01/06/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/180525_3.png" data-full-src="/images/gallery/180525_3.png" data-alt="Hot dog stand in NYC" data-caption="Hot dog stand in NYC" data-date="18/05/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/180525_3.png" alt="Hot dog stand in NYC" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Hot dog stand in NYC<span class="pin__date">18/05/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/180525_2.png" data-full-src="/images/gallery/180525_2.png" data-alt="Times Square" data-caption="Times Square" data-date="18/05/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/180525_2.png" alt="Times Square" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Times Square<span class="pin__date">18/05/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/180525.png" data-full-src="/images/gallery/180525.png" data-alt="Central Park in the sun" data-caption="Central Park in the sun" data-date="18/05/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/180525.png" alt="Central Park in the sun" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Central Park in the sun<span class="pin__date">18/05/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/170525.png" data-full-src="/images/gallery/170525.png" data-alt="Touristing Honolulu" data-caption="Touristing Honolulu" data-date="17/05/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/170525.png" alt="Touristing Honolulu" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Touristing Honolulu<span class="pin__date">17/05/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/070525.png" data-full-src="/images/gallery/070525.png" data-alt="Tasting the local delights in Hawaii" data-caption="Tasting the local delights in Hawaii" data-date="07/05/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/070525.png" alt="Tasting the local delights in Hawaii" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Tasting the local delights in Hawaii<span class="pin__date">07/05/25</span></figcaption></figure>
+        </article><article class="pin">
+          <figure>
+
+            <a class="pin__link" href="/images/gallery/140124.JPG" data-full-src="/images/gallery/140124.JPG" data-alt="Inauguration of King Frederik X" data-caption="Inauguration of King Frederik X" data-date="14/01/25" aria-label="Open larger gallery image">
+
+              <img src="/images/gallery/140124.JPG" alt="Inauguration of King Frederik X" class="pin__img" loading="lazy" decoding="async" />
+
+            </a><figcaption class="pin__caption">Inauguration of King Frederik X<span class="pin__date">14/01/25</span></figcaption></figure>
+        </article></div>
 
   </div>
 
-    <!-- Add gap -->
-    <div style="height: 200px;"></div>
 </div>
+
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+
+  <div class="gallery-lightbox-inner" role="dialog" aria-modal="true">
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button
+  class="gallery-lightbox-close"
+  type="button"
+  aria-label="Close larger image"&gt;
+  ×
+&lt;/button&gt;
+
+&lt;div class="gallery-lightbox-image-wrap"&gt;
+  &lt;img
+    class="gallery-lightbox-image"
+    id="galleryLightboxImage"
+    src=""
+    alt=""&gt;
+&lt;/div&gt;
+
+&lt;div class="gallery-lightbox-caption"&gt;
+  &lt;span id="galleryLightboxCaptionText"&gt;&lt;/span&gt;
+  &lt;span class="gallery-lightbox-date" id="galleryLightboxDate"&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre></div>    </div>
+  </div>
+
+</div>
+
+<script>
+  (function () {
+    function initGalleryLightbox() {
+      var lightbox = document.getElementById("galleryLightbox");
+      var lightboxImage = document.getElementById("galleryLightboxImage");
+      var captionText = document.getElementById("galleryLightboxCaptionText");
+      var captionDate = document.getElementById("galleryLightboxDate");
+      var closeButton = document.querySelector(".gallery-lightbox-close");
+
+      if (!lightbox || !lightboxImage || !captionText || !captionDate) {
+        return;
+      }
+
+      function openLightbox(link) {
+        var src = link.getAttribute("data-full-src") || link.getAttribute("href");
+        var alt = link.getAttribute("data-alt") || "";
+        var caption = link.getAttribute("data-caption") || "";
+        var date = link.getAttribute("data-date") || "";
+
+        if (!src) {
+          return;
+        }
+
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+        captionText.textContent = caption;
+        captionDate.textContent = date;
+
+        lightbox.classList.add("is-open");
+        lightbox.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+
+        lightboxImage.src = "";
+        lightboxImage.alt = "";
+        captionText.textContent = "";
+        captionDate.textContent = "";
+      }
+
+      document.querySelectorAll(".pin__link").forEach(function (link) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+          openLightbox(link);
+        });
+      });
+
+      if (closeButton) {
+        closeButton.addEventListener("click", closeLightbox);
+      }
+
+      lightbox.addEventListener("click", function (event) {
+        if (event.target === lightbox) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
+    }
+
+    function initMasonry() {
+      var board = document.querySelector(".board");
+      var pins = document.querySelectorAll(".pin");
+
+      if (!board || pins.length === 0) {
+        return;
+      }
+
+      function resizeMasonryItem(pin) {
+        var rowHeight = parseInt(window.getComputedStyle(board).getPropertyValue("grid-auto-rows"), 10);
+        var rowGap = parseInt(window.getComputedStyle(board).getPropertyValue("row-gap"), 10);
+        var pinHeight = pin.getBoundingClientRect().height;
+        var rowSpan = Math.ceil((pinHeight + rowGap) / (rowHeight + rowGap));
+        pin.style.gridRowEnd = "span " + rowSpan;
+      }
+
+      function resizeAllMasonryItems() {
+        pins.forEach(function (pin) {
+          resizeMasonryItem(pin);
+        });
+      }
+
+      resizeAllMasonryItems();
+
+      document.querySelectorAll(".pin__img").forEach(function (img) {
+        if (img.complete) {
+          resizeAllMasonryItems();
+        } else {
+          img.addEventListener("load", resizeAllMasonryItems);
+        }
+      });
+
+      window.addEventListener("resize", resizeAllMasonryItems);
+    }
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", function () {
+        initGalleryLightbox();
+        initMasonry();
+      });
+    } else {
+      initGalleryLightbox();
+      initMasonry();
+    }
+  })();
+</script>
+
+
+  </div>
+</main>
         </div>
       </div>
     </div>

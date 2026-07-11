@@ -1,7 +1,7 @@
 ---
 title: "Junk Journal"
 layout: junkjournal
-excerpt: "Et Roligt Sted - Junk Journal"
+excerpt: "Arkivet - Junk Journal"
 sitemap: false
 permalink: /junkjournal.html
 ---

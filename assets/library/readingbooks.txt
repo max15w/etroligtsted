@@ -499,5 +499,7 @@
 | George R.R          | Martin             | A Feast for Crows                                                | No            | Yes            | E           | Main     |
 | Terry               | Pratchett          | Going Postal                                                     | No            | Yes            | E           | Main     |
 | Justin              | Fox                | Malta Inferno                                                    | No            | Yes            | E           | Main     |
-| Bronwen             | Everill            | Africonomics                                                     | Yes           | No             | M           | Window   |
+| Bronwen             | Everill            | Africonomics                                                     | No            | No             | M           | Window   |
 | Asako               | Yuzuki             | Hooked                                                           | Yes           | No             | M           | Main     |
+| Belle               | Burden             | Strangers                                                        | Yes           | No             | M           | Main     |
+| Edouard             | Louis              | Collapse                                                         | Yes           | No             | M           | Main     |

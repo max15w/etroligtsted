@@ -5,75 +5,245 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Et Roligt Sted - Setup</title>
-  <meta name="description" content="A place for creative projects with no home.
-">
-  <link rel="stylesheet" href="http://localhost:4000/css/main.css">
-  <link rel="canonical" href="http://localhost:4000/guide.html">
 
+  <title>
+    Et Roligt Sted -
+    
+      Setup
+    
+  </title>
 
+  <meta
+    name="description"
+    content="A place for creative projects with no home.
+"
+  >
+
+  <style>
+    @font-face {
+      font-family: "CustomFont";
+      src: url("/fonts/Rons.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+  </style>
+
+  <link
+    rel="stylesheet"
+    href="/css/main.css"
+  >
+
+  <link
+    rel="canonical"
+    href="http://localhost:4000/guide.html"
+  >
+
+  
 </head>
 
   <body>
     
-    <style>
-	/* Navbar styling */
-	.navbar {
-	  background-color: rgba(245, 239, 238, 0.4);
-	  border: none;
-	  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-	}
-  
-	.navbar-brand img { position: relative; top: -10px; }
-  
-	.navbar-default .navbar-nav > li > a {
-	  color: #36324b;
-	  font-size: 16px;
-	}
-	.navbar-default .navbar-nav > li > a:hover { color: rgba(141, 71, 71, 0.2);}
-	.navbar-default .navbar-brand { color: #ffffff; }
-	.navbar-default .navbar-brand:hover { color: rgba(226, 225, 209, 0.333); }
-  
-	/* ⬇︎ Make links flush to the left edge */
-	.navbar .container-fluid { padding-left: 0; }            /* remove default 15px */
-	#navbar-collapse-1 { padding-left: 0; }                   /* no extra padding in collapse */
-	.navbar-nav { margin-left: 0; margin-right: 0; }          /* override Bootstrap’s -15px */
-  
-	/* Desktop tweak: Bootstrap 3 gives .navbar-nav vertical/horizontal margins */
-	@media (min-width: 768px) {
-	  .navbar-nav { margin: 7.5px 0; }                        /* no side margins */
-	}
-  
-	/* Optional: also remove any left padding on the whole bar if needed */
-	.navbar.navbar-default { padding-left: 0; }
-  </style>
-  
-  
-  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container-fluid">
-	  <div class="navbar-header">
-		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
-		  <span class="sr-only">Toggle navigation</span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		  <span class="icon-bar"></span>
-		</button>
-	  </div>
-	  <div class="collapse navbar-collapse" id="navbar-collapse-1">
-		<ul class="nav navbar-nav navbar-left">
-		  <li><a href="http://localhost:4000/">Home</a></li>
-		  <li><a href="http://localhost:4000/library">Library</a></li>
-		  <!-- <li><a href="http://localhost:4000/doodleddiary">Doodled Diary</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/junkjournal">Junk Journal</a></li> -->
-		  <!-- <li><a href="http://localhost:4000/bugart">Bug Art</a></li> -->
-		  <li><a href="http://localhost:4000/medialog">Media Log</a></li>
-		  <li><a href="http://localhost:4000/readinglog">Reading Log</a></li>
-		  <li><a href="http://localhost:4000/gallery">Gallery</a></li>
-		  <li><a href="http://localhost:4000/videos">Videos</a></li>
-		</ul>
-	  </div>
-	</div>
+    
+
+
+<style>
+  :root {
+    --nav-background: #F4F1EB;
+    --nav-active: #D4D0C6;
+    --nav-hover: #E7E1D6;
+    --nav-line: rgba(52, 49, 46, 0.10);
+    --nav-shadow: rgba(70, 62, 52, 0.08);
+    --nav-ink: #554D46;
+  }
+
+  .site-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    min-height: 56px;
+
+    background: rgba(238, 233, 224, 0.97);
+    border-bottom: 1px solid var(--nav-line);
+    box-shadow: 0 3px 10px var(--nav-shadow);
+
+    font-family: "CustomFont", Georgia, serif;
+  }
+
+  .site-nav-inner {
+    width: min(1240px, calc(100% - 48px));
+    min-height: 56px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+  }
+
+  .site-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .site-nav-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 40px;
+    padding: 0 14px;
+
+    border-radius: 11px;
+    text-decoration: none;
+
+    color: var(--nav-ink);
+    font-family: "CustomFont", Georgia, serif;
+    font-size: 1.65rem;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+
+    transition:
+      background-color 0.18s ease,
+      transform 0.18s ease;
+  }
+
+  .site-nav-links a:hover {
+    background: var(--nav-hover);
+    transform: translateY(-1px);
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a:focus {
+    color: var(--nav-ink);
+    text-decoration: none;
+  }
+
+  .site-nav-links a.active {
+    background: var(--nav-active);
+  }
+
+  .nav-home {
+    font-size: 1.55rem;
+  }
+
+  @media (max-width: 780px) {
+    .site-nav {
+      min-height: 50px;
+    }
+
+    .site-nav-inner {
+      width: min(100% - 24px, 1240px);
+      min-height: 50px;
+    }
+
+    .site-nav-links {
+      gap: 4px;
+    }
+
+    .site-nav-links a {
+      height: 36px;
+      padding: 0 9px;
+      border-radius: 9px;
+      font-size: 1.3rem;
+    }
+
+    .nav-home {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="site-nav-inner">
+    <ul class="site-nav-links">
+
+      <li>
+        <a
+          class="nav-home"
+          href="/"
+          aria-label="Home">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/library"
+          aria-label="Library">
+          Library
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/art"
+          aria-label="Art">
+          Art
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/readinglog"
+          aria-label="Reading Log">
+          Reading Log
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/gallery"
+          aria-label="Gallery">
+          Gallery
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/videos"
+          aria-label="Videos">
+          Videos
+        </a>
+      </li>
+
+      <li>
+        <a
+          class=""
+          href="/sansebastian"
+          aria-label="San Sebastian">
+          San Sebastian
+        </a>
+      </li>
+
+    </ul>
   </div>
+</nav>
+
+
 
     <div class="container-fluid">
         <div class="row">
@@ -96,103 +266,13 @@ gem <span class="nb">install </span>bundler jekyll
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
 </code></pre></div></div>
 
-<h2 id="contribute">Contribute</h2>
+<p>## Hints</p>
 
-<h3 id="add-a-new-member">Add a new member</h3>
+<p>If you get a “Adress already in use” error, you can kill the process using the port with:</p>
 
-<p>New members are stored as markdown files under
-<a href="_pages/team/_posts">_pages/team/_posts</a>.</p>
-
-<p>Each new member <code class="language-plaintext highlighter-rouge">.md</code> file must look like this:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">member</span>
-<span class="na">category</span><span class="pi">:</span> <span class="s">staff</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">Researcher Name</span>
-<span class="na">image</span><span class="pi">:</span> <span class="s">researcher.png</span>
-<span class="na">role</span><span class="pi">:</span> <span class="s">Lab Director</span>
-<span class="na">permalink</span><span class="pi">:</span> <span class="s1">'</span><span class="s">team/researcher-name'</span>
-<span class="na">social</span><span class="pi">:</span>
-    <span class="na">twitter</span><span class="pi">:</span> <span class="s">https://twitter.com/</span>
-    <span class="na">linkedin</span><span class="pi">:</span> <span class="s">https://www.linkedin.com/</span>
-    <span class="na">google-scholar</span><span class="pi">:</span> <span class="s">https://scholar.google.fr/</span>
-    <span class="na">github</span><span class="pi">:</span> <span class="s">https://github.com/</span>
-    <span class="na">website</span><span class="pi">:</span>
-    <span class="na">orcid</span><span class="pi">:</span> <span class="s">https://orcid.org/</span>
-    <span class="na">research-gate</span><span class="pi">:</span> <span class="s">https://www.researchgate.net/</span>
-<span class="na">education</span><span class="pi">:</span>
- <span class="pi">-</span> <span class="s">Education</span>
-<span class="nn">---</span>
-
-<span class="s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</span>
-<span class="s">tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</span>
-<span class="s">quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</span>
-<span class="s">consequat. Duis aute irure dolor in reprehenderit in voluptate velit</span>
-<span class="s">esse cillum dolore eu fugiat </span><span class="no">null</span><span class="s">a pariatur. Excepteur sint occaecat</span>
-<span class="s">cupidatat non proident, sunt in culpa qui officia deserunt</span>
-<span class="s">mollit anim id est laborum.</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lsof <span class="nt">-i</span> :4000
+<span class="nb">kill</span> <span class="nt">-9</span> &lt;PID&gt;
 </code></pre></div></div>
-
-<h3 id="add-a-new-publication">Add a new publication</h3>
-
-<p>Publications are stored as <code class="language-plaintext highlighter-rouge">.json</code> file under
-<a href="_data/publications.json">_data/publications.json</a>.
-This json file is exported from <a href="https://www.zotero.org/">Zotero</a>
-bibliography tool.</p>
-
-<p>Just add a new entry to the list like this:</p>
-
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://zotero.org/groups/2386072/items/NU9LTX7C"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"article-journal"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Foo"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"container-title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IEEE Transactions on Medical Imaging"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"page"</span><span class="p">:</span><span class="w"> </span><span class="s2">"448-459"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"volume"</span><span class="p">:</span><span class="w"> </span><span class="s2">"38"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"issue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"source"</span><span class="p">:</span><span class="w"> </span><span class="s2">"IEEE Xplore"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"abstract"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bar"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"DOI"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.1109/TMI.2018.2865709"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"author"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="p">{</span><span class="w">
-      </span><span class="nl">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-      </span><span class="nl">"given"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-    </span><span class="p">},</span><span class="w">
-  </span><span class="p">],</span><span class="w">
-  </span><span class="nl">"issued"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-    </span><span class="nl">"date-parts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-      </span><span class="p">[</span><span class="w">
-        </span><span class="s2">"2019"</span><span class="p">,</span><span class="w">
-        </span><span class="mi">2</span><span class="w">
-      </span><span class="p">]</span><span class="w">
-    </span><span class="p">]</span><span class="w">
-  </span><span class="p">}</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
-
-<h3 id="add-news">Add news</h3>
-
-<p>News are stored as <code class="language-plaintext highlighter-rouge">.yml</code> file under <a href="_data/news.yml">_data/news.yml</a>.</p>
-
-<p>An entry looks like the following:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="pi">-</span> <span class="na">date</span><span class="pi">:</span> <span class="s">03/09/19</span>
-  <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Something</span><span class="nv"> </span><span class="s">great"</span>
-  <span class="na">tags</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="s">some</span>
-    <span class="pi">-</span> <span class="s">tags</span>
-  <span class="na">content</span><span class="pi">:</span> <span class="s">Lorem ipsum dolor sit amet, consectetur adipiscing elit,</span>
-    <span class="s">sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</span>
-    <span class="s">Eu turpis egestas pretium aenean. Luctus venenatis lectus magna fringilla</span>
-    <span class="s">urna porttitor. Lorem ipsum dolor sit amet. Pellentesque massa placerat</span>
-    <span class="s">duis ultricies. Commodo viverra maecenas accumsan lacus vel.</span>
-</code></pre></div></div>
-
-<h3 id="edit-template">Edit template</h3>
-
-<p>We use <a href="https://getbootstrap.com/">Bootstrap</a> for designing the website.
-Feel free to modify either the <a href="_pages/">_pages</a> or the
-<a href="_layouts/">_layouts</a> components.</p>
 
         </div>
       </div>

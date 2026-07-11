@@ -1,7 +1,7 @@
 ---
-title: "Et Roligt Sted - hjem"
+title: "Arkivet - hjem"
 layout: homelay
-excerpt: "Et Roligt Sted"
+excerpt: "Arkivet Sted"
 sitemap: false
 permalink: /
 ---
